@@ -27,10 +27,14 @@ public class selectionManager : MonoBehaviour
                 interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
                 interaction_info_UI.SetActive(true);
             }
-            else
+            else //hit durumu var ama Interactable Object'e deðil
             {
                 interaction_info_UI.SetActive(false);
             }
+        }
+        else //hit durumu hiç yok, herhangi bir objeye bakmýyoruz
+        {
+            interaction_info_UI.SetActive(false);
         }
     }
 }

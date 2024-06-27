@@ -30,7 +30,7 @@ public class mouseMovement : MonoBehaviour
         xRotation -= mouseY;
 
         // bakýþ açýsýnýn dönüþ sýnýrýný belirlemek için (sonsuza kadar yukarý veya aþaðý bakmamak için)
-        xRotation = Mathf.Clamp(xRotation, -45f, 45f);
+        xRotation = Mathf.Clamp(xRotation, -50f, 50f);
 
         // saða sola bakma mekaniði
         yRotation += mouseX;
