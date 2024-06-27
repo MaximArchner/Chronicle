@@ -16,7 +16,6 @@ public class mouseMovement : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         groundCheckOffset = groundCheck.position - transform.position;
     }
 
