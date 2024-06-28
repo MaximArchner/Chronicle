@@ -8,10 +8,25 @@ public class selectionManager : MonoBehaviour
 {
     public GameObject interaction_info_UI;
     TextMeshProUGUI interaction_text;
+    public static selectionManager Instance { get; set; }
+    public bool onTarget;
 
     private void Start()
     {
+        onTarget = false;
         interaction_text = interaction_info_UI.GetComponent<TextMeshProUGUI>();
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     void Update()
@@ -22,13 +37,15 @@ public class selectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
-            if (selectionTransform.GetComponent<InteractableObject >())
+            if (selectionTransform.GetComponent<InteractableObject >() && selectionTransform.GetComponent<InteractableObject>().playerInRange)
             {
+                onTarget = true;
                 interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
                 interaction_info_UI.SetActive(true);
             }
             else //hit durumu var ama Interactable Object'e deðil
             {
+                onTarget = false;
                 interaction_info_UI.SetActive(false);
             }
         }

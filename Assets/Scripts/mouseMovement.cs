@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mouseMovement : MonoBehaviour
 {
-    public float mouseSensitivity = 500f;
+    public float mouseSensitivity = 400f;
 
     float xRotation = 0f;
     float yRotation = 0f;
@@ -29,7 +29,7 @@ public class mouseMovement : MonoBehaviour
         xRotation -= mouseY;
 
         // bakýþ açýsýnýn dönüþ sýnýrýný belirlemek için (sonsuza kadar yukarý veya aþaðý bakmamak için)
-        xRotation = Mathf.Clamp(xRotation, -50f, 50f);
+        xRotation = Mathf.Clamp(xRotation, -45f, 45f);
 
         // saða sola bakma mekaniði
         yRotation += mouseX;
