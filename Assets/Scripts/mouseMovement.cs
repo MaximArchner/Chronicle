@@ -23,20 +23,24 @@ public class mouseMovement : MonoBehaviour
     
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (InventorySystem.Instance.isOpen == false) { 
 
-        // yukarý aþaðý bakma mekaniði
-        xRotation -= mouseY;
 
-        // bakýþ açýsýnýn dönüþ sýnýrýný belirlemek için (sonsuza kadar yukarý veya aþaðý bakmamak için)
-        xRotation = Mathf.Clamp(xRotation, -45f, 45f);
+                float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // saða sola bakma mekaniði
-        yRotation += mouseX;
+                // yukarý aþaðý bakma mekaniði
+                xRotation -= mouseY;
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        AdjustGroundCheckPosition();
+                // bakýþ açýsýnýn dönüþ sýnýrýný belirlemek için (sonsuza kadar yukarý veya aþaðý bakmamak için)
+                xRotation = Mathf.Clamp(xRotation, -45f, 45f);
+
+                // saða sola bakma mekaniði
+                yRotation += mouseX;
+
+                transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+                AdjustGroundCheckPosition();
+        }
     }
 
     void AdjustGroundCheckPosition()
