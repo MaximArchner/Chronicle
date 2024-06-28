@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeOpacity : MonoBehaviour
 {
-    public float targetOpacity = 0.5f; // Set your desired opacity (0 is fully transparent, 1 is fully opaque)
+   public float targetOpacity = 0.5f; // Set your desired opacity (0 is fully transparent, 1 is fully opaque)
 
     void Start()
     {
