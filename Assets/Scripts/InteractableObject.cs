@@ -20,7 +20,7 @@ public class InteractableObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Mouse0) && playerInRange && selectionManager.Instance.onTarget)
+        if(Input.GetKey(KeyCode.E) && playerInRange && selectionManager.Instance.onTarget)
         {
             Debug.Log("Item added into the inventory.");
             Destroy(gameObject);

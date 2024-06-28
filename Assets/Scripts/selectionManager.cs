@@ -51,6 +51,7 @@ public class selectionManager : MonoBehaviour
         }
         else //hit durumu hiç yok, herhangi bir objeye bakmýyoruz
         {
+            onTarget = false;
             interaction_info_UI.SetActive(false);
         }
     }
