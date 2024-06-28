@@ -16,6 +16,7 @@ public class playerMovement : MonoBehaviour
 
     Vector3 velocity;
     public bool isGrounded;
+    public bool isSprinting;
 
     void Update()
     {
@@ -31,6 +32,18 @@ public class playerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            isSprinting = true;
+            speed = 17f;
+        }
+        
+        else
+        {
+            isSprinting = false;
+            speed = 12f;
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
