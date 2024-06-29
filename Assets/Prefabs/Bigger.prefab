@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.744274
+      value: 7.6342735
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.019
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.561
+      value: -0.12900019
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42,15 +42,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4841158701643064453, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -100,7 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInRange: 0
   ItemName: Big Rabbit
+  proximityText: {fileID: 8635430239778640587}
+  textOffset: {x: 0, y: 2, z: 0}
 --- !u!136 &6718064636719589113
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -151,3 +154,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8635430239778640587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4186743344311866792, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+  m_PrefabInstance: {fileID: 5606272279670196067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,7 +9,6 @@ public class InteractableObject : MonoBehaviour
     
     public string ItemName;
 
-    public Transform player; // Reference to the player
     public TextMeshPro proximityText; // Reference to the TextMeshPro element
     public Vector3 textOffset = new Vector3(0, 2, 0);
 
@@ -39,9 +38,6 @@ public class InteractableObject : MonoBehaviour
             playerInRange = true;
             proximityText.gameObject.SetActive(true);
             proximityText.text = gameObject.name + " [E]";
-            proximityText.transform.position = transform.position + textOffset;
-            proximityText.transform.LookAt(player); // Ensure the text faces the player
-            proximityText.transform.Rotate(0, 180, 0); // Correct the text orientation
         }
     }
 
