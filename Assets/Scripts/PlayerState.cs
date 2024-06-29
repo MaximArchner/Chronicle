@@ -69,7 +69,12 @@ public class PlayerState : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            currentHunger -= 0.05f * maxHunger;
+            currentHealth -= 0.05f * maxHealth;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            currentHealth += 0.05f * maxHealth;
         }
     }
 }
