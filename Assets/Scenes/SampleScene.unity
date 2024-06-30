@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 45441794}
   m_Layer: 5
   m_Name: Slot4
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 93389035}
   m_Layer: 5
   m_Name: Slot15
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 111473873}
   m_Layer: 5
   m_Name: Slot17
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,7 +444,6 @@ GameObject:
   - component: {fileID: 136389876}
   - component: {fileID: 136389878}
   - component: {fileID: 136389877}
-  - component: {fileID: 136389879}
   m_Layer: 5
   m_Name: MiddlePoint
   m_TagString: Untagged
@@ -510,20 +509,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136389875}
   m_CullTransparentMesh: 1
---- !u!114 &136389879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136389875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033c5322dc367664db44d1486e7bb209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasRectTransform: {fileID: 1508184378}
-  cursorOffset: {x: 2, y: -2}
 --- !u!1 &242629690
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +523,7 @@ GameObject:
   - component: {fileID: 242629694}
   m_Layer: 5
   m_Name: Slot7
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -683,7 +668,7 @@ GameObject:
   - component: {fileID: 323121407}
   m_Layer: 5
   m_Name: Slot13
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,7 +756,7 @@ GameObject:
   - component: {fileID: 324958176}
   m_Layer: 5
   m_Name: Slot9
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1153,7 +1138,7 @@ GameObject:
   - component: {fileID: 460770500}
   m_Layer: 5
   m_Name: Slot3
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,7 +1236,7 @@ GameObject:
   - component: {fileID: 674028018}
   m_Layer: 5
   m_Name: Slot2
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1467,7 +1452,7 @@ GameObject:
   - component: {fileID: 762427644}
   m_Layer: 5
   m_Name: Slot11
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1811,7 +1796,7 @@ GameObject:
   - component: {fileID: 847118278}
   m_Layer: 5
   m_Name: Slot16
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,7 +1884,7 @@ GameObject:
   - component: {fileID: 953094206}
   m_Layer: 5
   m_Name: Slot1
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1988,7 +1973,7 @@ GameObject:
   - component: {fileID: 996152624}
   m_Layer: 5
   m_Name: Slot10
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2515,7 +2500,7 @@ GameObject:
   - component: {fileID: 1324818871}
   m_Layer: 5
   m_Name: Slot19
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2608,7 +2593,7 @@ GameObject:
   - component: {fileID: 1364186272}
   m_Layer: 5
   m_Name: Slot12
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2696,7 +2681,7 @@ GameObject:
   - component: {fileID: 1368044522}
   m_Layer: 5
   m_Name: Slot5
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3001,7 +2986,7 @@ GameObject:
   - component: {fileID: 1481604220}
   m_Layer: 5
   m_Name: Slot8
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3089,7 +3074,7 @@ GameObject:
   - component: {fileID: 1505192216}
   m_Layer: 5
   m_Name: Slot14
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3281,7 +3266,7 @@ GameObject:
   - component: {fileID: 1526526129}
   m_Layer: 5
   m_Name: Slot18
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3557,7 +3542,7 @@ GameObject:
   - component: {fileID: 1609852572}
   m_Layer: 5
   m_Name: Slot21
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3666,7 +3651,7 @@ GameObject:
   - component: {fileID: 1878924094}
   m_Layer: 5
   m_Name: Slot20
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3754,7 +3739,7 @@ GameObject:
   - component: {fileID: 1902068818}
   m_Layer: 5
   m_Name: Slot6
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3845,7 +3830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1962211933
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3859,25 +3844,25 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 953094203}
-  - {fileID: 1481604217}
-  - {fileID: 93389032}
   - {fileID: 674028015}
-  - {fileID: 324958173}
-  - {fileID: 847118275}
   - {fileID: 460770497}
-  - {fileID: 996152621}
-  - {fileID: 111473870}
   - {fileID: 45441791}
-  - {fileID: 762427641}
-  - {fileID: 1526526126}
   - {fileID: 1368044519}
-  - {fileID: 1364186269}
-  - {fileID: 1324818868}
   - {fileID: 1902068815}
-  - {fileID: 323121404}
-  - {fileID: 1878924091}
   - {fileID: 242629691}
+  - {fileID: 1481604217}
+  - {fileID: 324958173}
+  - {fileID: 996152621}
+  - {fileID: 762427641}
+  - {fileID: 1364186269}
+  - {fileID: 323121404}
   - {fileID: 1505192213}
+  - {fileID: 93389032}
+  - {fileID: 847118275}
+  - {fileID: 111473870}
+  - {fileID: 1526526126}
+  - {fileID: 1324818868}
+  - {fileID: 1878924091}
   - {fileID: 1609852569}
   m_Father: {fileID: 1508184378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

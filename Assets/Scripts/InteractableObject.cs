@@ -10,7 +10,6 @@ public class InteractableObject : MonoBehaviour
     public string ItemName;
 
     public TextMeshPro proximityText; // Reference to the TextMeshPro element
-    public Vector3 textOffset = new Vector3(0, 2, 0);
 
     public string GetItemName()
     {
@@ -19,15 +18,18 @@ public class InteractableObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.E) && playerInRange)
+        if(Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            Debug.Log("Item added into the inventory.");
-            Destroy(gameObject);
-        }
-        else if (Input.GetKey(KeyCode.E) && selectionManager.Instance.onTarget && playerInRange)
-        {
-            Debug.Log("Item added into the inventory.");
-            Destroy(gameObject);
+            if (!InventorySystem.Instance.CheckIfFull())
+            {
+                InventorySystem.Instance.AddToInventory(ItemName);
+                Debug.Log("Item added into the inventory.");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Inventory is full!");
+            }
         }
     }
 
