@@ -12,7 +12,7 @@ public class selectionManager : MonoBehaviour
     
     public bool onTarget;
 
-    public GameObject selectedObject;
+    //public GameObject selectedObject;
 
     private void Start()
     {
