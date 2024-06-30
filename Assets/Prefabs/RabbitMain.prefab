@@ -1108,9 +1108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  ItemName: Rabbit
+  ItemName: Stone
   proximityText: {fileID: 4186743344311866792}
-  textOffset: {x: 0, y: 2, z: 0}
 --- !u!114 &5649864489575500343
 MonoBehaviour:
   m_ObjectHideFlags: 0

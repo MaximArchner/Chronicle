@@ -12,7 +12,7 @@ public class selectionManager : MonoBehaviour
     
     public bool onTarget;
 
-    //public GameObject selectedObject;
+    public GameObject selectedObject;
 
     private void Start()
     {
@@ -40,13 +40,13 @@ public class selectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
-//InteractableObject.interactable = selectionTransform.GetComponent<InteractableObject>();
+            InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
 
-            if (selectionTransform.GetComponent<InteractableObject >() && selectionTransform.GetComponent<InteractableObject>().playerInRange)
+            if (interactable && interactable.playerInRange)
             {
                 onTarget = true;
-                //selectedObject = interactable.gameObject;
-                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
+                selectedObject = interactable.gameObject;
+                interaction_text.text = interactable.GetItemName();
                 interaction_info_UI.SetActive(true);
             }
             else //hit durumu var ama Interactable Object'e deðil
