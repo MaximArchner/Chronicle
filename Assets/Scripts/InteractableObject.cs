@@ -9,7 +9,7 @@ public class InteractableObject : MonoBehaviour
     
     public string ItemName;
 
-    public TextMeshPro proximityText; // Reference to the TextMeshPro element
+    public TextMeshPro proximityText; // yakina gelince bu objeyi tweaklemeli
 
     public string GetItemName()
     {
@@ -18,7 +18,7 @@ public class InteractableObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible"))
+        if(Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible")) // Objenin collider'ina dokunuyorken ve objenin tag'i Collectible ise
         {
             if (!InventorySystem.Instance.CheckIfFull())
             {
@@ -35,10 +35,11 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) // Objenin collider'ina dokundugumuzda text olusturmali ve Range'inde oldugumuzu bildirmeli
         {
             playerInRange = true;
             proximityText.gameObject.SetActive(true);
+            // proximityText'in transform degerlerini ve oyuncuya bakmasini saglamaliyiz
             proximityText.text = gameObject.name + " [E]";
         }
     }

@@ -20,7 +20,7 @@ public class InventorySystem : MonoBehaviour
 
     public bool isOpen;
 
-    //public bool isFull;
+    //public bool isFull; sonra kullanirsak diye saklayalim
 
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen)
+        if (Input.GetKeyDown(KeyCode.I) && !isOpen) // Envanteri acma
         {
 
             Debug.Log("i is pressed");
@@ -73,14 +73,14 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    public void AddToInventory(string itemName)
+    public void AddToInventory(string itemName) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
             nextEmptySlot = FindNextEmptySlot();
             itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
             itemToAdd.transform.SetParent(nextEmptySlot.transform);
             itemList.Add(itemName);
     }
-    private GameObject FindNextEmptySlot()
+    private GameObject FindNextEmptySlot() // envanterde yer varsa, toplanan bir objeyi mevcut bos yere koyuyor
     {
         foreach (GameObject slot in slotList)
         {
@@ -93,7 +93,7 @@ public class InventorySystem : MonoBehaviour
         return new GameObject();
     }
 
-    public bool CheckIfFull()
+    public bool CheckIfFull() // envanterde bos yuva var mi bakacak, yoksa False dondurecek
     {
         int counter = 0;
         foreach (GameObject slot in slotList) 

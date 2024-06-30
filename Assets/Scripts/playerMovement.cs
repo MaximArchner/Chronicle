@@ -20,11 +20,11 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-        if (InventorySystem.Instance.isOpen == false)
+        if (InventorySystem.Instance.isOpen == false) // Envanter paneli acik degilse
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // groundCheck objesine dayanarak yere degiyor muyuz kontrol et
 
-            if (isGrounded && velocity.y < 0)
+            if (isGrounded && velocity.y < 0) // yerdeysek ve dikey dusus hizimiz 0'dan dusukse
             {
                 velocity.y = -2f;
             }
@@ -35,7 +35,7 @@ public class playerMovement : MonoBehaviour
             Vector3 move = transform.right * x + transform.forward * z;
             controller.Move(move * speed * Time.deltaTime);
 
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) // herhangi bir shift'e basili tutarsak
             {
                 isSprinting = true;
                 speed = 17f;
@@ -47,7 +47,7 @@ public class playerMovement : MonoBehaviour
                 speed = 12f;
             }
 
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (Input.GetButtonDown("Jump") && isGrounded) // Yerdeyken Jump butonuna basarsak
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }

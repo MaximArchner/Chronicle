@@ -47,7 +47,7 @@ public class PlayerState : MonoBehaviour
         StartCoroutine(decreaseThirst());
     }
 
-    IEnumerator decreaseThirst()
+    IEnumerator decreaseThirst() // Coroutine'in hangi araliklarla gerceklesecegini belirliyor (su an 5 saniyede bir -1 veriyor Thirst'e)
     {
         while (true)
         {
@@ -58,8 +58,8 @@ public class PlayerState : MonoBehaviour
     
     void Update()
     {
-        distanceTravelled += Vector3.Distance(playerBody.transform.position, lastPosition);
-        lastPosition = playerBody.transform.position;
+        distanceTravelled += Vector3.Distance(playerBody.transform.position, lastPosition); //ilk pozisyonumuz ile son pozisyonumuz arasindaki farki kaydedecek
+        lastPosition = playerBody.transform.position; //son pozisyonumuzu, yukaridaki hesap icin ilk pozisyonumuz olarak sifirlayacak
 
         if (distanceTravelled >= 5)
         {
