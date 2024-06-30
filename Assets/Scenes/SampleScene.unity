@@ -701,6 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction_info_UI: {fileID: 1153622769}
   onTarget: 0
+  selectedObject: {fileID: 0}
 --- !u!4 &53186524
 Transform:
   m_ObjectHideFlags: 0
@@ -6182,7 +6183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  ItemName: Cylinder
+  ItemName: Stone
   proximityText: {fileID: 800755414}
 --- !u!65 &1002117114
 BoxCollider:
