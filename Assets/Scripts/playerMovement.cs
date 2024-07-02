@@ -8,11 +8,12 @@ public class playerMovement : MonoBehaviour
 
     public float speed = 0f;
     public float gravity = -9.81f * 2;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 2f;
 
     public Transform groundCheck;
     public float groundDistance = 0.5f;
     public LayerMask groundMask;
+    public Transform orientation;
 
     Vector3 velocity;
     public bool isGrounded;
@@ -32,19 +33,19 @@ public class playerMovement : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
-            Vector3 move = transform.right * x + transform.forward * z;
+            Vector3 move = orientation.forward * z + orientation.right * x;
             controller.Move(move * speed * Time.deltaTime);
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) // herhangi bir shift'e basili tutarsak
             {
                 isSprinting = true;
-                speed = 17f;
+                speed = 12f;
             }
 
             else
             {
                 isSprinting = false;
-                speed = 12f;
+                speed = 7f;
             }
 
             if (Input.GetButtonDown("Jump") && isGrounded) // Yerdeyken Jump butonuna basarsak
