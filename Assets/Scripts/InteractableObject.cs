@@ -6,7 +6,8 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     public bool playerInRange;
-    
+    public Transform player;
+    private Vector3 textOffset = new Vector3(0, 2.3f, 0);
     public string ItemName;
 
     public TextMeshPro proximityText; // yakina gelince bu objeyi tweaklemeli
@@ -39,8 +40,17 @@ public class InteractableObject : MonoBehaviour
         {
             playerInRange = true;
             proximityText.gameObject.SetActive(true);
-            // proximityText'in transform degerlerini ve oyuncuya bakmasini saglamaliyiz
-            proximityText.text = gameObject.name + " [E]";
+            proximityText.transform.position = proximityText.transform.parent.position + textOffset;
+            proximityText.transform.LookAt(player.transform);
+            proximityText.transform.Rotate(0, 180, 0);
+            if (CompareTag("Collectible"))
+            {
+                proximityText.text = gameObject.name + " [E]";
+            }
+            else if (!CompareTag("Collectible"))
+            {
+                proximityText.text = gameObject.name;
+            }
         }
     }
 
