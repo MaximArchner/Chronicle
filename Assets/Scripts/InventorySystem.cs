@@ -62,7 +62,6 @@ public class InventorySystem : MonoBehaviour
             Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
             UnityEngine.Cursor.lockState = CursorLockMode.None;
-            UnityEngine.Cursor.visible = true;
             isOpen = true;
 
         }
@@ -70,7 +69,6 @@ public class InventorySystem : MonoBehaviour
         {
             inventoryScreenUI.SetActive(false);
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-            UnityEngine.Cursor.visible = false;
             isOpen = false;
         }
     }
