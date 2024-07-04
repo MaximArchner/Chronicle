@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &18356428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18356429}
+  m_Layer: 0
+  m_Name: groundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &18356429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18356428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 616544441}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &45441790
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +786,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -1065,7 +1096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418647195}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04763198, y: 0.0000000021483566, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: -0.0000000021483566, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 2, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1216,7 +1247,7 @@ PrefabInstance:
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 4342373353622587746, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: m_Name
       value: Big Rabbit
@@ -1382,7 +1413,6 @@ MonoBehaviour:
   orientation: {fileID: 165738297}
   player: {fileID: 616544441}
   playerObj: {fileID: 835508538}
-  rb: {fileID: 616544440}
   rotationSpeed: 7
 --- !u!1 &460770496
 GameObject:
@@ -1543,7 +1573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522041004}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: -0.00000001765986, z: 0.0000000016409466, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: 0.000000017659854, z: -0.0000000016409462, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1570,42 +1600,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 616544441}
-  - component: {fileID: 616544440}
-  - component: {fileID: 616544442}
+  - component: {fileID: 616544445}
+  - component: {fileID: 616544444}
   m_Layer: 0
-  m_Name: Player2
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &616544440
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616544439}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!4 &616544441
 Transform:
   m_ObjectHideFlags: 0
@@ -1621,33 +1624,10 @@ Transform:
   m_Children:
   - {fileID: 835508538}
   - {fileID: 165738297}
+  - {fileID: 418647196}
+  - {fileID: 18356429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &616544442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616544439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c313d245d54f2146b5bc1833b81e2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 7
-  groundDrag: 5
-  jumpForce: 7
-  jumpCooldown: 0.25
-  airMultiplier: 0.4
-  jumpKey: 32
-  playerHeight: 2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  orientation: {fileID: 165738297}
-  isGrounded: 0
-  isSprinting: 0
 --- !u!143 &616544444
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1674,6 +1654,30 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &616544445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616544439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbb05c840c29fd4bbe83bfb530a5291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 616544444}
+  speed: 0
+  gravity: -19.62
+  jumpHeight: 2
+  groundCheck: {fileID: 18356429}
+  groundDistance: 0.5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  orientation: {fileID: 165738297}
+  isGrounded: 0
+  isSprinting: 0
 --- !u!1001 &644346815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1722,6 +1726,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2407112228227977917, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 616544441}
     - target: {fileID: 8016159337824653433, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: m_Name
       value: Stone2
@@ -2692,7 +2700,7 @@ GameObject:
   - component: {fileID: 835508538}
   - component: {fileID: 835508541}
   - component: {fileID: 835508540}
-  - component: {fileID: 835508539}
+  - component: {fileID: 835508542}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -2715,29 +2723,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 616544441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &835508539
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835508537}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &835508540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2788,6 +2773,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835508537}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &835508542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835508537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5426fc968b5b234a80f2fda6e44d4b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetOpacity: 0.5
 --- !u!1 &847118274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,7 +3536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 0}
+  player: {fileID: 616544441}
   ItemName: Stone
   proximityText: {fileID: 800755414}
 --- !u!65 &1002117114
@@ -3997,7 +3995,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -4192,7 +4190,7 @@ PrefabInstance:
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 4342373353622587746, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: m_Name
       value: Big Rabbit
@@ -4511,6 +4509,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2407112228227977917, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 616544441}
     - target: {fileID: 8016159337824653433, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: m_Name
       value: Stone3
@@ -4971,45 +4973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b52abac66fa97449fcb01f8193b0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1499693535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2010289758696251510, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
-  m_PrefabInstance: {fileID: 778101060}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1499693537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499693535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1505192212
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,7 +5299,7 @@ MonoBehaviour:
   currentHunger: 0
   maxHunger: 100
   distanceTravelled: 0
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 835508537}
   currentThirstPercent: 0
   maxThirstPercent: 100
   isThirstActive: 0
@@ -5406,7 +5369,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -5643,7 +5606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868393}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047631975, y: 0.0000000021483564, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631975, y: -0.0000000021483564, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5856,7 +5819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092139566812134330, guid: 495db027d9373f84dbc4c2ee65533c05, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2092139566812134330, guid: 495db027d9373f84dbc4c2ee65533c05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6544,7 +6507,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -6605,7 +6568,7 @@ PrefabInstance:
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: proximityText
       value: 
@@ -6874,7 +6837,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -6945,7 +6908,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1040341165}
+      objectReference: {fileID: 835508538}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -7172,6 +7135,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2407112228227977917, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 616544441}
     - target: {fileID: 8016159337824653433, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: m_Name
       value: Stone
@@ -7185,8 +7152,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 616544441}
   - {fileID: 705507995}
-  - {fileID: 778101060}
   - {fileID: 397233730}
   - {fileID: 1508184378}
   - {fileID: 1609635261}
