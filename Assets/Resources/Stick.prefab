@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2398570935648481947}
   - component: {fileID: 3688072943984562206}
   - component: {fileID: 662863616461061861}
+  - component: {fileID: 3136367876726387944}
   m_Layer: 5
   m_Name: Stick
   m_TagString: Collectible
@@ -102,3 +103,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &3136367876726387944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439278607387699564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a662335d658999941b927d24abfc1ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  thisName: Stick
+  thisDescription: A sturdy twig with a few branches.
+  thisFunctionality: A crafting material used in many tools.
+  isConsumable: 0
+  healthEffect: 0
+  hungerEffect: 0
+  thirstEffect: 0

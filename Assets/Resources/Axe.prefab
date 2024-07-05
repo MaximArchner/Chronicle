@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 606185497264628839}
   - component: {fileID: 8657205021115752218}
   - component: {fileID: 6422839885647503645}
+  - component: {fileID: 4847281979556530361}
   m_Layer: 5
   m_Name: Axe
   m_TagString: Untagged
@@ -102,3 +103,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4847281979556530361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203225757392466343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a662335d658999941b927d24abfc1ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  thisName: Axe
+  thisDescription: A blunt axe that will do the job.
+  thisFunctionality: Use this axe to chop down trees.
+  isConsumable: 0
+  healthEffect: 0
+  hungerEffect: 0
+  thirstEffect: 0

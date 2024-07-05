@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -12,12 +14,20 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject inventoryScreenUI;
 
+    public GameObject itemInfoUI;
+
     public List<GameObject> slotList = new List<GameObject>();
 
     public List<string> itemList = new List<string>();
 
     private GameObject itemToAdd;
     private GameObject nextEmptySlot;
+    public GameObject pickupAlert;
+    public TextMeshProUGUI pickupName;
+    public UnityEngine.UI.Image pickupImage;
+
+    private Coroutine hidePickupAlertCoroutine;
+
 
     public bool isOpen;
 
@@ -82,10 +92,36 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
-            nextEmptySlot = FindNextEmptySlot();
-            itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
-            itemToAdd.transform.SetParent(nextEmptySlot.transform);
-            itemList.Add(itemName);
+        nextEmptySlot = FindNextEmptySlot();
+        itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
+        itemToAdd.transform.SetParent(nextEmptySlot.transform);
+        itemList.Add(itemName);
+        ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
+
+        TriggerPickupPopUp(itemName, itemToAdd.GetComponent<UnityEngine.UI.Image>().sprite);
+    }
+
+    void TriggerPickupPopUp(string itemName, Sprite itemSprite)
+    {
+        pickupAlert.SetActive(true);
+        pickupName.text = itemName;
+        pickupImage.sprite = itemSprite;
+
+        if (hidePickupAlertCoroutine != null)
+        {
+            StopCoroutine(hidePickupAlertCoroutine);
+        }
+
+        hidePickupAlertCoroutine = StartCoroutine(HidePickupAlertAfterDelay(3f));
+    }
+
+    private IEnumerator HidePickupAlertAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        pickupAlert.SetActive(false);
+        hidePickupAlertCoroutine = null;
     }
     private GameObject FindNextEmptySlot() // envanterde yer varsa, toplanan bir objeyi mevcut bos yere koyuyor
     {
@@ -140,17 +176,11 @@ public class InventorySystem : MonoBehaviour
 
 
                 }
-
-
-
             }
+        }
 
-
-
-        } 
-
-
-
+        ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
     }
     public void ReCalculateList()
     {
@@ -173,11 +203,5 @@ public class InventorySystem : MonoBehaviour
             }
 
         }
-
-
-
-
-
     }
-
 }

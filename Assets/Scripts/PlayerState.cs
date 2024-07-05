@@ -77,4 +77,19 @@ public class PlayerState : MonoBehaviour
             currentHealth += 0.05f * maxHealth;
         }
     }
+
+    public void setHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+    }
+
+    public void setHunger(float newHunger)
+    {
+        currentHunger = newHunger;
+    }
+
+    public void setThirst(float newThirst)
+    {
+        currentThirstPercent = newThirst;
+    }
 }
