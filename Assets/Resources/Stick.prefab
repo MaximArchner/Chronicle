@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1524289843586184643
+--- !u!1 &2439278607387699564
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2092139566812134330}
-  - component: {fileID: 6558573299330843556}
-  - component: {fileID: 6955597483553404174}
-  - component: {fileID: 5240084640649841224}
-  - component: {fileID: 652209641183656624}
-  - component: {fileID: -7431647888164771398}
+  - component: {fileID: 326400958217799153}
+  - component: {fileID: 4699260857289877337}
+  - component: {fileID: 2398570935648481947}
+  - component: {fileID: 3688072943984562206}
+  - component: {fileID: 662863616461061861}
+  - component: {fileID: 3136367876726387944}
   m_Layer: 5
-  m_Name: Stone
-  m_TagString: Untagged
+  m_Name: Stick
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2092139566812134330
+--- !u!224 &326400958217799153
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524289843586184643}
+  m_GameObject: {fileID: 2439278607387699564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.74369, y: 0.74369, z: 0.74369}
@@ -40,21 +40,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6558573299330843556
+--- !u!222 &4699260857289877337
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524289843586184643}
+  m_GameObject: {fileID: 2439278607387699564}
   m_CullTransparentMesh: 1
---- !u!114 &6955597483553404174
+--- !u!114 &2398570935648481947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524289843586184643}
+  m_GameObject: {fileID: 2439278607387699564}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27db0b51a92eb0b4dad896365aefbc69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c04f4986ebc72e48a8b0c3eb2e42db2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -78,46 +78,46 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5240084640649841224
+--- !u!114 &3688072943984562206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524289843586184643}
+  m_GameObject: {fileID: 2439278607387699564}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5aeab39fc717c9b4e9c77b29c29b686c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
---- !u!225 &652209641183656624
+--- !u!225 &662863616461061861
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524289843586184643}
+  m_GameObject: {fileID: 2439278607387699564}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &-7431647888164771398
+--- !u!114 &3136367876726387944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524289843586184643}
+  m_GameObject: {fileID: 2439278607387699564}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a662335d658999941b927d24abfc1ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isTrashable: 1
-  thisName: Stone
-  thisDescription: A small peble that fits in your pocket.
+  thisName: Stick
+  thisDescription: A sturdy twig with a few branches.
   thisFunctionality: A crafting material used in many tools.
   isConsumable: 0
   healthEffect: 0
