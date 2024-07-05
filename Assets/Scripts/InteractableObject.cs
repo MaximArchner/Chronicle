@@ -7,7 +7,7 @@ public class InteractableObject : MonoBehaviour
 {
     public bool playerInRange;
     public Transform player;
-    private Vector3 textOffset = new Vector3(0, 2.3f, 0);
+    public Vector3 textOffset = new Vector3(0, 0, 0);
     public string ItemName;
 
     public TextMeshPro proximityText; // yakina gelince bu objeyi tweaklemeli
@@ -42,14 +42,14 @@ public class InteractableObject : MonoBehaviour
             proximityText.gameObject.SetActive(true);
             proximityText.transform.position = proximityText.transform.parent.position + textOffset;
             proximityText.transform.LookAt(player.transform);
-            proximityText.transform.Rotate(0, 45, 0);
+            proximityText.transform.Rotate(0, 180, 0);
             if (CompareTag("Collectible"))
             {
-                proximityText.text = gameObject.name + " [E]";
+                proximityText.text = ItemName + " [E]";
             }
             else if (!CompareTag("Collectible"))
             {
-                proximityText.text = gameObject.name;
+                proximityText.text = ItemName;
             }
         }
     }
