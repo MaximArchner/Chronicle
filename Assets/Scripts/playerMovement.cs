@@ -6,7 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 7f;
+    public float speed = 15f;
     public float gravity = -9.81f * 2;
     public float jumpHeight = 2f;
 
@@ -39,13 +39,13 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) // herhangi bir shift'e basili tutarsak
             {
                 isSprinting = true;
-                speed = 12f;
+                speed = 20f;
             }
 
             else
             {
                 isSprinting = false;
-                speed = 7f;
+                speed = 15f;
             }
 
             if (Input.GetButtonDown("Jump") && isGrounded) // Yerdeyken Jump butonuna basarsak
