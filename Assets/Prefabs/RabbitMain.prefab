@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   player: {fileID: 0}
-  textOffset: {x: 0, y: 1, z: 0}
+  textOffset: {x: 0, y: 5, z: 0}
   ItemName: Rabbit
   proximityText: {fileID: 4186743344311866792}
 --- !u!114 &5649864489575500343
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
