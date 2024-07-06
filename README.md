@@ -44,6 +44,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/4e56f56e-af68-42dd-a8f7-2831770955e4" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/1cef5e7f-0a93-43bc-84ee-0f909b136bb7" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/4d7cdb55-7a2d-4bfd-9d4e-3800164e54c7" width="600" />
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/20d6cd58-bed1-4b59-a5fc-5581b205b6fc" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/a4888aa1-6af6-460d-93a2-688351861059" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
