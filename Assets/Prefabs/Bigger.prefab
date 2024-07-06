@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   player: {fileID: 0}
-  textOffset: {x: 0, y: 2, z: 0}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Big Rabbit
   proximityText: {fileID: 8635430239778640587}
 --- !u!136 &6718064636719589113

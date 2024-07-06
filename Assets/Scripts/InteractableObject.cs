@@ -32,6 +32,13 @@ public class InteractableObject : MonoBehaviour
                 Debug.Log("Inventory is full!");
             }
         }
+
+        if (playerInRange)
+        {
+            proximityText.transform.position = proximityText.transform.parent.position + textOffset;
+            proximityText.transform.LookAt(player.transform);
+            proximityText.transform.Rotate(0, 180, 0);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
