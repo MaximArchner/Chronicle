@@ -6,12 +6,12 @@ public class playerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 7f;
-    public float gravity = -9.81f * 2;
-    public float jumpHeight = 2f;
+    public float speed = 30f;
+    public float gravity = -60;
+    public float jumpHeight = 8f;
 
     public Transform groundCheck;
-    public float groundDistance = 0.5f;
+    public float groundDistance = 2f;
     public LayerMask groundMask;
     public Transform orientation;
 
@@ -39,13 +39,13 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) // herhangi bir shift'e basili tutarsak
             {
                 isSprinting = true;
-                speed = 12f;
+                speed = 40f;
             }
 
             else
             {
                 isSprinting = false;
-                speed = 7f;
+                speed = 30f;
             }
 
             if (Input.GetButtonDown("Jump") && isGrounded) // Yerdeyken Jump butonuna basarsak
