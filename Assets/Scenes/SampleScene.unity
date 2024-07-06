@@ -300,8 +300,7 @@ GameObject:
   - component: {fileID: 54643710}
   - component: {fileID: 54643709}
   - component: {fileID: 54643708}
-  - component: {fileID: 54643707}
-  - component: {fileID: 54643706}
+  - component: {fileID: 54643711}
   - component: {fileID: 54643705}
   - component: {fileID: 54643704}
   - component: {fileID: 54643703}
@@ -325,7 +324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Stick
   proximityText: {fileID: 87434259}
 --- !u!114 &54643704
@@ -361,50 +361,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 31.8, y: 2.49, z: 4.77}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &54643706
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54643702}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &54643707
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54643702}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &54643708
 MeshRenderer:
@@ -464,14 +420,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54643702}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.030313015, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 87434262}
   m_Father: {fileID: 1134263278}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!136 &54643711
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54643702}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 1.01
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &79515684
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Apple
   proximityText: {fileID: 872564652}
 --- !u!23 &81517793
@@ -864,7 +844,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 20, y: 5}
+  m_SizeDelta: {x: 1.809, y: 0.952}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &93389031
 GameObject:
@@ -1556,7 +1536,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -1604,7 +1584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text
+  m_text: Stick
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1631,14 +1611,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1647,7 +1627,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1667,7 +1647,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.2879715, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.03988266, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1734,8 +1714,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: 0, y: 3}
+  m_SizeDelta: {x: 1.809, y: 0.952}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &323121403
 GameObject:
@@ -2037,7 +2017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418647195}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04763198, y: 0.0000000021483566, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: -0.0000000021483566, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 2, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2188,7 +2168,7 @@ PrefabInstance:
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 4342373353622587746, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: m_Name
       value: Big Rabbit
@@ -2679,7 +2659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522041004}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: 0.000000017659854, z: -0.0000000016409462, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.00000001765986, z: 0.0000000016409466, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2969,7 +2949,7 @@ PrefabInstance:
     - target: {fileID: 2407112228227977917, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 616544441}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 5799307415798721032, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -2985,7 +2965,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4702181713388340241, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
 --- !u!1 &651169970
 GameObject:
@@ -5565,7 +5548,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 0, z: 0}
   ItemName: Stone
   proximityText: {fileID: 800755414}
 --- !u!65 &1002117114
@@ -6250,7 +6234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Apple
   proximityText: {fileID: 994577759}
 --- !u!23 &1125305377
@@ -6402,22 +6387,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5354472454524914989, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.78819704
-      objectReference: {fileID: 0}
-    - target: {fileID: 5354472454524914989, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 8.762661
-      objectReference: {fileID: 0}
-    - target: {fileID: 5354472454524914989, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.4
-      objectReference: {fileID: 0}
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -6612,7 +6585,7 @@ PrefabInstance:
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 4342373353622587746, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: m_Name
       value: Big Rabbit
@@ -7055,7 +7028,7 @@ PrefabInstance:
     - target: {fileID: 2407112228227977917, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 616544441}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 5799307415798721032, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -7071,7 +7044,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4702181713388340241, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
 --- !u!1 &1339865533
 GameObject:
@@ -7302,8 +7278,7 @@ GameObject:
   - component: {fileID: 1357701727}
   - component: {fileID: 1357701726}
   - component: {fileID: 1357701725}
-  - component: {fileID: 1357701724}
-  - component: {fileID: 1357701723}
+  - component: {fileID: 1357701728}
   - component: {fileID: 1357701722}
   - component: {fileID: 1357701721}
   - component: {fileID: 1357701720}
@@ -7327,7 +7302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Stick
   proximityText: {fileID: 315566463}
 --- !u!114 &1357701721
@@ -7363,50 +7339,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 31.8, y: 2.49, z: 4.77}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1357701723
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357701719}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1357701724
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357701719}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1357701725
 MeshRenderer:
@@ -7467,13 +7399,36 @@ Transform:
   m_GameObject: {fileID: 1357701719}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.05, y: -0.030313015, z: -3.02}
+  m_LocalPosition: {x: 3.05, y: 0, z: -3.02}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 315566466}
   m_Father: {fileID: 1134263278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1357701728
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357701719}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 1.01
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1364186268
 GameObject:
   m_ObjectHideFlags: 0
@@ -8322,7 +8277,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -8408,7 +8363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Apple
   proximityText: {fileID: 964180811}
 --- !u!23 &1597315664
@@ -8705,7 +8661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868393}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047631975, y: 0.0000000021483564, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631975, y: -0.0000000021483564, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9188,17 +9144,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768403864}
   m_CullTransparentMesh: 1
---- !u!114 &1794153541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8635430239778640587, guid: aa78316e1221753408c9d8078786420e, type: 3}
-  m_PrefabInstance: {fileID: 1987820558}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1827365249
 GameObject:
   m_ObjectHideFlags: 0
@@ -9801,7 +9746,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -9862,11 +9807,7 @@ PrefabInstance:
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
-    - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
-      propertyPath: proximityText
-      value: 
-      objectReference: {fileID: 1794153541}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 4342373353622587746, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: m_Name
       value: Big Rabbit
@@ -10093,7 +10034,6 @@ GameObject:
   - component: {fileID: 2087437329}
   - component: {fileID: 2087437328}
   - component: {fileID: 2087437327}
-  - component: {fileID: 2087437326}
   - component: {fileID: 2087437325}
   - component: {fileID: 2087437324}
   - component: {fileID: 2087437323}
@@ -10117,7 +10057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  player: {fileID: 616544441}
+  player: {fileID: 418647196}
+  textOffset: {x: 0, y: 1, z: 0}
   ItemName: Stick
   proximityText: {fileID: 2127350786}
 --- !u!114 &2087437324
@@ -10154,27 +10095,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 31.8, y: 2.49, z: 4.77}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &2087437326
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087437322}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &2087437327
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10194,9 +10114,9 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  m_Radius: 0.7
+  m_Height: 1.01
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2087437328
 MeshRenderer:
@@ -10256,14 +10176,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087437322}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 3.83, y: -0.030313015, z: 2.28}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2127350789}
   m_Father: {fileID: 1134263278}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &2127350785
 GameObject:
   m_ObjectHideFlags: 0
@@ -10329,14 +10249,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10345,7 +10265,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -10365,7 +10285,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.6234455, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.0031185148, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -10432,8 +10352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.71}
-  m_SizeDelta: {x: 20.271, y: 7.054}
+  m_AnchoredPosition: {x: 0, y: 1.64}
+  m_SizeDelta: {x: 1.809, y: 0.952}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2129344797
 PrefabInstance:
@@ -10486,7 +10406,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -10594,7 +10514,7 @@ PrefabInstance:
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 835508538}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -10659,7 +10579,7 @@ PrefabInstance:
     - target: {fileID: 2010056816770836542, guid: f007e11154db4e04b81e3596e7bc18a6, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 616544441}
+      objectReference: {fileID: 418647196}
     - target: {fileID: 2410462517614637141, guid: f007e11154db4e04b81e3596e7bc18a6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.81601
@@ -10940,23 +10860,22 @@ PrefabInstance:
     - target: {fileID: 2407112228227977917, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 616544441}
-    - target: {fileID: 5799307415798721032, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+      objectReference: {fileID: 418647196}
+    - target: {fileID: 4702181713388340241, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8016159337824653433, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
       propertyPath: m_Name
       value: Stone
       objectReference: {fileID: 0}
-    - target: {fileID: 9169880125420019606, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4702181713388340241, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8f493e964f075b541845d606d63bdef2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

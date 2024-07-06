@@ -19,7 +19,14 @@ public class InteractableObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible")) // Objenin collider'ina dokunuyorken ve objenin tag'i Collectible ise
+        if (playerInRange)
+        {
+            proximityText.transform.position = transform.position + textOffset;
+            proximityText.transform.LookAt(player);
+            proximityText.transform.Rotate(0, 180, 0);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible")) // Objenin collider'ina dokunuyorken ve objenin tag'i Collectible ise
         {
             if (!InventorySystem.Instance.CheckIfFull())
             {
