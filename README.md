@@ -45,6 +45,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Sprint 1 Board Update:
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7d394e55-3e3f-4bd7-a9bf-79f325ac07d5" width="600" />
 <br/>
+<br/>
 
 [Unity71 - Oyun Süreci ve Güncel Durumu Görüntüleri](https://imgur.com/a/stQdCxw)
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
