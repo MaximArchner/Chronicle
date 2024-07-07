@@ -12,7 +12,7 @@ U71 Unity Takımı
 Chronicle
 
 ## Game Backlog URL
-To be published...
+[U71 Unity Trello Backlog Board](https://trello.com/b/FLC7Xb4v/unity-71)
 
 ## Oyun Açıklaması
 Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chronicle'da oyuncular kayığı fırtınada bir adaya sürüklenen baş karakter olarak ada sakinlerinin de yardımıyla bir kaçış yolu aramaya koyulmalıdır. Oyuncu adadaki materyalleri toplayarak hem kendisi hem de NPC'ler için kaynak toplar, NPC'ler tarafından verilen görevleri yerine getirir; bilgi alışverişinde bulunur ve adadaki belki de tek çıkış bileti olan kilitli deniz fenerine girmenin yollarını arar.
@@ -30,8 +30,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * 16+
 
 # Sprint 1
-
-## Product Backlog URL : [U71 Unity Trello Backlog Board](https://trello.com/b/FLC7Xb4v/unity-71)
 <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
 
 <strong> Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. İlk Sprint için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
