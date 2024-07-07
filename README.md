@@ -30,11 +30,11 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * 16+
 
 # Sprint 1
-<strong> * Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
+* <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
 
-<strong> * Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. İlk Sprint için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
+* <strong> Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. İlk Sprint için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
 
-<strong> * Daily Scrum: </strong> Yazılı görüşmelerimizi WhatsApp ve Discord üzerinden, sesli görüşmelerimizi de müsaitlik durumunda Discord üzerinden kod ve tasarım konu başlıkları olmak üzere gerçekleştirdik.
+* <strong> Daily Scrum: </strong> Yazılı görüşmelerimizi WhatsApp ve Discord üzerinden, sesli görüşmelerimizi de müsaitlik durumunda Discord üzerinden kod ve tasarım konu başlıkları olmak üzere gerçekleştirdik.
 
 [Unity71 - Whatsapp & Discord Görüşme Kayıtları](https://imgur.com/a/XK73K0O)
 
