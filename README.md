@@ -42,7 +42,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Tasarım Grubu Üyeleri: Dilara, Zilan
 * Kod Grubu Üyeleri: Berke, Burak Arda, Deniz
 
-* Sprint Board Update
+* Sprint 1 Board Update
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7d394e55-3e3f-4bd7-a9bf-79f325ac07d5" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
