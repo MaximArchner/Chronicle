@@ -61,7 +61,7 @@ public class PlayerState : MonoBehaviour
         distanceTravelled += Vector3.Distance(playerBody.transform.position, lastPosition); //ilk pozisyonumuz ile son pozisyonumuz arasindaki farki kaydedecek
         lastPosition = playerBody.transform.position; //son pozisyonumuzu, yukaridaki hesap icin ilk pozisyonumuz olarak sifirlayacak
 
-        if (distanceTravelled >= 5)
+        if (distanceTravelled >= 50)
         {
             distanceTravelled = 0;
             currentHunger -= 0.5f;
