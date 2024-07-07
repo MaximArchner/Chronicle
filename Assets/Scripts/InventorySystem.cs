@@ -181,18 +181,20 @@ public class InventorySystem : MonoBehaviour
         itemList.Clear();
         foreach (GameObject slot in slotList)
         {
-            if (slot.transform.childCount > 0)
+            if (slot.GetComponent<InventorySlot>())
             {
+                InventoryItem item = slot.GetComponent<InventorySlot>().itemInSlot;
 
-                string name = slot.transform.GetChild(0).name; //Taþ (klonu)
-
-                string str2 = "(Clone)";
-
-                string result = name.Replace(str2, "");
-
-
-                itemList.Add(result);
-
+                if (item != null)
+                {
+                    if (item.amountInInventory > 0)
+                    {
+                        for (int i = 0; i < item.amountInInventory; i++)
+                        {
+                            itemList.Add(item.thisName);
+                        }
+                    }
+                }
             }
 
         }
