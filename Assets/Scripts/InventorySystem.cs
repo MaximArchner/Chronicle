@@ -97,7 +97,7 @@ public class InventorySystem : MonoBehaviour
     {
         GameObject stack = CheckIfStackExists(itemName);
 
-        if(stack != null)
+        if(stack != null && shouldStack)
         {
             Debug.Log("Stack exists with this item: " + itemName);
             stack.GetComponent<InventorySlot>().itemInSlot.amountInInventory++;
