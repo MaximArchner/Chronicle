@@ -38,6 +38,11 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 [Unity71 - Whatsapp & Discord Görüşme Kayıtları](https://imgur.com/a/XK73K0O)
 
+* Tasarım ve Developing Mantığı: Tüm ada elementlerinin tasarımları, çeşitli UI elementlerinin tasarımları (envanter, eşyalar, ekran öğeleri, vs.), modellemeleri ve (Blender veya benzeri başka modelleme uygulamalarından) Unity'ye entegrasyonları için kodlama ekibinden ayrı bir tasarım grubu oluşturulmuştur. Tasarım ekibinin tüm materyallere ve modellerine tam yoğunlaşabilmesi için kod yazımı görevi ekibin diğer üç üyesi arasında paylaşılmıştır.
+* Tasarım Grubu Üyeleri: Dilara, Zilan
+* Kod Grubu Üyeleri: Berke, Burak Arda, Deniz
+
+* Sprint Board Update
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7d394e55-3e3f-4bd7-a9bf-79f325ac07d5" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
