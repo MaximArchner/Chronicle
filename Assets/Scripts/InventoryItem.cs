@@ -21,6 +21,12 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Esya tuketme
     private GameObject itemPendingConsumption;
     public bool isConsumable;
+    public bool isEquippable;
+    public int amountInInventory = 1;
+    public bool isInsideQuickSlot;
+
+    public bool isSelected;
+    public bool isUseable;
 
     public float healthEffect;
     public float hungerEffect;
@@ -65,10 +71,17 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerUp(PointerEventData eventData)
     {
+               
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (isConsumable && itemPendingConsumption == gameObject)
-            DestroyImmediate(gameObject);
+            {
+                amountInInventory--;
+                if (amountInInventory <= 0)
+                {
+                    DestroyImmediate(gameObject);
+                }
+            }
             InventorySystem.Instance.ReCalculateList();
             CraftingSystem.Instance.RefreshNeededItems();
         }

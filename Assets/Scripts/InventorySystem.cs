@@ -26,8 +26,11 @@ public class InventorySystem : MonoBehaviour
     public TextMeshProUGUI pickupName;
     public UnityEngine.UI.Image pickupImage;
 
+    public List<string> itemsPickedup;
+
     private Coroutine hidePickupAlertCoroutine;
 
+    public int stackLimit = 99;
 
     public bool isOpen;
 
@@ -92,10 +95,23 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
-        nextEmptySlot = FindNextEmptySlot();
-        itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
-        itemToAdd.transform.SetParent(nextEmptySlot.transform);
-        itemList.Add(itemName);
+        GameObject stack = CheckIfStackExists(itemName);
+
+        if(stack != null)
+        {
+            Debug.Log("Stack exists with this item: " + itemName);
+            stack.GetComponent<InventorySlot>().itemInSlot.amountInInventory++;
+            stack.GetComponent<InventorySlot>().UpdateItemInSlot();
+        }
+        else
+        {
+            nextEmptySlot = FindNextEmptySlot();
+            itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
+            itemToAdd.transform.SetParent(nextEmptySlot.transform);
+            itemList.Add(itemName);
+        }
+        
+        
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
 
@@ -127,7 +143,7 @@ public class InventorySystem : MonoBehaviour
     {
         foreach (GameObject slot in slotList)
         {
-            if (slot.transform.childCount == 0)
+            if (slot.transform.childCount <= 1)
             {
                 return slot;
             }
@@ -135,29 +151,6 @@ public class InventorySystem : MonoBehaviour
 
         return new GameObject();
     }
-
-    public bool CheckIfFull() // envanterde bos yuva var mi bakacak, yoksa False dondurecek
-    {
-        int counter = 0;
-        foreach (GameObject slot in slotList) 
-        {
-            if (slot.transform.childCount > 0) 
-            {
-                counter += 1;
-            }
-        }
-
-        if (counter == 21)
-        {
-            return true;
-        }
-
-        else
-        {
-            return false;
-        }
-    }
-
 
     public void RemoveItem(string nameToRemove, int amountToRemove)
     {
@@ -202,6 +195,46 @@ public class InventorySystem : MonoBehaviour
 
             }
 
+        }
+    }
+
+    private GameObject CheckIfStackExists(string ItemName)
+    {
+        foreach (GameObject slot in slotList)
+        {
+            InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
+            inventorySlot.UpdateItemInSlot();
+            if(inventorySlot != null && inventorySlot.itemInSlot != null)
+            {
+                if (inventorySlot.itemInSlot.thisName == ItemName && inventorySlot.itemInSlot.amountInInventory < stackLimit)
+                {
+                    return slot;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public bool CheckSlotsAvailable(int emptyMeeded)
+    {
+        int emptySlot = 0;
+
+        foreach (GameObject slot in slotList)
+        {
+            if(slot.transform.childCount <= 1)
+            {
+                emptySlot++;
+            }
+        }
+
+        if (emptySlot >= emptyMeeded)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
