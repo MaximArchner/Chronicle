@@ -44,23 +44,17 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
   
 * Sprint 1 Board Update:
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7d394e55-3e3f-4bd7-a9bf-79f325ac07d5" width="600" />
+<br/>
+[Unity71 - Ürün Süreci ve Güncel Durumuna Dair Görseller](https://imgur.com/a/stQdCxw)
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/436f8b3a-6ed8-4da0-be1f-95a1b3171d5b" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/db4ecf18-9f53-4a62-8872-2fa27ceed646" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/d8a3cf7b-38ca-49b1-8b39-b49e31c85ae7" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/69b27a0c-9de9-43c0-bbd3-6edb9e01aa1d" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/6d2b9832-9adc-4ac2-b0c3-cb46f906521e" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/d045f206-1a97-4a48-906c-306375c15edd" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/35cfa58f-ea02-4379-b9f1-3b1331153d7a" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/8eccc5fd-20e7-4b9e-a61c-e336a24bfa13" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/21aab32b-6633-4a08-ae00-02580509fa79" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/223353fb-00cc-4ee6-8f45-4989dac39ee2" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7afa3c07-d56c-4010-a1b4-08fad1c69d21" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/e5889d3e-ac19-4a48-a6cc-0f3e9a15e540" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/5a43fde8-087e-4e67-a228-607d193dffcc" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/5af61de6-da4c-45ff-b9fa-f7dc8b14de33" width="600" />
-
 
 <br/>
 <br/>
