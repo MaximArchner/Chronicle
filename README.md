@@ -37,7 +37,9 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <strong> Daily Scrum: </strong> Yazılı görüşmelerimizi WhatsApp ve Discord üzerinden, sesli görüşmelerimizi de müsaitlik durumunda Discord üzerinden kod ve tasarım konu başlıkları olmak üzere gerçekleştirdik.
 
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7d394e55-3e3f-4bd7-a9bf-79f325ac07d5" width="600" />
+
 [Unity71 - Whatsapp & Discord Görüşme Kayıtları](https://imgur.com/a/XK73K0O)
+
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/436f8b3a-6ed8-4da0-be1f-95a1b3171d5b" width="600" />
