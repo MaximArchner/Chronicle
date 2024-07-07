@@ -37,13 +37,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <strong> Daily Scrum: </strong> Yazılı görüşmelerimizi WhatsApp ve Discord üzerinden, sesli görüşmelerimizi de müsaitlik durumunda Discord üzerinden kod ve tasarım konu başlıkları olmak üzere gerçekleştirdik.
 
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/7d394e55-3e3f-4bd7-a9bf-79f325ac07d5" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/c0964a03-55ca-485d-97fd-ffa082560421" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/df742f22-effc-4267-93fc-4f10a339e9b3" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/4e56f56e-af68-42dd-a8f7-2831770955e4" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/1cef5e7f-0a93-43bc-84ee-0f909b136bb7" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/4d7cdb55-7a2d-4bfd-9d4e-3800164e54c7" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/20d6cd58-bed1-4b59-a5fc-5581b205b6fc" width="600" />
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/a4888aa1-6af6-460d-93a2-688351861059" width="600" />
+[Unity71 - Whatsapp & Discord Görüşme Kayıtları](https://imgur.com/a/XK73K0O)
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/436f8b3a-6ed8-4da0-be1f-95a1b3171d5b" width="600" />
