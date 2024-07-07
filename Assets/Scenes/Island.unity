@@ -2053,7 +2053,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397233727}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6b89d52e68b74fd4499d848a03462853, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10290,6 +10290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: denizfeneri-decimate
       objectReference: {fileID: 0}
+    - target: {fileID: 7607094312706817872, guid: bcf32e7aac2e40d45ba5394c5e2adaad, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6b89d52e68b74fd4499d848a03462853, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11440,6 +11444,14 @@ PrefabInstance:
     - target: {fileID: 1977790893172663810, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278842691386528787, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278842691386528787, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7726910811245901432, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
       propertyPath: m_LocalPosition.x
