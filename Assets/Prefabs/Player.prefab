@@ -212,7 +212,7 @@ MonoBehaviour:
   gravity: -60
   jumpHeight: 8
   groundCheck: {fileID: 8802485179851784821}
-  groundDistance: 2
+  groundDistance: 1.5
   groundMask:
     serializedVersion: 2
     m_Bits: 72
@@ -238,7 +238,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2.09
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
