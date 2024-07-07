@@ -93,7 +93,7 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    public void AddToInventory(string itemName) // spesifik bir objeyi envanter listesine ekleyebilme metodu
+    public void AddToInventory(string itemName, bool shouldStack) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
         GameObject stack = CheckIfStackExists(itemName);
 

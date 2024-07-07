@@ -63,7 +63,7 @@ public class CraftingSystem : MonoBehaviour
     void CraftAnyItem(ItemBP blueprintToCraft)
     {
         // Envantere item ekleme
-        InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName);
+        InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, true);
 
         // Envanterden kaynak silme
         if (blueprintToCraft.numOfReq == 1)

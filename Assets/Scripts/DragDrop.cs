@@ -115,7 +115,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     //    if(item.amountInInventory > 1)
     //    {
     //        item.amountInInventory -= 1;
-    //        InventorySystem.Instance.AddToInventory(item.thisName);
+    //        InventorySystem.Instance.AddToInventory(item.thisName, false);
     //    }
     //}
 
