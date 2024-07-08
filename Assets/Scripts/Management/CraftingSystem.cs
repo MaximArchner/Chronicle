@@ -91,7 +91,7 @@ public class CraftingSystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.C) && !isOpen) // Envanteri açma
+        if (Input.GetKeyDown(KeyCode.C) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri açma
         {
             Debug.Log("C tuþuna basýldý - Menü açýlýyor");
             craftingMainScreenUI.SetActive(true);
@@ -99,7 +99,7 @@ public class CraftingSystem : MonoBehaviour
             Cursor.visible = true;
             isOpen = true;
         }
-        else if (Input.GetKeyDown(KeyCode.C) && isOpen)
+        else if (Input.GetKeyDown(KeyCode.C) && isOpen && !MenuManager.Instance.isMenuOpen)
         {
             Debug.Log("C tuþuna basýldý - Menü kapanýyor");
             craftingMainScreenUI.SetActive(false);

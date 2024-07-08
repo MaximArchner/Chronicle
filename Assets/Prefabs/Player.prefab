@@ -215,7 +215,7 @@ MonoBehaviour:
   groundDistance: 1.5
   groundMask:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 8
   orientation: {fileID: 5748955463675364833}
   isGrounded: 0
   isSprinting: 0

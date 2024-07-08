@@ -70,7 +70,7 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen) // Envanteri acma
+        if (Input.GetKeyDown(KeyCode.I) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri acma
         {
 
             Debug.Log("i is pressed");
@@ -80,7 +80,7 @@ public class InventorySystem : MonoBehaviour
             isOpen = true;
 
         }
-        else if (Input.GetKeyDown(KeyCode.I) && isOpen)
+        else if (Input.GetKeyDown(KeyCode.I) && isOpen && !MenuManager.Instance.isMenuOpen)
         {
             inventoryScreenUI.SetActive(false);
             if (CraftingSystem.Instance.isOpen == false)
