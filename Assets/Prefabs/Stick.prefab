@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4397239169741778257}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.46, y: -1.04568, z: -1.7255659}
   m_LocalScale: {x: 0.5, y: 0.3, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -314,6 +314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   player: {fileID: 0}
-  textOffset: {x: 0, y: 1, z: 0}
+  textOffset: {x: 0, y: 5, z: 0}
   ItemName: Stick
   proximityText: {fileID: 162825122932381472}
