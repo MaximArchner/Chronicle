@@ -76,10 +76,4 @@ public class MenuManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
     }
-
-    public void TempSaveGame()
-    {
-        SaveManager.Instance.SaveGame();
-        print("Player Data saved successfully, try quitting...");
-    }
 }
