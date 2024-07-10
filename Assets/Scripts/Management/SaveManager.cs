@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -37,6 +38,8 @@ public class SaveManager : MonoBehaviour
 
     public bool isLoading;
 
+    public Canvas loadingScreen;
+
     private void Start()
     {
         jsonPathProject = Application.dataPath + Path.AltDirectorySeparatorChar;
@@ -53,7 +56,16 @@ public class SaveManager : MonoBehaviour
 
         data.playerData = GetPlayerData();
 
+        data.environmentData = GetEnvironmentData();
+
         SavingTypeSwitch(data, slotNumber);
+    }
+
+    private EnvironmentData GetEnvironmentData()
+    {
+        List<string> itemsPickedup = InventorySystem.Instance.itemsPickedup;
+
+        return new EnvironmentData(itemsPickedup);
     }
 
     public PlayerData GetPlayerData()
@@ -137,7 +149,26 @@ public class SaveManager : MonoBehaviour
         SetPlayerData(LoadingTypeSwitch(slotNumber).playerData);
 
         //Environment Data
-        //SetEnvironment(LoadAllGameData().environmentData);
+        SetEnvironmentData(LoadingTypeSwitch(slotNumber).environmentData);
+
+        isLoading = false;
+        DisableLoadingScreen();
+    }
+
+    private void SetEnvironmentData(EnvironmentData environmentData)
+    {
+        foreach (Transform itemType in EnvironmentManager.Instance.collectibles.transform)
+        {
+            foreach (Transform item in itemType.transform)
+            {
+                if (environmentData.pickedUpItems.Contains(item.name))
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+        }
+
+        InventorySystem.Instance.itemsPickedup = environmentData.pickedUpItems;
     }
 
     private void SetPlayerData(PlayerData playerData)
@@ -181,12 +212,12 @@ public class SaveManager : MonoBehaviour
 
         //    itemToAdd.transform.SetParent(availableSlot.transform, false);
         //}
-
-        isLoading = false;
     }
 
     public void StartLoadedGame(int slotNumber)
     {
+        ActivateLoadingScreen();
+        
         isLoading = true;
         SceneManager.LoadScene("Island");
 
@@ -195,7 +226,7 @@ public class SaveManager : MonoBehaviour
 
     private IEnumerator DelayedLoading(int slotNumber)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1.5f);
 
         LoadGame(slotNumber);
     }
@@ -325,6 +356,27 @@ public class SaveManager : MonoBehaviour
         //
         // M -          01101101
     }
+    #endregion
+
+    #region || LoadingScreen Section ||
+
+    public void ActivateLoadingScreen()
+    {
+        loadingScreen.gameObject.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        // yuklenme animasyonu gelebilir belki
+
+        // oyun ipuclari veya bilgileri verilebilir
+    }
+
+    public void DisableLoadingScreen()
+    {
+        loadingScreen.gameObject.SetActive(false);
+    }
+
     #endregion
 
     #region || Utility ||
