@@ -25,6 +25,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public int amountInInventory = 1;
     public bool isInsideQuickSlot;
 
+    public bool isStackable;
     public bool isSelected;
     public bool isUseable;
 

@@ -120,6 +120,12 @@ MonoBehaviour:
   thisDescription: A sturdy twig with a few branches.
   thisFunctionality: A crafting material used in many tools.
   isConsumable: 0
+  isEquippable: 0
+  amountInInventory: 1
+  isInsideQuickSlot: 0
+  isStackable: 1
+  isSelected: 0
+  isUseable: 0
   healthEffect: 0
   hungerEffect: 0
   thirstEffect: 0

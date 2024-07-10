@@ -107,6 +107,12 @@ MonoBehaviour:
   thisDescription: A red, juicy, refreshing apple.
   thisFunctionality: Will replenish Health, Hunger and Thirst.
   isConsumable: 1
+  isEquippable: 0
+  amountInInventory: 1
+  isInsideQuickSlot: 0
+  isStackable: 1
+  isSelected: 0
+  isUseable: 0
   healthEffect: 10
   hungerEffect: 10
   thirstEffect: 10

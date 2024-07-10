@@ -21,7 +21,9 @@ public class InventorySystem : MonoBehaviour
     public List<string> itemList = new List<string>();
 
     private GameObject itemToAdd;
+
     private GameObject nextEmptySlot;
+    
     public GameObject pickupAlert;
     public TextMeshProUGUI pickupName;
     public UnityEngine.UI.Image pickupImage;
@@ -97,7 +99,13 @@ public class InventorySystem : MonoBehaviour
     {
         GameObject stack = CheckIfStackExists(itemName);
 
-        if(stack != null && shouldStack)
+        // if(SaveManager.Instance.isLoading == false)
+        // {
+        // SoundManager.Instance.PlaySound(SoundManager.Instance.pickupItemSound());
+        // }
+
+
+        if (stack != null && shouldStack)
         {
             Debug.Log("Stack exists with this item: " + itemName);
             stack.GetComponent<InventorySlot>().itemInSlot.amountInInventory++;
@@ -161,15 +169,28 @@ public class InventorySystem : MonoBehaviour
 
             if (slotList[i].transform.childCount > 0)
             {
-                if (slotList[i].transform.GetChild(0).name == nameToRemove + "(Clone)" && counter != 0)
+                InventorySlot slot  = slotList[i].GetComponent<InventorySlot>();
+                if (slot != null && slot.itemInSlot != null && slot.itemInSlot.thisName == nameToRemove && counter > 0)
                 {
-
-                    Destroy(slotList[i].transform.GetChild(0).gameObject);
-                    counter -= 1;
-
-
+                    if(slot.itemInSlot.amountInInventory > counter)
+                    {
+                        slot.itemInSlot.amountInInventory -= counter;
+                        slot.UpdateItemInSlot();
+                        counter = 0;
+                    }
+                    else
+                    {
+                        counter -= slot.itemInSlot.amountInInventory;
+                        Destroy(slot.transform.GetChild(0).gameObject);
+                    }
                 }
             }
+            
+            if (counter == 0)
+            {
+                break;
+            }
+
         }
 
         ReCalculateList();

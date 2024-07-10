@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSavingToJson: 1
+  isLoading: 0
 --- !u!1 &276601849
 GameObject:
   m_ObjectHideFlags: 0

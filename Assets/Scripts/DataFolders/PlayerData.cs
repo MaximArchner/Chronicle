@@ -7,11 +7,27 @@ public class PlayerData
 {
     public float[] playerStats; // [0] - Health, [1] - Energy/Hunger, [2] - Hydration/Thirst
     public float[] playerTransform; // [0] - positon x, y, z; [1] - rotation x, y, z;
-    //public string[] inventoryContent;
+    public List<InventoryItemData> inventoryContent;
+    //public string[] quickslotContent;
 
-    public PlayerData(float[] _playerStats, float[] _playerTransform)
+    public PlayerData(float[] _playerStats, float[] _playerTransform, List<InventoryItemData> inventoryContent) // string[] _quickslotContent
     {
         playerStats = _playerStats;
         playerTransform = _playerTransform;
+        this.inventoryContent = inventoryContent;
+        //quickSlotContent = _quickSlotContent;
+    }
+}
+
+[System.Serializable]
+public class InventoryItemData
+{
+    public string itemName;
+    public int quantity;
+
+    public InventoryItemData(string itemName, int quantity)
+    {
+        this.itemName = itemName;
+        this.quantity = quantity;
     }
 }
