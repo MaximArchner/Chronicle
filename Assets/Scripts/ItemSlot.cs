@@ -30,7 +30,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             DragDrop.itemBeingDragged.transform.SetParent(transform);
             DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
 
-            if (transform.CompareTag("Quickslot") == false)
+            /*if (transform.CompareTag("Quickslot") == false)
             {
                 DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsideQuickSlot = false;
                 InventorySystem.Instance.ReCalculateList();
@@ -40,7 +40,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             {
                 DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsideQuickSlot = true;
                 InventorySystem.Instance.ReCalculateList();
-            }
+            }*/
         }
         else //mevcut slot bos degil ise
         {
