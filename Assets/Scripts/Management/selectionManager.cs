@@ -55,4 +55,16 @@ public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisin
             onTarget = false;
         }
     }
+
+    public void DisableSelection()
+    {
+
+        selectedObject = null;
+    }
+
+    public void EnableSelection()
+    {
+
+
+    }
 }

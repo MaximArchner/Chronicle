@@ -54,6 +54,8 @@ public class InventorySystem : MonoBehaviour
         isOpen = false;
 
         PopulateSlotList();
+
+        UnityEngine.Cursor.visible = false;
     }
 
     private void PopulateSlotList() // Envanter haznelerini sayip durumlarini sonradan degistirip kontrol edebilmemiz icin bir listeye esitleyecek
@@ -73,10 +75,14 @@ public class InventorySystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri acma
         {
 
-            Debug.Log("i is pressed");
+            //Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
             UnityEngine.Cursor.lockState = CursorLockMode.None;
             UnityEngine.Cursor.visible = true;
+
+            selectionManager.Instance.DisableSelection();
+            selectionManager.Instance.GetComponent<selectionManager>().enabled = false;
+
             isOpen = true;
 
         }
@@ -87,6 +93,8 @@ public class InventorySystem : MonoBehaviour
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
+                selectionManager.Instance.DisableSelection();
+                selectionManager.Instance.GetComponent<selectionManager>().enabled = true;
             }
 
             isOpen = false;
