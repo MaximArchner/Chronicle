@@ -22,8 +22,11 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private GameObject itemPendingConsumption;
     public bool isConsumable;
     public bool isEquippable;
-    public int amountInInventory = 1;
+    private GameObject itemPendingEquipping;
     public bool isInsideQuickSlot;
+
+ 
+    public int amountInInventory = 1;
 
     public bool isSelected;
     public bool isUseable;
@@ -39,6 +42,20 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemName = itemInfoUI.transform.Find("itemName").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemDescription = itemInfoUI.transform.Find("itemDescription").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<TextMeshProUGUI>();
+    }
+
+    void Update ()
+    { 
+
+        if (isSelected)
+        {
+            gameObject.GetComponent<DragDrop>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent <DragDrop>().enabled = true;
+        }
+
     }
 
     // hover'ladigimizda bu event calisacak
@@ -66,7 +83,18 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 itemPendingConsumption = gameObject;
                 consumingFunction(healthEffect, hungerEffect, thirstEffect);
             }
+
+            if (isEquippable && isInsideQuickSlot == false && QuickSlotsSystem.Instance.CheckIfFull() == false)
+            {
+
+                QuickSlotsSystem.Instance.AddToQuickSlots(gameObject);
+                isInsideQuickSlot = true;
+
+            }
         }
+
+
+
     }
 
     public void OnPointerUp(PointerEventData eventData)

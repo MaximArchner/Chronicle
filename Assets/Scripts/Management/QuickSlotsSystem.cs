@@ -1,0 +1,217 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class QuickSlotsSystem : MonoBehaviour
+{
+    public static QuickSlotsSystem Instance { get; set; }
+
+    // -- UI -- //
+    public GameObject quickSlotsPanel;
+
+    public List<GameObject> quickSlotsList = new List<GameObject>();
+    //public List<string> itemList = new List<string>();
+
+    public GameObject numbersHolder;
+
+    public int selectedNumber = -1;
+    public GameObject selectedItem;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+
+    private void Start()
+    {
+        PopulateSlotList();
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+
+            SelectQuickSlot(1);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SelectQuickSlot(2);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SelectQuickSlot(3);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SelectQuickSlot(4);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SelectQuickSlot(5);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SelectQuickSlot(6);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            SelectQuickSlot(7);
+
+        }
+    }
+
+
+    void SelectQuickSlot(int number)
+    {
+        if (CheckIfSlotFull(number) == true)
+        {
+            if (selectedNumber != number)
+            {
+
+                selectedNumber = number;
+
+
+                // daha önce seçilen itemi seçmeme
+                if (selectedItem != null)
+                {
+                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                }
+
+                selectedItem = GetSelectedItem(number);
+                selectedItem.GetComponent<InventoryItem>().isSelected = true;
+
+
+                //rengi deðiþtirmek için
+
+                foreach (Transform child in numbersHolder.transform)
+                {
+                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+                }
+
+                Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text (TMP)").GetComponent<Text>();
+                toBeChanged.color = Color.white;
+            }
+            else // Ayný slotu seçmeyi deniyoruz
+            {
+                selectedNumber = -1; //boþ anlamýna gelir
+
+                // daha önce seçilen itemi seçmeme
+                if (selectedItem != null)
+                {
+                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem = null;
+                }
+                //rengi deðiþtirmek için
+
+                foreach (Transform child in numbersHolder.transform)
+                {
+                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+                }
+
+            }
+        }
+
+        GameObject GetSelectedItem(int slotNumber)
+        {
+
+            return quickSlotsList[slotNumber - 1].transform.GetChild(0).gameObject;
+
+        }
+
+        bool CheckIfSlotFull(int slotnumber)
+        {
+
+            if (quickSlotsList[slotnumber-1].transform.childCount > 0)
+            {
+
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+    }
+
+
+
+    private void PopulateSlotList()
+    {
+        foreach (Transform child in quickSlotsPanel.transform)
+        {
+            if (child.CompareTag("QuickSlot"))
+            {
+                quickSlotsList.Add(child.gameObject);
+            }
+        }
+    }
+
+    public void AddToQuickSlots(GameObject itemToEquip)
+    {
+        // Sýradaki Boþ Slotu bulma
+        GameObject availableSlot = FindNextEmptySlot();
+        // Objemizi transform etme
+        itemToEquip.transform.SetParent(availableSlot.transform, false);
+        // Temiz(yeni) isim alma
+
+        InventorySystem.Instance.ReCalculateList();
+
+    }
+
+
+    private GameObject FindNextEmptySlot()
+    {
+        foreach (GameObject slot in quickSlotsList)
+        {
+            if (slot.transform.childCount == 0)
+            {
+                return slot;
+            }
+        }
+        return new GameObject();
+    }
+
+    public bool CheckIfFull()
+    {
+
+        int counter = 0;
+
+        foreach (GameObject slot in quickSlotsList)
+        {
+            if (slot.transform.childCount > 0)
+            {
+                counter += 1;
+            }
+        }
+
+        if (counter == 7)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
