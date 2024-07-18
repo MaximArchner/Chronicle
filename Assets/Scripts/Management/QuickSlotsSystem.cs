@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using static UnityEditor.Progress;
 
 public class QuickSlotsSystem : MonoBehaviour
 {
@@ -91,7 +93,7 @@ public class QuickSlotsSystem : MonoBehaviour
                 // daha önce seçilen itemi seçmeme
                 if (selectedItem != null)
                 {
-                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem.GetComponent<InventoryItem>().isSelected = false;
                 }
 
                 selectedItem = GetSelectedItem(number);
@@ -102,10 +104,10 @@ public class QuickSlotsSystem : MonoBehaviour
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+                    child.transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>().color = Color.gray;
                 }
 
-                Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text (TMP)").GetComponent<Text>();
+                TextMeshProUGUI toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>();
                 toBeChanged.color = Color.white;
             }
             else // Ayný slotu seçmeyi deniyoruz
@@ -115,14 +117,14 @@ public class QuickSlotsSystem : MonoBehaviour
                 // daha önce seçilen itemi seçmeme
                 if (selectedItem != null)
                 {
-                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem.GetComponent<InventoryItem>().isSelected = false;
                     selectedItem = null;
                 }
                 //rengi deðiþtirmek için
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+                    child.transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>().color = Color.gray;
                 }
 
             }
@@ -138,7 +140,7 @@ public class QuickSlotsSystem : MonoBehaviour
         bool CheckIfSlotFull(int slotnumber)
         {
 
-            if (quickSlotsList[slotnumber-1].transform.childCount > 0)
+            if (quickSlotsList[slotnumber-1].transform.childCount > 1)
             {
 
                 return true;
@@ -174,7 +176,8 @@ public class QuickSlotsSystem : MonoBehaviour
         // Objemizi transform etme
         itemToEquip.transform.SetParent(availableSlot.transform, false);
         // Temiz(yeni) isim alma
-
+        //string cleanName = itemToEquip.name.Replace("(Clone)", "");
+        //itemList.Add(cleanName);
         InventorySystem.Instance.ReCalculateList();
 
     }
