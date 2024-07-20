@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using static UnityEditor.Progress;
+using System.Runtime.CompilerServices;
 
 public class QuickSlotsSystem : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class QuickSlotsSystem : MonoBehaviour
 
     public int selectedNumber = -1;
     public GameObject selectedItem;
+
+    public GameObject toolHolder;
+    public GameObject selectedItemModel;
 
     private void Awake()
     {
@@ -100,6 +104,9 @@ public class QuickSlotsSystem : MonoBehaviour
                 selectedItem.GetComponent<InventoryItem>().isSelected = true;
 
 
+                SetEquippedModel(selectedItem);
+
+
                 //rengi deðiþtirmek için
 
                 foreach (Transform child in numbersHolder.transform)
@@ -120,6 +127,16 @@ public class QuickSlotsSystem : MonoBehaviour
                     selectedItem.GetComponent<InventoryItem>().isSelected = false;
                     selectedItem = null;
                 }
+                if (selectedItemModel != null)
+                {
+
+                    DestroyImmediate(selectedItemModel.gameObject);
+                    selectedItemModel = null;
+
+                }
+
+
+
                 //rengi deðiþtirmek için
 
                 foreach (Transform child in numbersHolder.transform)
@@ -129,6 +146,7 @@ public class QuickSlotsSystem : MonoBehaviour
 
             }
         }
+
 
         GameObject GetSelectedItem(int slotNumber)
         {
@@ -156,7 +174,24 @@ public class QuickSlotsSystem : MonoBehaviour
 
     }
 
+    private void SetEquippedModel(GameObject selectedItem)
+    {
+        if (selectedItemModel != null)
+        {
 
+            DestroyImmediate(selectedItemModel.gameObject);
+            selectedItemModel = null;
+
+        }
+
+
+        string selectedItemName = selectedItem.name.Replace("(Clone)","");
+        selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
+            new Vector3(0.6f, 0, 0.4f), Quaternion.Euler(0, 49.71f, -21f)); //aletin konumunu deðiþtireceðimiz satýr//
+        selectedItemModel.transform.SetParent(toolHolder.transform, false);
+
+
+    }
 
     private void PopulateSlotList()
     {

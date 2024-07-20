@@ -13,6 +13,8 @@ public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisin
 
     public GameObject selectedObject;
 
+    public bool handIsVisible;
+
     private void Start()
     {
         onTarget = false;
