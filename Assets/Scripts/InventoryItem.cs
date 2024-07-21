@@ -22,10 +22,13 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private GameObject itemPendingConsumption;
     public bool isConsumable;
     public bool isEquippable;
-    public int amountInInventory = 1;
+    private GameObject itemPendingEquipping;
     public bool isInsideQuickSlot;
 
     public bool isStackable;
+
+    public int amountInInventory = 1;
+
     public bool isSelected;
     public bool isUseable;
 
@@ -40,6 +43,20 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemName = itemInfoUI.transform.Find("itemName").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemDescription = itemInfoUI.transform.Find("itemDescription").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<TextMeshProUGUI>();
+    }
+
+    void Update()
+    { 
+
+        if (isSelected)
+        {
+            gameObject.GetComponent<DragDrop>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent <DragDrop>().enabled = true;
+        }
+
     }
 
     // hover'ladigimizda bu event calisacak
@@ -65,14 +82,13 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             if (isConsumable)
             {
                 itemPendingConsumption = gameObject;
-                consumingFunction(healthEffect, hungerEffect, thirstEffect);
+                ConsumingFunction(healthEffect, hungerEffect, thirstEffect);
             }
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-               
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (isConsumable && itemPendingConsumption == gameObject)
@@ -88,7 +104,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    private void consumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
+    private void ConsumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
     {
         itemInfoUI.SetActive(false);
 
