@@ -88,6 +88,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
+[Unity71 - Sprint 2 Daily Scrum Screenshots](https://imgur.com/a/Bg19paH)
   
 <br/>
 <br/> 
