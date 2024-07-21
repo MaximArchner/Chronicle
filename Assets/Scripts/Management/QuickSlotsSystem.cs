@@ -94,10 +94,10 @@ public class QuickSlotsSystem : MonoBehaviour
                 selectedNumber = number;
 
 
-                // daha önce seçilen itemi seçmeme
+                // daha ï¿½nce seï¿½ilen itemi seï¿½meme
                 if (selectedItem != null)
                 {
-                    selectedItem.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
                 }
 
                 selectedItem = GetSelectedItem(number);
@@ -107,24 +107,24 @@ public class QuickSlotsSystem : MonoBehaviour
                 SetEquippedModel(selectedItem);
 
 
-                //rengi deðiþtirmek için
+                //rengi deï¿½iï¿½tirmek iï¿½in
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>().color = Color.gray;
+                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
                 }
 
-                TextMeshProUGUI toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>();
+                Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text (TMP)").GetComponent<Text>();
                 toBeChanged.color = Color.white;
             }
-            else // Ayný slotu seçmeyi deniyoruz
+            else // Aynï¿½ slotu seï¿½meyi deniyoruz
             {
-                selectedNumber = -1; //boþ anlamýna gelir
+                selectedNumber = -1; //boï¿½ anlamï¿½na gelir
 
-                // daha önce seçilen itemi seçmeme
+                // daha ï¿½nce seï¿½ilen itemi seï¿½meme
                 if (selectedItem != null)
                 {
-                    selectedItem.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
                     selectedItem = null;
                 }
                 if (selectedItemModel != null)
@@ -137,11 +137,11 @@ public class QuickSlotsSystem : MonoBehaviour
 
 
 
-                //rengi deðiþtirmek için
+                //rengi deï¿½iï¿½tirmek iï¿½in
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>().color = Color.gray;
+                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
                 }
 
             }
@@ -158,7 +158,7 @@ public class QuickSlotsSystem : MonoBehaviour
         bool CheckIfSlotFull(int slotnumber)
         {
 
-            if (quickSlotsList[slotnumber-1].transform.childCount > 1)
+            if (quickSlotsList[slotnumber-1].transform.childCount > 0)
             {
 
                 return true;
@@ -187,7 +187,7 @@ public class QuickSlotsSystem : MonoBehaviour
 
         string selectedItemName = selectedItem.name.Replace("(Clone)","");
         selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
-            new Vector3(0.6f, 0, 0.4f), Quaternion.Euler(0, 49.71f, -21f)); //aletin konumunu deðiþtireceðimiz satýr//
+            new Vector3(0.6f, 0, 0.4f), Quaternion.Euler(0, 49.71f, -21f)); //aletin konumunu deï¿½iï¿½tireceï¿½imiz satï¿½r//
         selectedItemModel.transform.SetParent(toolHolder.transform, false);
 
 
@@ -206,13 +206,12 @@ public class QuickSlotsSystem : MonoBehaviour
 
     public void AddToQuickSlots(GameObject itemToEquip)
     {
-        // Sýradaki Boþ Slotu bulma
+        // Sï¿½radaki Boï¿½ Slotu bulma
         GameObject availableSlot = FindNextEmptySlot();
         // Objemizi transform etme
         itemToEquip.transform.SetParent(availableSlot.transform, false);
         // Temiz(yeni) isim alma
-        //string cleanName = itemToEquip.name.Replace("(Clone)", "");
-        //itemList.Add(cleanName);
+
         InventorySystem.Instance.ReCalculateList();
 
     }

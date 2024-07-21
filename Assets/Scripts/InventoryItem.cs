@@ -45,7 +45,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<TextMeshProUGUI>();
     }
 
-    void Update()
+    void Update ()
     { 
 
         if (isSelected)
@@ -82,9 +82,20 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             if (isConsumable)
             {
                 itemPendingConsumption = gameObject;
-                ConsumingFunction(healthEffect, hungerEffect, thirstEffect);
+                consumingFunction(healthEffect, hungerEffect, thirstEffect);
+            }
+
+            if (isEquippable && isInsideQuickSlot == false && QuickSlotsSystem.Instance.CheckIfFull() == false)
+            {
+
+                QuickSlotsSystem.Instance.AddToQuickSlots(gameObject);
+                isInsideQuickSlot = true;
+
             }
         }
+
+
+
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -104,7 +115,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    private void ConsumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
+    private void consumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
     {
         itemInfoUI.SetActive(false);
 
