@@ -113,6 +113,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 [Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
 
+<video src="https://imgur.com/HLbxIyK" width="600" />
 <br/>
 <br/>
 
