@@ -48,7 +48,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <br/>
 
 [Unity71 - Oyun Süreci ve Güncel Durumu Görüntüleri](https://imgur.com/a/stQdCxw)
-
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/69b27a0c-9de9-43c0-bbd3-6edb9e01aa1d" width="600" />
