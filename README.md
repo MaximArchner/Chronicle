@@ -85,4 +85,33 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 # Sprint 2
 
+* <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
+
+* <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
+
+  
+<video src="[https://i.imgur.com/dzmd7hF.mp4](https://i.imgur.com/dzmd7hF.mp4)" width="600" />
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/TtFp51h"  ><a href="//imgur.com/a/TtFp51h">Unity 71 - Oyun Geliştirme Süreci - Sprint 2</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<br/>
+<br/>
+
+<strong> Sprint Review: </strong>
+
+* Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
+* Sprint 2 sonunda ekip ile toplanılmış ve sprint gözden geçirilmiştir.
+* Tamamlanması hedeflenen puana ulaşılmıştır.
+* Karakter modellenmiştir ve animasyonlarıyla birklikte oyuna entegre edilmiştir.
+* Sprint Review katılımcıları: Berke Aytan, Burak Arda Ari, Deniz Yıldız, Dilara Karayel, Zilan Karataş
+
+
+<strong> Sprint Retrospective: </strong>
+
+* Tasarım ekibi tarafından karakter, balta, kazma, ağaç ve yiyecekler(çeşitli meyveler) modellenmiştir.
+* Kod ekibi tarafından envanter ve craft sistemi geliştirilmiştir.
+* Karakterin hareketleri ve alet kullanma animasyonları eklenmeye başlanmıştır.
+* Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
+* Quick Slot UI ve kod tamamlanmıştır.
+
 # Sprint 3
