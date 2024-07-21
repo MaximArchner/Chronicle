@@ -89,14 +89,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
 
-
-<video src="https://i.imgur.com/dzmd7hF.mp4" width="600" />
-
-[Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
-
-<br/>
-<br/>
-
 <strong> Sprint Review: </strong>
 
 * Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
@@ -113,5 +105,14 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Karakterin hareketleri ve alet kullanma animasyonları eklenmeye başlanmıştır.
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
+
+<video src="https://i.imgur.com/dzmd7hF.mp4" width="600" />
+
+[Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
+
+<br/>
+<br/>
+
+
 
 # Sprint 3
