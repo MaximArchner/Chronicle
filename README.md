@@ -90,9 +90,9 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
 
   
-<video src="[https://i.imgur.com/dzmd7hF.mp4](https://i.imgur.com/dzmd7hF.mp4)" width="600" />
+<video src="[https://i.imgur.com/dzmd7hF.mp4](https://i.imgur.com/dzmd7hF.mp4)" width="600"/>
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/TtFp51h"  ><a href="//imgur.com/a/TtFp51h">Unity 71 - Oyun Geliştirme Süreci - Sprint 2</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+[Unity71 - Oyun Süreci ve Güncel Durumu Görüntüleri](https://imgur.com/a/TtFp51h)
 
 <br/>
 <br/>
