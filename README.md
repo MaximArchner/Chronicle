@@ -106,13 +106,9 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-<video src="https://i.imgur.com/dzmd7hF.mp4" width="600" />
-
 [Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
 
 <br/>
 <br/>
-
-
 
 # Sprint 3
