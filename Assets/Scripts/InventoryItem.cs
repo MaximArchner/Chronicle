@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -21,17 +22,18 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Esya tuketme
     private GameObject itemPendingConsumption;
     public bool isConsumable;
-    public bool isEquippable;
-    private GameObject itemPendingEquipping;
-    public bool isInsideQuickSlot;
-
-    public bool isStackable;
-
-    public int amountInInventory = 1;
-
-    public bool isSelected;
     public bool isUseable;
 
+    // Esyayi eline alma
+    public bool isEquippable;
+    public bool isInsideQuickSlot;
+    public bool isSelected;
+    private GameObject itemPendingEquipping;
+
+    // Esyalari biriktirme
+    public bool isStackable;
+    public int amountInInventory = 1;
+    
     public float healthEffect;
     public float hungerEffect;
     public float thirstEffect;
@@ -54,7 +56,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         else
         {
-            gameObject.GetComponent <DragDrop>().enabled = true;
+            gameObject.GetComponent<DragDrop>().enabled = true;
         }
 
     }
@@ -82,7 +84,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             if (isConsumable)
             {
                 itemPendingConsumption = gameObject;
-                consumingFunction(healthEffect, hungerEffect, thirstEffect);
+                ConsumingFunction(healthEffect, hungerEffect, thirstEffect);
             }
 
             if (isEquippable && isInsideQuickSlot == false && QuickSlotsSystem.Instance.CheckIfFull() == false)
@@ -93,9 +95,6 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
             }
         }
-
-
-
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -115,7 +114,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    private void consumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
+    private void ConsumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
     {
         itemInfoUI.SetActive(false);
 

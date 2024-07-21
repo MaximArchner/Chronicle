@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEditor.Progress;
-using System.Runtime.CompilerServices;
 
 public class QuickSlotsSystem : MonoBehaviour
 {
@@ -12,11 +10,9 @@ public class QuickSlotsSystem : MonoBehaviour
 
     // -- UI -- //
     public GameObject quickSlotsPanel;
+    public GameObject numbersHolder;
 
     public List<GameObject> quickSlotsList = new List<GameObject>();
-    //public List<string> itemList = new List<string>();
-
-    public GameObject numbersHolder;
 
     public int selectedNumber = -1;
     public GameObject selectedItem;
@@ -97,34 +93,34 @@ public class QuickSlotsSystem : MonoBehaviour
                 // daha �nce se�ilen itemi se�meme
                 if (selectedItem != null)
                 {
-                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem.GetComponent<InventoryItem>().isSelected = false;
                 }
 
                 selectedItem = GetSelectedItem(number);
                 selectedItem.GetComponent<InventoryItem>().isSelected = true;
 
 
-                SetEquippedModel(selectedItem);
+                //SetEquippedModel(selectedItem); BUNU AKTIFLESTIRMEYI UNUTMA
 
 
-                //rengi de�i�tirmek i�in
+                //rengi degistirmek icin
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+                    child.transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>().color = Color.gray;
                 }
 
-                Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text (TMP)").GetComponent<Text>();
+                TextMeshProUGUI toBeChanged = numbersHolder.transform.Find("Number" + number).transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>();
                 toBeChanged.color = Color.white;
             }
-            else // Ayn� slotu se�meyi deniyoruz
+            else // Ayni slotu secmeyi deniyoruz
             {
-                selectedNumber = -1; //bo� anlam�na gelir
+                selectedNumber = -1; //bos anlamina gelir
 
-                // daha �nce se�ilen itemi se�meme
+                // daha once secilen itemi secmeme
                 if (selectedItem != null)
                 {
-                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                    selectedItem.GetComponent<InventoryItem>().isSelected = false;
                     selectedItem = null;
                 }
                 if (selectedItemModel != null)
@@ -136,12 +132,11 @@ public class QuickSlotsSystem : MonoBehaviour
                 }
 
 
-
-                //rengi de�i�tirmek i�in
+                //rengi degistirmek icin
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+                    child.transform.Find("SlotNumber").GetComponent<TextMeshProUGUI>().color = Color.gray;
                 }
 
             }
@@ -210,7 +205,6 @@ public class QuickSlotsSystem : MonoBehaviour
         GameObject availableSlot = FindNextEmptySlot();
         // Objemizi transform etme
         itemToEquip.transform.SetParent(availableSlot.transform, false);
-        // Temiz(yeni) isim alma
 
         InventorySystem.Instance.ReCalculateList();
 
@@ -221,7 +215,7 @@ public class QuickSlotsSystem : MonoBehaviour
     {
         foreach (GameObject slot in quickSlotsList)
         {
-            if (slot.transform.childCount == 0)
+            if (slot.transform.childCount == 1)
             {
                 return slot;
             }
@@ -236,7 +230,7 @@ public class QuickSlotsSystem : MonoBehaviour
 
         foreach (GameObject slot in quickSlotsList)
         {
-            if (slot.transform.childCount > 0)
+            if (slot.transform.childCount > 1)
             {
                 counter += 1;
             }

@@ -10,7 +10,7 @@ public class ResourceHealthBar : MonoBehaviour
     private Slider slider;
     private float currentHealth, maxHealth;
 
-    public GameObject globalState;
+    public GameObject GlobalState;
 
     private void Awake()
     {
@@ -19,8 +19,8 @@ public class ResourceHealthBar : MonoBehaviour
 
     private void Update()
     {
-        currentHealth = globalState.GetComponent<GlobalState>().resourceHealth;
-        maxHealth = globalState.GetComponent<GlobalState>().resourceMaxHealth;
+        //currentHealth = playerState.GetComponent<GlobalState>().currentHealth;
+        //maxHealth = playerState.GetComponent<GlobalState>().maxHealth;
 
         float fillValue = currentHealth / maxHealth; // orantisal olarak 0 ile 1 arasinda olacak (slider component icin)
         slider.value = fillValue;

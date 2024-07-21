@@ -15,8 +15,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     Vector3 startPosition;
     Transform startParent;
 
-
-
     private void Awake()
     {
 
@@ -24,7 +22,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         canvasGroup = GetComponent<CanvasGroup>();
 
     }
-
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -46,8 +43,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         rectTransform.anchoredPosition += eventData.delta;
 
     }
-
-
 
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -95,7 +90,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         //  }
         //}
 
-        if (transform.parent == startParent || transform.parent == transform.root) // to be discarded in 40
+        if (transform.parent == startParent || transform.parent == transform.root)
         {
             transform.position = startPosition;
             transform.SetParent(startParent);

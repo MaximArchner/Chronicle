@@ -120,11 +120,13 @@ MonoBehaviour:
   thisDescription: A blunt axe that will do the job.
   thisFunctionality: Use this axe to chop down trees.
   isConsumable: 0
-  isEquippable: 0
-  amountInInventory: 1
+  isUseable: 0
+  isEquippable: 1
+  isNowEquipped: 0
   isInsideQuickSlot: 0
   isSelected: 0
-  isUseable: 0
+  isStackable: 0
+  amountInInventory: 1
   healthEffect: 0
   hungerEffect: 0
   thirstEffect: 0

@@ -24,7 +24,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount <= 1) //mevcut slot bos ise
+        if (transform.childCount <= 2) //mevcut slot bos ise
         {
 
             DragDrop.itemBeingDragged.transform.SetParent(transform);
