@@ -109,7 +109,10 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
 <video src="https://github.com/user-attachments/assets/76479723-0836-49fc-886e-8569bed02293" width="600" />
 <video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
-
+<video src="https://github.com/user-attachments/assets/c87a24f3-bbbd-4430-9e27-905c51556136" width="600" />
+<gif src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDl0eWo3djg1dTF3c3YxcHhhdXBkNW5jdmUxeGd0c21scDVzYXlpeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/70z3rV4kG7l2lyjFg8/giphy.gif" width="600" />
+<gif src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjR5MXRrMnU4OHNrMXBhYnJ2MHRxZGtjMW04cWQzbm9rNTg5YTQ5cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/77QRJ18asU8VfHKb7B/giphy.gif" width="600" />
+<gif src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnBucWpqZjhvdzE5cTAwcGVubmc3dnowOGU3cnI0MzJ0cHF3aGx1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ldoPVEfPMkZH3H8t8F/giphy.gif" width="600" />
 
 <br/>
 <br/>
