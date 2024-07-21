@@ -13,7 +13,14 @@ public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisin
 
     public GameObject selectedObject;
 
-    public bool handIsVisible;
+    public bool handIsVisible; //muhtemelen gereksiz////
+
+    public GameObject selectedTree;
+    public GameObject chopHolder;
+
+
+
+
 
     private void Start()
     {
@@ -41,6 +48,24 @@ public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisin
             var selectionTransform = hit.transform; // netlestirmek icin isinin denk geldigi objenin (hit) transform degerlerini selectionTransform diye yeniden adlandirip
 
             InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
+
+            ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
+
+            if (choppableTree && choppableTree.playerInRange)
+            {
+                choppableTree.canBeChopped = true;
+                selectedTree = choppableTree.gameObject;
+                chopHolder.gameObject.SetActive(true);
+            }
+            else
+            {
+                selectedTree.gameObject.GetComponent<ChoppableTree>().canBeChopped = false;
+                selectedTree = null;
+                chopHolder.gameObject.SetActive(false);
+            }
+
+            
+
 
             if (interactable && interactable.playerInRange)
             {
