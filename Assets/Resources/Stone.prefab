@@ -120,6 +120,13 @@ MonoBehaviour:
   thisDescription: A small peble that fits in your pocket.
   thisFunctionality: A crafting material used in many tools.
   isConsumable: 0
+  isUseable: 0
+  isEquippable: 1
+  isNowEquipped: 0
+  isInsideQuickSlot: 0
+  isSelected: 0
+  isStackable: 1
+  amountInInventory: 1
   healthEffect: 0
   hungerEffect: 0
   thirstEffect: 0

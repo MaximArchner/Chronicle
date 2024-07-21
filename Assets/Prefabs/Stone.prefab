@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8655793638548695344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -314,6 +314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   player: {fileID: 0}
-  textOffset: {x: 0, y: 0.6, z: 0}
+  textOffset: {x: 0, y: 5, z: 0}
   ItemName: Stone
   proximityText: {fileID: 5799307415798721032}

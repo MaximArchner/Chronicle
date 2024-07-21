@@ -81,7 +81,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fcd9b5bc7a6cd1643b5c2769105e8fb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 719c2201c2f5f6c4aafffaeb5abdf5f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -120,6 +120,13 @@ MonoBehaviour:
   thisDescription: A blunt axe that will do the job.
   thisFunctionality: Use this axe to chop down trees.
   isConsumable: 0
+  isUseable: 0
+  isEquippable: 1
+  isNowEquipped: 0
+  isInsideQuickSlot: 0
+  isSelected: 0
+  isStackable: 0
+  amountInInventory: 1
   healthEffect: 0
   hungerEffect: 0
   thirstEffect: 0

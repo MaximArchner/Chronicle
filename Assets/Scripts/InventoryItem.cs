@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -21,7 +22,18 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Esya tuketme
     private GameObject itemPendingConsumption;
     public bool isConsumable;
+    public bool isUseable;
 
+    // Esyayi eline alma
+    public bool isEquippable;
+    public bool isInsideQuickSlot;
+    public bool isSelected;
+    private GameObject itemPendingEquipping;
+
+    // Esyalari biriktirme
+    public bool isStackable;
+    public int amountInInventory = 1;
+    
     public float healthEffect;
     public float hungerEffect;
     public float thirstEffect;
@@ -33,6 +45,20 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemName = itemInfoUI.transform.Find("itemName").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemDescription = itemInfoUI.transform.Find("itemDescription").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<TextMeshProUGUI>();
+    }
+
+    void Update ()
+    { 
+
+        if (isSelected)
+        {
+            gameObject.GetComponent<DragDrop>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<DragDrop>().enabled = true;
+        }
+
     }
 
     // hover'ladigimizda bu event calisacak
@@ -58,7 +84,15 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             if (isConsumable)
             {
                 itemPendingConsumption = gameObject;
-                consumingFunction(healthEffect, hungerEffect, thirstEffect);
+                ConsumingFunction(healthEffect, hungerEffect, thirstEffect);
+            }
+
+            if (isEquippable && isInsideQuickSlot == false && QuickSlotsSystem.Instance.CheckIfFull() == false)
+            {
+
+                QuickSlotsSystem.Instance.AddToQuickSlots(gameObject);
+                isInsideQuickSlot = true;
+
             }
         }
     }
@@ -68,13 +102,19 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (isConsumable && itemPendingConsumption == gameObject)
-            DestroyImmediate(gameObject);
+            {
+                amountInInventory--;
+                if (amountInInventory <= 0)
+                {
+                    DestroyImmediate(gameObject);
+                }
+            }
             InventorySystem.Instance.ReCalculateList();
             CraftingSystem.Instance.RefreshNeededItems();
         }
     }
 
-    private void consumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
+    private void ConsumingFunction(float healthEffect, float hungerEffect, float thirstEffect)
     {
         itemInfoUI.SetActive(false);
 

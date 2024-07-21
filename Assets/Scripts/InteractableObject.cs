@@ -21,9 +21,12 @@ public class InteractableObject : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible")) // Objenin collider'ina dokunuyorken ve objenin tag'i Collectible ise
         {
-            if (!InventorySystem.Instance.CheckIfFull())
+            if (InventorySystem.Instance.CheckSlotsAvailable(1))
             {
-                InventorySystem.Instance.AddToInventory(ItemName);
+                InventorySystem.Instance.AddToInventory(ItemName, true);
+
+                InventorySystem.Instance.itemsPickedup.Add(gameObject.name);
+
                 Debug.Log("Item added into the inventory.");
                 Destroy(gameObject);
             }
