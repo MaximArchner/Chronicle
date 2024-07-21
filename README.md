@@ -92,7 +92,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <br/>
 <br/> 
 
-[Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
+
 
 <video src="[https://github.com/MaximArchner/Chronicle/assets/95312458/5df68a3a-fb7a-40d2-92c5-14ebea777bbc]" width="600" />
 
@@ -118,6 +118,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Quick Slot UI ve kod tamamlanmıştır.
 
 
-
+[Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
 
 # Sprint 3
