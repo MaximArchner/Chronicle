@@ -93,13 +93,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <br/> 
 
 
-
-<video src="[https://github.com/MaximArchner/Chronicle/assets/95312458/5df68a3a-fb7a-40d2-92c5-14ebea777bbc]" width="600" />
-
-<br/>
-<br/>
-
-
 <strong> Sprint Review: </strong>
 
 * Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
@@ -119,5 +112,8 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 
 [Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
+
+<br/>
+<br/>
 
 # Sprint 3
