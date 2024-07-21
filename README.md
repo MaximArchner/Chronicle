@@ -97,7 +97,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <br/>
 
 [Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
-
 <img src="https://github.com/user-attachments/assets/a3b0274a-756e-47cf-bf44-892a0c77a4bd" width="600" />
 <img src="https://github.com/user-attachments/assets/c3e633b9-dcd3-4021-b238-b59784231528" width="600" />
 <img src="https://github.com/user-attachments/assets/b2000976-2e5c-474a-aae4-abcdcf3cdc17" width="600" />
@@ -107,7 +106,10 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600" />
 <img src="https://github.com/user-attachments/assets/bb1e110c-7c12-4893-b2f3-2ca37b220b9d" width="600" />
 <video src="https://github.com/user-attachments/assets/c87a24f3-bbbd-4430-9e27-905c51556136" width="600" />
-
+<video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600" />
+<video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
+<video src="https://github.com/user-attachments/assets/76479723-0836-49fc-886e-8569bed02293" width="600" />
+<video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
 
 <br/>
 <br/>
@@ -130,10 +132,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 # Sprint 3
 
-<video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600" />
-<video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
-<video src="https://github.com/user-attachments/assets/76479723-0836-49fc-886e-8569bed02293" width="600" />
-<video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
+
 <gif src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDl0eWo3djg1dTF3c3YxcHhhdXBkNW5jdmUxeGd0c21scDVzYXlpeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/70z3rV4kG7l2lyjFg8/giphy.gif" width="600" />
 <gif src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjR5MXRrMnU4OHNrMXBhYnJ2MHRxZGtjMW04cWQzbm9rNTg5YTQ5cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/77QRJ18asU8VfHKb7B/giphy.gif" width="600" />
 <gif src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnBucWpqZjhvdzE5cTAwcGVubmc3dnowOGU3cnI0MzJ0cHF3aGx1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ldoPVEfPMkZH3H8t8F/giphy.gif" width="600" />
