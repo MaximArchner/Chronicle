@@ -47,7 +47,8 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <br/>
 <br/>
 
-[Unity71 - Oyun Süreci ve Güncel Durumu Görüntüleri](https://imgur.com/a/stQdCxw)
+[Unity71 - Oyun Süreci ve Güncel Durumu Görüntüleri]
+(https://imgur.com/a/stQdCxw)
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600" />
 <img src="https://github.com/MaximArchner/Chronicle/assets/100310188/69b27a0c-9de9-43c0-bbd3-6edb9e01aa1d" width="600" />
@@ -88,12 +89,31 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
-[Unity71 - Sprint 2 Daily Scrum Screenshots](https://imgur.com/a/Bg19paH)
+[Unity71 - Sprint 2 Daily Scrum Screenshots]
+(https://imgur.com/a/Bg19paH)
+
+* Sprint 1 Board Update:
 <img src="https://github.com/user-attachments/assets/5e1ed3f9-118e-44a7-887b-c88b47eb2114" width="600" />
+<br/>
+<br/>
+
+[Unity71 - Sprint 2 Oyun Gelişim Süreci]
+(https://imgur.com/a/TtFp51h)
+<img src="https://github.com/user-attachments/assets/a3b0274a-756e-47cf-bf44-892a0c77a4bd" width="600" />
+<img src="https://github.com/user-attachments/assets/c3e633b9-dcd3-4021-b238-b59784231528" width="600" />
+<img src="https://github.com/user-attachments/assets/b2000976-2e5c-474a-aae4-abcdcf3cdc17" width="600" />
+<img src="https://github.com/user-attachments/assets/08553837-e60e-4372-adaf-162c9ba0e335" width="600" />
+<img src="https://github.com/user-attachments/assets/1436c761-b18e-4430-b18e-8f49a6ece6b7" width="600" />
+<img src="https://github.com/user-attachments/assets/d8030128-7112-4b89-9392-2c47aec1fd7b" width="600" />
+<img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600" />
+<video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600" />
+<video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
+<video src="https://github.com/user-attachments/assets/76479723-0836-49fc-886e-8569bed02293" width="600" />
+<video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
+
 
 <br/>
-<br/> 
-
+<br/>
 <strong> Sprint Review: </strong>
 
 * Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
@@ -111,11 +131,5 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-
-[Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
-<video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
-
-<br/>
-<br/>
 
 # Sprint 3
