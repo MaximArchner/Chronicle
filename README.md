@@ -107,6 +107,8 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <video src="https://github.com/user-attachments/assets/c87a24f3-bbbd-4430-9e27-905c51556136" width="600" />
 <video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
 
+<video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600" />
+
 <br/>
 <br/>
 <strong> Sprint Review: </strong>
@@ -126,12 +128,14 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-
-<video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600" />
 <br />
 <video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
+
 <br/>
+
 <video src="https://github.com/user-attachments/assets/76479723-0836-49fc-886e-8569bed02293" width="600" />
+
 <br/>
+
 <video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
 # Sprint 3
