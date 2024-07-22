@@ -125,14 +125,14 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Quick Slot UI ve kod tamamlanmıştır.
 
 <br />
-<video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
+![QuickSlot]("https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4")
 
 <br />
-<video src="https://github.com/user-attachments/assets/1bb29d7a-4459-436d-bdf7-9c79b62e6870" width="600" />
+![PlayerModeling]("https://github.com/user-attachments/assets/1bb29d7a-4459-436d-bdf7-9c79b62e6870")
 
 <br/>
 
-<video src="https://github.com/user-attachments/assets/54d2123e-d96b-456f-b232-4d87ebfbeeb5" width="600" />
+![FinalVersion]("https://github.com/user-attachments/assets/54d2123e-d96b-456f-b232-4d87ebfbeeb5")
 
 
 
