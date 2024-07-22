@@ -85,7 +85,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Level Design için oyunun hikayesinin kesinleştirilmesine karar verilmiştir.
 
 # Sprint 2
-
+<br>
 * <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
@@ -95,10 +95,10 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/5e1ed3f9-118e-44a7-887b-c88b47eb2114" width="600"></img>
 
 <br>
-</br>
+<br>
 
 [Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
-<br></br>
+<br><br>
 <img src="https://github.com/user-attachments/assets/a3b0274a-756e-47cf-bf44-892a0c77a4bd" width="600"></img>
 <img src="https://github.com/user-attachments/assets/c3e633b9-dcd3-4021-b238-b59784231528" width="600"></img>
 <img src="https://github.com/user-attachments/assets/b2000976-2e5c-474a-aae4-abcdcf3cdc17" width="600"></img>
