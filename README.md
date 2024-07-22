@@ -127,8 +127,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <br />
 <video src="https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4" width="600" />
 
-<br/>
-
 <video src="https://github.com/user-attachments/assets/76479723-0836-49fc-886e-8569bed02293" width="600" />
 
 <br/>
