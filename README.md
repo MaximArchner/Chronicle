@@ -90,8 +90,9 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
 [Unity71 - Sprint 2 Daily Scrum Screenshots](https://imgur.com/a/Bg19paH)
 
-* Sprint 1 Board Update:
+* Sprint 2 Board Update:
 <img src="https://github.com/user-attachments/assets/5e1ed3f9-118e-44a7-887b-c88b47eb2114" width="600" />
+
 <br/>
 <br/>
 
@@ -104,8 +105,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/d8030128-7112-4b89-9392-2c47aec1fd7b" width="600" />
 <img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600" />
 <img src="https://github.com/user-attachments/assets/bb1e110c-7c12-4893-b2f3-2ca37b220b9d" width="600" />
-<video src="https://github.com/user-attachments/assets/c87a24f3-bbbd-4430-9e27-905c51556136" width="600" />
-<video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
 
 <video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600"/>
 
