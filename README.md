@@ -134,5 +134,4 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDl0eWo3djg1dTF3c3YxcHhhdXBkNW5jdmUxeGd0c21scDVzYXlpeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/70z3rV4kG7l2lyjFg8/giphy.gif" width="600" />
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjR5MXRrMnU4OHNrMXBhYnJ2MHRxZGtjMW04cWQzbm9rNTg5YTQ5cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/77QRJ18asU8VfHKb7B/giphy.gif" width="600" />
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnBucWpqZjhvdzE5cTAwcGVubmc3dnowOGU3cnI0MzJ0cHF3aGx1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ldoPVEfPMkZH3H8t8F/giphy.gif" width="600" />
 # Sprint 3
