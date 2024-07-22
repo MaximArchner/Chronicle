@@ -182,11 +182,12 @@ GameObject:
   - component: {fileID: 2402265109662687635}
   - component: {fileID: 2457054269843669557}
   - component: {fileID: 3952819882821881100}
-  - component: {fileID: 8894368749187162674}
+  - component: {fileID: -2687665203059301129}
   - component: {fileID: 3130864647794631616}
-  - component: {fileID: 2407112228227977917}
+  - component: {fileID: 6748301635577735661}
+  - component: {fileID: -7928380828843143483}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Stone_Model
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +203,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.683483, y: -1.04568, z: -1.7255659}
-  m_LocalScale: {x: 0.5, y: 0.3, z: 0.5}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8655793638548695344}
@@ -258,8 +259,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8894368749187162674
-SphereCollider:
+--- !u!64 &-2687665203059301129
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -276,9 +277,10 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.63
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -915661510970944972, guid: d43474aa29bcb614d9017dd582e64a14, type: 3}
 --- !u!65 &3130864647794631616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -300,20 +302,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2407112228227977917
+--- !u!95 &6748301635577735661
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016159337824653433}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7928380828843143483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8016159337824653433}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Script: {fileID: 11500000, guid: 62b71b2d6f5a8724ebc19df54ab844d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
-  player: {fileID: 0}
-  textOffset: {x: 0, y: 5, z: 0}
-  ItemName: Stone
-  proximityText: {fileID: 5799307415798721032}
+  animator: {fileID: 0}

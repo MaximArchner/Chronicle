@@ -19,6 +19,8 @@ public class QuickSlotsSystem : MonoBehaviour
 
     public GameObject toolHolder;
     public GameObject selectedItemModel;
+    public Vector3 ModelPosition;
+    public Quaternion ModelRotation;
 
     private void Awake()
     {
@@ -77,6 +79,7 @@ public class QuickSlotsSystem : MonoBehaviour
             SelectQuickSlot(7);
 
         }
+
     }
 
 
@@ -100,7 +103,7 @@ public class QuickSlotsSystem : MonoBehaviour
                 selectedItem.GetComponent<InventoryItem>().isSelected = true;
 
 
-                //SetEquippedModel(selectedItem); BUNU AKTIFLESTIRMEYI UNUTMA
+                SetEquippedModel(selectedItem);
 
 
                 //rengi degistirmek icin
@@ -179,13 +182,10 @@ public class QuickSlotsSystem : MonoBehaviour
 
         }
 
-
         string selectedItemName = selectedItem.name.Replace("(Clone)","");
         selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
-            new Vector3(0.6f, 0, 0.4f), Quaternion.Euler(0, 49.71f, -21f)); //aletin konumunu de�i�tirece�imiz sat�r//
+            ModelPosition, ModelRotation); //aletin konumunu de�i�tirece�imiz sat�r//
         selectedItemModel.transform.SetParent(toolHolder.transform, false);
-
-
     }
 
     private void PopulateSlotList()
