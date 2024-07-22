@@ -128,8 +128,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-<video src="https://github.com/user-attachments/assets/e6b4502d-c285-400d-8286-ddec6b96bcb4" width="auto"></video>
-
 <video src="https://github.com/user-attachments/assets/c9ab9fb5-c6ff-4be6-b2c4-a542c00fa615" width="600"></video>
 
 # Sprint 3
