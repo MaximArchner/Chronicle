@@ -127,7 +127,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 <video src="https://github.com/user-attachments/assets/7342435d-65a5-4836-85e8-a8dd7aaf2f64" width="600">
 
-<video src="https://github.com/MaximArchner/Chronicle/blob/Main/VisualMaterials/350799941-76479723-0836-49fc-886e-8569bed02293.mp4" width="auto">
-
+<video src="https://github.com/user-attachments/assets/e6b4502d-c285-400d-8286-ddec6b96bcb4" width="auto">
 
 # Sprint 3
