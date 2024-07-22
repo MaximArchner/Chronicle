@@ -107,6 +107,9 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/d8030128-7112-4b89-9392-2c47aec1fd7b" width="600"></img>
 <img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600"></img>
 <img src="https://github.com/user-attachments/assets/bb1e110c-7c12-4893-b2f3-2ca37b220b9d" width="600"></img>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDl0eWo3djg1dTF3c3YxcHhhdXBkNW5jdmUxeGd0c21scDVzYXlpeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/70z3rV4kG7l2lyjFg8/giphy.gif" width="600"></img>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjR5MXRrMnU4OHNrMXBhYnJ2MHRxZGtjMW04cWQzbm9rNTg5YTQ5cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/77QRJ18asU8VfHKb7B/giphy.gif" width="600"></img>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnBucWpqZjhvdzE5cTAwcGVubmc3dnowOGU3cnI0MzJ0cHF3aGx1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ldoPVEfPMkZH3H8t8F/giphy.gif" width="600"></img>
 
 <br></br>
 <strong> Sprint Review: </strong>
@@ -126,8 +129,8 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-<video src="https://github.com/user-attachments/assets/c9ab9fb5-c6ff-4be6-b2c4-a542c00fa615" width="600"></video>
-
 <video src="https://github.com/user-attachments/assets/e6b4502d-c285-400d-8286-ddec6b96bcb4" width="auto"></video>
+
+<video src="https://github.com/user-attachments/assets/c9ab9fb5-c6ff-4be6-b2c4-a542c00fa615" width="600"></video>
 
 # Sprint 3
