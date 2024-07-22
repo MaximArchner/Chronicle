@@ -124,13 +124,9 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-<br />
 ![QuickSlot](https://github.com/user-attachments/assets/230642c6-2277-40a1-b663-4fc9473c4ee4)
 
-<br />
 ![PlayerModeling](https://github.com/user-attachments/assets/1bb29d7a-4459-436d-bdf7-9c79b62e6870)
-
-<br/>
 
 ![FinalVersion](https://github.com/user-attachments/assets/54d2123e-d96b-456f-b232-4d87ebfbeeb5)
 
