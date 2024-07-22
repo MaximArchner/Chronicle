@@ -106,10 +106,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600" />
 <img src="https://github.com/user-attachments/assets/bb1e110c-7c12-4893-b2f3-2ca37b220b9d" width="600" />
 
-<video src="https://github.com/user-attachments/assets/3efe8e17-b82b-4d2f-beaf-88932509e72d" width="600"/>
-<video src="https://github.com/user-attachments/assets/c87a24f3-bbbd-4430-9e27-905c51556136" width="600" />
-<video src="https://github.com/user-attachments/assets/8f7cefcc-a074-4498-b139-d499ffd7c788" width="600" />
-
 <br />
 <strong> Sprint Review: </strong>
 
