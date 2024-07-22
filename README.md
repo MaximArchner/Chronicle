@@ -49,21 +49,21 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 
 [Unity71 - Oyun Süreci ve Güncel Durumu Görüntüleri](https://imgur.com/a/stQdCxw)
 <br>
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/69b27a0c-9de9-43c0-bbd3-6edb9e01aa1d" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/6d2b9832-9adc-4ac2-b0c3-cb46f906521e" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/35cfa58f-ea02-4379-b9f1-3b1331153d7a" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/8eccc5fd-20e7-4b9e-a61c-e336a24bfa13" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/21aab32b-6633-4a08-ae00-02580509fa79" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/5a43fde8-087e-4e67-a228-607d193dffcc" width="600">
-<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/5af61de6-da4c-45ff-b9fa-f7dc8b14de33" width="600">
-<video src="https://github.com/MaximArchner/Chronicle/assets/95312458/5df68a3a-fb7a-40d2-92c5-14ebea777bbc" width="600">
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/62f9c124-13c9-4f51-8831-34647167f4a0" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/0413b810-f1be-4498-b251-4b179a615242" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/69b27a0c-9de9-43c0-bbd3-6edb9e01aa1d" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/6d2b9832-9adc-4ac2-b0c3-cb46f906521e" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/35cfa58f-ea02-4379-b9f1-3b1331153d7a" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/8eccc5fd-20e7-4b9e-a61c-e336a24bfa13" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/21aab32b-6633-4a08-ae00-02580509fa79" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/5a43fde8-087e-4e67-a228-607d193dffcc" width="600"></img>
+<img src="https://github.com/MaximArchner/Chronicle/assets/100310188/5af61de6-da4c-45ff-b9fa-f7dc8b14de33" width="600"></img>
+<video src="https://github.com/MaximArchner/Chronicle/assets/95312458/5df68a3a-fb7a-40d2-92c5-14ebea777bbc" width="600"></video>
 
 
 
-<br/>
-<br/>
+<br>
+</br>
 
 <strong> Sprint Review: </strong>
 
@@ -92,22 +92,23 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 [Unity71 - Sprint 2 Daily Scrum Screenshots](https://imgur.com/a/Bg19paH)
 
 * Sprint 2 Board Update:
-<img src="https://github.com/user-attachments/assets/5e1ed3f9-118e-44a7-887b-c88b47eb2114" width="600">
+<img src="https://github.com/user-attachments/assets/5e1ed3f9-118e-44a7-887b-c88b47eb2114" width="600"></img>
 
-<br/>
-<br/>
+<br>
+</br>
 
 [Unity71 - Sprint 2 Oyun Gelişim Süreci](https://imgur.com/a/TtFp51h)
-<img src="https://github.com/user-attachments/assets/a3b0274a-756e-47cf-bf44-892a0c77a4bd" width="600">
-<img src="https://github.com/user-attachments/assets/c3e633b9-dcd3-4021-b238-b59784231528" width="600">
-<img src="https://github.com/user-attachments/assets/b2000976-2e5c-474a-aae4-abcdcf3cdc17" width="600">
-<img src="https://github.com/user-attachments/assets/08553837-e60e-4372-adaf-162c9ba0e335" width="600">
-<img src="https://github.com/user-attachments/assets/1436c761-b18e-4430-b18e-8f49a6ece6b7" width="600">
-<img src="https://github.com/user-attachments/assets/d8030128-7112-4b89-9392-2c47aec1fd7b" width="600">
-<img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600">
-<img src="https://github.com/user-attachments/assets/bb1e110c-7c12-4893-b2f3-2ca37b220b9d" width="600">
+<br></br>
+<img src="https://github.com/user-attachments/assets/a3b0274a-756e-47cf-bf44-892a0c77a4bd" width="600"></img>
+<img src="https://github.com/user-attachments/assets/c3e633b9-dcd3-4021-b238-b59784231528" width="600"></img>
+<img src="https://github.com/user-attachments/assets/b2000976-2e5c-474a-aae4-abcdcf3cdc17" width="600"></img>
+<img src="https://github.com/user-attachments/assets/08553837-e60e-4372-adaf-162c9ba0e335" width="600"></img>
+<img src="https://github.com/user-attachments/assets/1436c761-b18e-4430-b18e-8f49a6ece6b7" width="600"></img>
+<img src="https://github.com/user-attachments/assets/d8030128-7112-4b89-9392-2c47aec1fd7b" width="600"></img>
+<img src="https://github.com/user-attachments/assets/8478c00d-1798-4cf7-b0b7-8db575b16211" width="600"></img>
+<img src="https://github.com/user-attachments/assets/bb1e110c-7c12-4893-b2f3-2ca37b220b9d" width="600"></img>
 
-<br />
+<br></br>
 <strong> Sprint Review: </strong>
 
 * Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
@@ -125,7 +126,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Adanın yapısından kaynaklı su ile etkileşim düzeltilmiştir.
 * Quick Slot UI ve kod tamamlanmıştır.
 
-<video src="https://github.com/user-attachments/assets/7342435d-65a5-4836-85e8-a8dd7aaf2f64" width="600"></video>
+<video src="https://github.com/user-attachments/assets/c9ab9fb5-c6ff-4be6-b2c4-a542c00fa615" width="600"></video>
 
 <video src="https://github.com/user-attachments/assets/e6b4502d-c285-400d-8286-ddec6b96bcb4" width="auto"></video>
 
