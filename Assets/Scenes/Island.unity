@@ -23868,13 +23868,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5278842691386528787, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
+      propertyPath: m_Height
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7726910811245901432, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -642
       objectReference: {fileID: 0}
     - target: {fileID: 7726910811245901432, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 7726910811245901432, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23954,6 +23958,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 616544441}
+    - target: {fileID: 1091948486009288997, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -405.78827
+      objectReference: {fileID: 0}
     - target: {fileID: 1323550461186835773, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: toolHolder
       value: 
