@@ -20,6 +20,9 @@ public class QuickSlotsSystem : MonoBehaviour
     public GameObject toolHolder;
     public GameObject selectedItemModel;
 
+    public Vector3 modelPositionOffSet = new Vector3(0.15f, 0.15f, 0.2f);
+    public Quaternion modelRotationOffSet = Quaternion.Euler(1f,0f, 0f);
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -78,6 +81,10 @@ public class QuickSlotsSystem : MonoBehaviour
 
         }
 
+        if (selectedItemModel != null)
+        {
+            UpdateModelPositionAndRotation();
+        }
     }
 
 
@@ -182,7 +189,8 @@ public class QuickSlotsSystem : MonoBehaviour
 
         string selectedItemName = selectedItem.name.Replace("(Clone)","");
         selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
-            new Vector3(0f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f)); //aletin konumunu de�i�tirece�imiz sat�r//
+            toolHolder.transform.position + modelPositionOffSet, toolHolder.transform.rotation * modelRotationOffSet); //aletin konumunu de�i�tirece�imiz sat�r//
+
         selectedItemModel.transform.SetParent(toolHolder.transform, false);
     }
 
@@ -242,5 +250,10 @@ public class QuickSlotsSystem : MonoBehaviour
         {
             return false;
         }
+    }
+    private void UpdateModelPositionAndRotation()
+    {
+        selectedItemModel.transform.localPosition = modelPositionOffSet;
+        selectedItemModel.transform.localRotation = modelRotationOffSet;
     }
 }

@@ -51,12 +51,8 @@ MonoBehaviour:
   selectedItem: {fileID: 0}
   toolHolder: {fileID: 0}
   selectedItemModel: {fileID: 0}
-  rotX: 0
-  rotY: 0
-  rotZ: 0
-  rotW: 0
-  ModelPosition: {x: 0.14, y: -0.2, z: 0.1}
-  ModelRotation: {x: 0, y: 30, z: 0, w: 30}
+  modelPositionOffSet: {x: 0.15, y: 0.15, z: 0.2}
+  modelRotationOffSet: {x: 1, y: 0, z: 0, w: 1}
 --- !u!1 &1651259884966909037
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +511,6 @@ MonoBehaviour:
   orientation: {fileID: 0}
   player: {fileID: 0}
   playerObj: {fileID: 0}
-  handTransform: {fileID: 0}
   rotationSpeed: 7
 --- !u!1 &4048427988672164559
 GameObject:
