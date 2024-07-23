@@ -51,8 +51,8 @@ MonoBehaviour:
   selectedItem: {fileID: 0}
   toolHolder: {fileID: 0}
   selectedItemModel: {fileID: 0}
-  modelPositionOffSet: {x: 0.15, y: 0.15, z: 0.2}
-  modelRotationOffSet: {x: 1, y: 0, z: 0, w: 1}
+  modelPositionOffSet: {x: 0.43, y: 0.03, z: 0.1}
+  modelRotationOffSet: {x: 1, y: 0, z: 4, w: 1}
 --- !u!1 &1651259884966909037
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 3808989699015726851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1533.5417, y: -405.54828, z: 939.41565}
+  m_LocalPosition: {x: -1533.5417, y: -405.78827, z: 939.41565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

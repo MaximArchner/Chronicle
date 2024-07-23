@@ -8,6 +8,9 @@ public class playerMovement : MonoBehaviour
     private Animator _animator;
     public CharacterController controller;
 
+    int isWalkingHash;
+    int isSprintingHash;
+
     public float speed = 0f;
     public float gravity = -60;
     public float jumpHeight = 8f;
@@ -24,6 +27,8 @@ public class playerMovement : MonoBehaviour
     private void Start()
     {
         _animator = GetComponentInChildren<Animator>();
+        isWalkingHash = Animator.StringToHash("isWalking");
+        isSprintingHash = Animator.StringToHash("isSprinting");
     }
 
     void Update()
@@ -45,8 +50,8 @@ public class playerMovement : MonoBehaviour
             {
                 speed = 0f;
                 _animator.SetFloat("Speed", 0f);
-                _animator.SetBool("isSprinting", false);
-                _animator.SetBool("isWalking", false);
+                _animator.SetBool(isSprintingHash, false);
+                _animator.SetBool(isWalkingHash, false);
             }
             else
             {
@@ -58,8 +63,8 @@ public class playerMovement : MonoBehaviour
                     isSprinting = true;
                     speed = 40f;
                     _animator.SetFloat("Speed", 40f);
-                    _animator.SetBool("isWalking", false);
-                    _animator.SetBool("isSprinting", true);
+                    _animator.SetBool(isWalkingHash, false);
+                    _animator.SetBool(isSprintingHash, true);
                 }
 
                 else
@@ -67,8 +72,8 @@ public class playerMovement : MonoBehaviour
                     isSprinting = false;
                     speed = 30f;
                     _animator.SetFloat("Speed", 30f);
-                    _animator.SetBool("isSprinting", false);
-                    _animator.SetBool("isWalking", true);
+                    _animator.SetBool(isSprintingHash, false);
+                    _animator.SetBool(isWalkingHash, true);
                 }
             }
             
