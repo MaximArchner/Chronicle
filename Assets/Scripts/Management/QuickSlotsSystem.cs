@@ -19,8 +19,6 @@ public class QuickSlotsSystem : MonoBehaviour
 
     public GameObject toolHolder;
     public GameObject selectedItemModel;
-    public Vector3 ModelPosition;
-    public Quaternion ModelRotation;
 
     private void Awake()
     {
@@ -184,7 +182,7 @@ public class QuickSlotsSystem : MonoBehaviour
 
         string selectedItemName = selectedItem.name.Replace("(Clone)","");
         selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
-            ModelPosition, ModelRotation); //aletin konumunu de�i�tirece�imiz sat�r//
+            new Vector3(0f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f)); //aletin konumunu de�i�tirece�imiz sat�r//
         selectedItemModel.transform.SetParent(toolHolder.transform, false);
     }
 

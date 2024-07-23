@@ -8,7 +8,6 @@ public class ThirdPersonCam : MonoBehaviour
     public Transform orientation;
     public Transform player;
     public Transform playerObj;
-    public Transform handTransform;
 
     public float rotationSpeed;
 
@@ -31,17 +30,5 @@ public class ThirdPersonCam : MonoBehaviour
 
             if (inputDir != Vector3.zero)
             playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
-
-            if (QuickSlotsSystem.Instance != null && QuickSlotsSystem.Instance.selectedItemModel != null)
-            {
-                QuickSlotsSystem.Instance.selectedItemModel.transform.SetParent(handTransform, false); // Set parent to toolHolder
-
-                // Ensure local position and rotation
-                QuickSlotsSystem.Instance.selectedItemModel.transform.localPosition = QuickSlotsSystem.Instance.ModelPosition;
-                QuickSlotsSystem.Instance.selectedItemModel.transform.localRotation = QuickSlotsSystem.Instance.ModelRotation;
-
-                // Sync the held object rotation with the player's facing direction
-                QuickSlotsSystem.Instance.selectedItemModel.transform.rotation = playerObj.rotation * QuickSlotsSystem.Instance.ModelRotation;
-            }
     }
 }
