@@ -6,7 +6,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     public bool playerInRange;
-    public Transform player;
+    private Transform player;
     public Vector3 textOffset = new Vector3(0, 0, 0);
     public string ItemName;
 
@@ -15,6 +15,11 @@ public class InteractableObject : MonoBehaviour
     public string GetItemName()
     {
         return ItemName;
+    }
+
+    private void Start()
+    {
+        player = PlayerState.Instance.playerBody.transform.Find("Main Camera").transform;
     }
 
     void Update()

@@ -16,6 +16,7 @@ public class QuickSlotsSystem : MonoBehaviour
 
     public int selectedNumber = -1;
     public GameObject selectedItem;
+    public GameObject selectedSlot;
 
     public GameObject toolHolder;
     public GameObject selectedItemModel;
@@ -85,6 +86,7 @@ public class QuickSlotsSystem : MonoBehaviour
         {
             UpdateModelPositionAndRotation();
         }
+
     }
 
 
@@ -102,13 +104,30 @@ public class QuickSlotsSystem : MonoBehaviour
                 if (selectedItem != null)
                 {
                     selectedItem.GetComponent<InventoryItem>().isSelected = false;
+                    selectedSlot = null;
+                }
+                else if (selectedItem == null)
+                {
+                    selectedSlot = null;
                 }
 
                 selectedItem = GetSelectedItem(number);
-                selectedItem.GetComponent<InventoryItem>().isSelected = true;
+                selectedSlot = quickSlotsList[number - 1];
 
-
-                SetEquippedModel(selectedItem);
+                if (selectedItem != null)
+                {
+                    selectedItem.GetComponent<InventoryItem>().isSelected = true;
+                    SetEquippedModel(selectedItem);
+                }
+                else
+                {
+                    if (selectedItemModel != null)
+                    {
+                        DestroyImmediate(selectedItemModel.gameObject);
+                        selectedItemModel = null;
+                        selectedSlot = null;
+                    }
+                }
 
 
                 //rengi degistirmek icin
@@ -131,6 +150,11 @@ public class QuickSlotsSystem : MonoBehaviour
                     selectedItem.GetComponent<InventoryItem>().isSelected = false;
                     selectedItem = null;
                 }
+                else if (selectedItem == null)
+                {
+                    selectedSlot = null;
+                }
+
                 if (selectedItemModel != null)
                 {
 
@@ -138,7 +162,6 @@ public class QuickSlotsSystem : MonoBehaviour
                     selectedItemModel = null;
 
                 }
-
 
                 //rengi degistirmek icin
 
@@ -153,6 +176,10 @@ public class QuickSlotsSystem : MonoBehaviour
 
         GameObject GetSelectedItem(int slotNumber)
         {
+            if (quickSlotsList[slotNumber - 1].transform.childCount == 0)
+            {
+                return null;
+            }
 
             return quickSlotsList[slotNumber - 1].transform.GetChild(0).gameObject;
 
@@ -161,7 +188,7 @@ public class QuickSlotsSystem : MonoBehaviour
         bool CheckIfSlotFull(int slotnumber)
         {
 
-            if (quickSlotsList[slotnumber-1].transform.childCount > 0)
+            if (quickSlotsList[slotnumber-1].transform.childCount >= 0)
             {
 
                 return true;
@@ -181,17 +208,21 @@ public class QuickSlotsSystem : MonoBehaviour
     {
         if (selectedItemModel != null)
         {
-
             DestroyImmediate(selectedItemModel.gameObject);
             selectedItemModel = null;
-
         }
 
         string selectedItemName = selectedItem.name.Replace("(Clone)","");
-        selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
-            toolHolder.transform.position + modelPositionOffSet, toolHolder.transform.rotation * modelRotationOffSet); //aletin konumunu de�i�tirece�imiz sat�r//
 
-        selectedItemModel.transform.SetParent(toolHolder.transform, false);
+        GameObject modelPrefab = Resources.Load<GameObject>(selectedItemName + "_Model");
+
+        if (modelPrefab != null)
+        {
+            selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
+                toolHolder.transform.position + modelPositionOffSet, toolHolder.transform.rotation * modelRotationOffSet); //aletin konumunu de�i�tirece�imiz sat�r//
+
+            selectedItemModel.transform.SetParent(toolHolder.transform, false);
+        }
     }
 
     private void PopulateSlotList()
@@ -209,11 +240,25 @@ public class QuickSlotsSystem : MonoBehaviour
     {
         // S�radaki Bo� Slotu bulma
         GameObject availableSlot = FindNextEmptySlot();
-        // Objemizi transform etme
-        itemToEquip.transform.SetParent(availableSlot.transform, false);
+        
+        if (availableSlot != null)
+        {
+            // Objemizi transform etme
+            itemToEquip.transform.SetParent(availableSlot.transform);
+            itemToEquip.transform.transform.localPosition = new Vector2(0, 0);
 
-        InventorySystem.Instance.ReCalculateList();
+            if (availableSlot == selectedSlot)
+            {
+                SetEquippedModel(itemToEquip);
+            }
 
+            InventorySystem.Instance.ReCalculateList();
+            CraftingSystem.Instance.RefreshNeededItems();
+        }
+        else
+        {
+            Debug.LogWarning("No empty quick slots available.");
+        }
     }
 
 
@@ -221,12 +266,12 @@ public class QuickSlotsSystem : MonoBehaviour
     {
         foreach (GameObject slot in quickSlotsList)
         {
-            if (slot.transform.childCount == 1)
+            if (slot.transform.childCount == 0)
             {
                 return slot;
             }
         }
-        return new GameObject();
+        return null;
     }
 
     public bool CheckIfFull()
@@ -236,7 +281,7 @@ public class QuickSlotsSystem : MonoBehaviour
 
         foreach (GameObject slot in quickSlotsList)
         {
-            if (slot.transform.childCount > 1)
+            if (slot.transform.childCount > 0)
             {
                 counter += 1;
             }
@@ -255,5 +300,27 @@ public class QuickSlotsSystem : MonoBehaviour
     {
         selectedItemModel.transform.localPosition = modelPositionOffSet;
         selectedItemModel.transform.localRotation = modelRotationOffSet;
+    }
+
+    public List<string> GetQuickSlotItems()
+    {
+        List<string> quickSlotItems = new List<string>();
+
+        foreach (GameObject slot in quickSlotsList)
+        {
+            if (slot.transform.childCount > 0)
+            {
+                InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
+                if (inventorySlot != null && inventorySlot.itemInSlot != null)
+                {
+                    for (int i = 0; i < inventorySlot.itemInSlot.amountInInventory; i++)
+                    {
+                        quickSlotItems.Add(inventorySlot.itemInSlot.thisName);
+                    }
+                }
+            }
+        }
+
+        return quickSlotItems;
     }
 }

@@ -23,7 +23,7 @@ public class InventorySlot : MonoBehaviour
             itemInSlot = null;
         }
 
-        if (itemInSlot != null)
+        if (itemInSlot != null && itemInSlot.isStackable)
         {
             ItemCount.gameObject.SetActive(true);
             ItemCount.text = $"{itemInSlot.amountInInventory}";
@@ -33,6 +33,7 @@ public class InventorySlot : MonoBehaviour
         else
         {
             ItemCount.gameObject.SetActive(false);
+            ItemCount.transform.SetAsLastSibling();
         }
     }
 

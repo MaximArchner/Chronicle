@@ -9,7 +9,6 @@ using TMPro;
 
 public class InventorySystem : MonoBehaviour
 {
-
     public static InventorySystem Instance { get; set; }
 
     public GameObject inventoryScreenUI;
@@ -74,13 +73,11 @@ public class InventorySystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri acma
         {
-
-            Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
             UnityEngine.Cursor.lockState = CursorLockMode.None;
             UnityEngine.Cursor.visible = true;
             isOpen = true;
-
+            ReCalculateList();
         }
         else if (Input.GetKeyDown(KeyCode.I) && isOpen && !MenuManager.Instance.isMenuOpen)
         {
@@ -107,15 +104,16 @@ public class InventorySystem : MonoBehaviour
 
         if (stack != null && shouldStack)
         {
-            Debug.Log("Stack exists with this item: " + itemName);
             stack.GetComponent<InventorySlot>().itemInSlot.amountInInventory++;
             stack.GetComponent<InventorySlot>().UpdateItemInSlot();
         }
         else
         {
             nextEmptySlot = FindNextEmptySlot();
+
             itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
             itemToAdd.transform.SetParent(nextEmptySlot.transform);
+            
             itemList.Add(itemName);
         }
         
@@ -160,37 +158,33 @@ public class InventorySystem : MonoBehaviour
         return new GameObject();
     }
 
-    public void RemoveItem(string nameToRemove, int amountToRemove)
+    public void RemoveItem(string itemName, int amountToRemove)
     {
-        int counter = amountToRemove;
+        int remainingAmountToRemove = amountToRemove;
 
-        for (var i = slotList.Count - 1; i >= 0; i--)
+        foreach (GameObject slot in slotList)
         {
-
-            if (slotList[i].transform.childCount > 0)
-            {
-                InventorySlot slot  = slotList[i].GetComponent<InventorySlot>();
-                if (slot != null && slot.itemInSlot != null && slot.itemInSlot.thisName == nameToRemove && counter > 0)
-                {
-                    if(slot.itemInSlot.amountInInventory > counter)
-                    {
-                        slot.itemInSlot.amountInInventory -= counter;
-                        slot.UpdateItemInSlot();
-                        counter = 0;
-                    }
-                    else
-                    {
-                        counter -= slot.itemInSlot.amountInInventory;
-                        Destroy(slot.transform.GetChild(0).gameObject);
-                    }
-                }
-            }
-            
-            if (counter == 0)
+            if (remainingAmountToRemove == 0)
             {
                 break;
             }
 
+            InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
+            if (inventorySlot.itemInSlot != null && inventorySlot.itemInSlot.thisName == itemName)
+            {
+                while (inventorySlot.itemInSlot.amountInInventory > 0 && remainingAmountToRemove > 0)
+                {
+                    inventorySlot.itemInSlot.amountInInventory--;
+                    remainingAmountToRemove--;
+
+                    if (inventorySlot.itemInSlot.amountInInventory == 0)
+                    {
+                        Destroy(inventorySlot.itemInSlot.gameObject);
+                        inventorySlot.itemInSlot = null;
+                        break;
+                    }
+                }
+            }
         }
 
         ReCalculateList();
@@ -202,9 +196,7 @@ public class InventorySystem : MonoBehaviour
         itemList.Clear();
         foreach (GameObject slot in slotList)
         {
-            if (slot.GetComponent<InventorySlot>())
-            {
-                InventoryItem item = slot.GetComponent<InventorySlot>().itemInSlot;
+            InventoryItem item = slot.GetComponent<InventorySlot>().itemInSlot;
 
                 if (item != null)
                 {
@@ -216,8 +208,6 @@ public class InventorySystem : MonoBehaviour
                         }
                     }
                 }
-            }
-
         }
     }
 
@@ -226,10 +216,13 @@ public class InventorySystem : MonoBehaviour
         foreach (GameObject slot in slotList)
         {
             InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
+
             inventorySlot.UpdateItemInSlot();
+            
             if(inventorySlot != null && inventorySlot.itemInSlot != null)
             {
-                if (inventorySlot.itemInSlot.thisName == ItemName && inventorySlot.itemInSlot.amountInInventory < stackLimit)
+                if (inventorySlot.itemInSlot.thisName == ItemName 
+                    && inventorySlot.itemInSlot.amountInInventory < stackLimit)
                 {
                     return slot;
                 }

@@ -89,10 +89,8 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
             if (isEquippable && isInsideQuickSlot == false && QuickSlotsSystem.Instance.CheckIfFull() == false)
             {
-
                 QuickSlotsSystem.Instance.AddToQuickSlots(gameObject);
                 isInsideQuickSlot = true;
-
             }
         }
     }

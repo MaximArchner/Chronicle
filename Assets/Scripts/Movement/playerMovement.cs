@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -14,6 +15,7 @@ public class playerMovement : MonoBehaviour
     public float speed = 0f;
     public float gravity = -60;
     public float jumpHeight = 8f;
+    public float jumpDuration = 1f;
 
     public Transform groundCheck;
     public float groundDistance = 1.5f;
@@ -80,14 +82,25 @@ public class playerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && isGrounded) // Yerdeyken Jump butonuna basarsak
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                _animator.SetTrigger("Jump");
-                _animator.SetBool("isGrounded", false);
+                StartCoroutine(Jump());
             }
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
         }
+    }
+
+    private IEnumerator Jump()
+    {
+        _animator.SetTrigger("Jump");
+        _animator.SetBool("isGrounded", false);
+
+        yield return new WaitForSeconds(jumpDuration);
+
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+        yield return new WaitForSeconds(jumpDuration);
+        _animator.SetTrigger("Idle");
     }
 }
 

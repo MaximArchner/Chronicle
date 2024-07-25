@@ -89,7 +89,7 @@ public class SaveManager : MonoBehaviour
         foreach(GameObject slot in InventorySystem.Instance.slotList)
         {
             InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
-            if (inventorySlot != null && inventorySlot.itemInSlot != null)
+            if (slot != null && inventorySlot.itemInSlot != null)
             {
                 inventory.Add(new InventoryItemData(inventorySlot.itemInSlot.thisName, inventorySlot.itemInSlot.amountInInventory));
             }
