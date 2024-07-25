@@ -19,8 +19,8 @@ public class ResourceHealthBar : MonoBehaviour
 
     private void Update()
     {
-        //currentHealth = playerState.GetComponent<GlobalState>().currentHealth;
-        //maxHealth = playerState.GetComponent<GlobalState>().maxHealth;
+        currentHealth = GlobalState.GetComponent<GlobalState>().resourceHealth;
+        maxHealth = GlobalState.GetComponent<GlobalState>().resourceMaxHealth;
 
         float fillValue = currentHealth / maxHealth; // orantisal olarak 0 ile 1 arasinda olacak (slider component icin)
         slider.value = fillValue;

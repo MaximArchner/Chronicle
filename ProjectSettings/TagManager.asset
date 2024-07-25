@@ -7,6 +7,7 @@ TagManager:
   - Slot
   - Collectible
   - QuickSlot
+  - Choppable
   layers:
   - Default
   - TransparentFX

@@ -108,8 +108,7 @@ MonoBehaviour:
   thisFunctionality: Will replenish Health, Hunger and Thirst.
   isConsumable: 1
   isUseable: 0
-  isEquippable: 1
-  isNowEquipped: 0
+  isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0
   isStackable: 1

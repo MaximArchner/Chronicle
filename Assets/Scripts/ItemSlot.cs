@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
 
-    //public GameObject Item
+    //public GameObject Item Bu belki daha sonra kullanılır
     //{
     //    get
     //    {
@@ -24,7 +24,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount <= 2) //mevcut slot bos ise
+
+        InventoryItem draggedItem = DragDrop.itemBeingDragged.GetComponent<InventoryItem>();
+        if (transform.childCount == 1) //mevcut slot bos ise
         {
 
             DragDrop.itemBeingDragged.transform.SetParent(transform);
@@ -32,33 +34,34 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
             if (transform.CompareTag("QuickSlot") == false)
             {
-                DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsideQuickSlot = false;
-                InventorySystem.Instance.ReCalculateList();
-            }
-
-            if (transform.CompareTag("QuickSlot"))
-            {
-                DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsideQuickSlot = true;
+                draggedItem.isInsideQuickSlot = false;
+                CraftingSystem.Instance.RefreshNeededItems();
                 InventorySystem.Instance.ReCalculateList();
             }
         }
-        else //mevcut slot bos degil ise
+        else if (transform.childCount == 2)//mevcut slot bos degil ise
         {
-            InventoryItem draggedItem = DragDrop.itemBeingDragged.GetComponent<InventoryItem>();
-
             // iki item'in da ayni tipten olup olmadigini anlamak icin
-            if (draggedItem.thisName == GetStoredItem().thisName && IsLimitExceeded(draggedItem) == false)
+            if (draggedItem.thisName == GetStoredItem().thisName && IsLimitExceeded(draggedItem) == false && draggedItem.isStackable == true)
             {
                 // DraggedItem ile StoredItem'� mergeleme
                 GetStoredItem().amountInInventory += draggedItem.amountInInventory;
                 DestroyImmediate(DragDrop.itemBeingDragged);
             }
-            else
-            {
-                DragDrop.itemBeingDragged.transform.SetParent(transform);
-            }
         }
 
+        if (transform.CompareTag("QuickSlot"))
+        {
+            if (draggedItem.isEquippable == true)
+            {
+                DragDrop.itemBeingDragged.transform.SetParent(transform);
+                DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
+                draggedItem.isInsideQuickSlot = true;
+            }
+
+            CraftingSystem.Instance.RefreshNeededItems();
+            InventorySystem.Instance.ReCalculateList();
+        }
     }
 
     InventoryItem GetStoredItem()

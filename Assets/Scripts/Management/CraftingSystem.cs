@@ -63,7 +63,7 @@ public class CraftingSystem : MonoBehaviour
     void CraftAnyItem(ItemBP blueprintToCraft)
     {
         // Envantere item ekleme
-        InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, true);
+        InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, false);
 
         // Envanterden kaynak silme
         if (blueprintToCraft.numOfReq == 1)
@@ -77,10 +77,10 @@ public class CraftingSystem : MonoBehaviour
         }
 
         // Listeyi güncelle
-        StartCoroutine(calculate());
+        StartCoroutine(Calculate());
     }
 
-    public IEnumerator calculate()
+    public IEnumerator Calculate()
     {
 
         yield return 0;
@@ -88,20 +88,29 @@ public class CraftingSystem : MonoBehaviour
         RefreshNeededItems();
     }
 
+    /*IENumerator CraftedDelayForSound(ItemBP blueprintToCraft)
+    {
+        yield return new WaitForSeconds(1f);
+
+        for (var i  = 0; i < blueprintToCraft.numOfItemsToProduce; i++)
+        {
+            InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, true);
+        }
+    }*/
+
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.C) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri açma
         {
-            Debug.Log("C tuþuna basýldý - Menü açýlýyor");
             craftingMainScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             isOpen = true;
+            RefreshNeededItems();
         }
         else if (Input.GetKeyDown(KeyCode.C) && isOpen && !MenuManager.Instance.isMenuOpen)
         {
-            Debug.Log("C tuþuna basýldý - Menü kapanýyor");
             craftingMainScreenUI.SetActive(false);
             craftingToolsScreenUI.SetActive(false);
 

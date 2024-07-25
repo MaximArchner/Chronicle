@@ -121,8 +121,7 @@ MonoBehaviour:
   thisFunctionality: A crafting material used in many tools.
   isConsumable: 0
   isUseable: 0
-  isEquippable: 1
-  isNowEquipped: 0
+  isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0
   isStackable: 1

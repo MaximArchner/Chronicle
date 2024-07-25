@@ -50,7 +50,7 @@ public class ChoppableTree : MonoBehaviour
         treeHealth -= 1;
     }
 
-    /*private void Update()
+    private void Update()
     {
 
         if (canBeChopped) 
@@ -61,5 +61,4 @@ public class ChoppableTree : MonoBehaviour
         }
 
     }
-    */
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThirdPersonCam : MonoBehaviour
 {
-    [Header("Refernces")]
+    [Header("References")]
     public Transform orientation;
     public Transform player;
     public Transform playerObj;
