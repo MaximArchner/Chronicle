@@ -26,7 +26,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     {
 
         InventoryItem draggedItem = DragDrop.itemBeingDragged.GetComponent<InventoryItem>();
-        if (transform.childCount <= 1) //mevcut slot bos ise
+        if (transform.childCount == 1) //mevcut slot bos ise
         {
 
             DragDrop.itemBeingDragged.transform.SetParent(transform);

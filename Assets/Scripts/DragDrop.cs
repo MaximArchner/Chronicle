@@ -103,7 +103,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     private void DropItemIntoTheWorld(GameObject tempItemReference)
     {
         // Eger envanterde itemden birden fazla varsa her esya attiginda stack miktarini dusurme
-        if (tempItemReference.GetComponent<InventoryItem>().amountInInventory > 1)
+        if (tempItemReference.GetComponent<InventoryItem>().amountInInventory > 0)
         {
             tempItemReference.GetComponent<InventoryItem>().amountInInventory--;
         }
@@ -134,9 +134,9 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         var itemsObject = FindObjectOfType<EnvironmentManager>().gameObject.transform.Find("Collectibles");
         item.transform.SetParent(itemsObject.transform);
 
-        if (tempItemReference.GetComponent<InventoryItem>().amountInInventory == 1)
+        if (tempItemReference.GetComponent<InventoryItem>().amountInInventory == 0)
         {// Atilan objeyi envanterden silme
-            DestroyImmediate(tempItemReference.gameObject);
+            DestroyImmediate(tempItemReference);
         }
 
         InventorySystem.Instance.ReCalculateList();
