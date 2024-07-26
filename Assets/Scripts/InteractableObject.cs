@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class InteractableObject : MonoBehaviour
     public Vector3 textOffset = new Vector3(0, 0, 0);
     public string ItemName;
     public string entityDescription;
+    public Sprite entityImage;
     public GameObject entityInfoUI;
 
     public TextMeshPro proximityText; // yakina gelince bu objeyi tweaklemeli
@@ -81,6 +83,7 @@ public class InteractableObject : MonoBehaviour
                 entityInfoUI.SetActive(true);
                 entityInfoUI.transform.Find("EntityName").GetComponent<TextMeshProUGUI>().text = closestObject.ItemName;
                 entityInfoUI.transform.Find("EntityDescription").GetComponent<TextMeshProUGUI>().text = closestObject.entityDescription;
+                entityInfoUI.transform.Find("EntityImage").GetComponent<Image>().sprite = closestObject.entityImage;
             }
         }
     }
@@ -115,6 +118,7 @@ public class InteractableObject : MonoBehaviour
                 entityInfoUI.SetActive(true);
                 entityInfoUI.transform.Find("EntityName").transform.GetComponent<TextMeshProUGUI>().text = ItemName;
                 entityInfoUI.transform.Find("EntityDescription").transform.GetComponent<TextMeshProUGUI>().text = entityDescription;
+                entityInfoUI.transform.Find("EntityImage").GetComponent<Image>().sprite = entityImage;
             }
         }
     }

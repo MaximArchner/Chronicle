@@ -610,6 +610,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 5, z: 0}
   ItemName: Apple
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 872564652}
 --- !u!23 &81517793
 MeshRenderer:
@@ -1718,11 +1721,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &132654867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 259784049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &132654868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 259784049}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &132654871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132654867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &132654872
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132654867}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1 &136624039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,11 +2221,56 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &158940333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 873479108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &158940334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 873479108}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &158940337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158940333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &158940338
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158940333}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!4 &165738297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5748955463675364833, guid: 4dfe9a89eb84ba840991df3dbaff957d, type: 3}
@@ -2877,6 +2970,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2937,6 +3038,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_11
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -2961,6 +3070,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 327240552}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 327240553}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -3017,6 +3132,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_08
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -3041,6 +3164,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 132654871}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 132654872}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -3300,6 +3429,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 418647196}
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: textOffset.y
       value: 5
       objectReference: {fileID: 0}
@@ -3635,11 +3776,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCount: {fileID: 775914402}
   itemInSlot: {fileID: 0}
+--- !u!1 &327240548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 251953310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &327240549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 251953310}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &327240552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327240548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &327240553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327240548}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1001 &361261517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3829,11 +4015,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2145176d1e9190f4787f9af2ee5031f2, type: 3}
+--- !u!1 &377161390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 575565933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &377161391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 575565933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &377161394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377161390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &377161395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377161390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1 &397233727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,6 +4558,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: ItemName
+      value: Big Rabbit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
@@ -4343,16 +4590,62 @@ PrefabInstance:
       propertyPath: m_enableWordWrapping
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa78316e1221753408c9d8078786420e, type: 3}
+--- !u!1 &423777588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 1318687383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &423777589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 1318687383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &423777592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423777588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &423777593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423777588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1 &426983789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,11 +5854,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525553091}
   m_CullTransparentMesh: 1
+--- !u!1 &525948176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 567090901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &525948177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 567090901}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &525948180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525948176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &525948181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525948176}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1001 &530734786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6235,6 +6573,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -6259,6 +6605,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 525948180}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 525948181}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -6315,6 +6667,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_12
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -6339,6 +6699,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 377161394}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 377161395}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -6867,8 +7233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -257.73, y: 39.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -209.1802, y: 7.15}
+  m_SizeDelta: {x: 297.0995, y: 114.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647075625
 MonoBehaviour:
@@ -6917,14 +7283,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7759,6 +8125,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stone
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 1291101546}
 --- !u!4 &688629202 stripped
 Transform:
@@ -8491,11 +8860,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCount: {fileID: 1260430579}
   itemInSlot: {fileID: 0}
+--- !u!1 &763059787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 1953987742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &763059788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 1953987742}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &763059791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763059787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &763059792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763059787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1001 &769923948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9220,11 +9634,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829610837}
   m_CullTransparentMesh: 1
+--- !u!1 &830981351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 878072148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &830981352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 878072148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &830981355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830981351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &830981356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830981351}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1 &846890601
 GameObject:
   m_ObjectHideFlags: 0
@@ -9857,6 +10316,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_06
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -9881,6 +10348,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 158940337}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 158940338}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -9937,6 +10410,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -9961,6 +10442,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 830981355}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 830981356}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -10017,6 +10504,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_09
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -10041,6 +10536,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1035109375}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1035109376}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -11491,6 +11992,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stone
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 91162452}
 --- !u!4 &998496384 stripped
 Transform:
@@ -11712,11 +12216,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003660167}
   m_CullTransparentMesh: 1
+--- !u!1 &1022685408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 1327768596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1022685409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 1327768596}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022685412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022685408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &1022685413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022685408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1 &1024413701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11935,11 +12484,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1035109371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 886121804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1035109372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 886121804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1035109375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035109371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &1035109376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035109371}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.028248787, y: 6.86, z: 0}
 --- !u!224 &1037610079 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4107281187701837949, guid: 2145176d1e9190f4787f9af2ee5031f2, type: 3}
@@ -12264,6 +12858,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stone
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 1462126474}
 --- !u!4 &1068607886 stripped
 Transform:
@@ -12803,6 +13400,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stick
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 913312779}
 --- !u!23 &1081527464
 MeshRenderer:
@@ -13478,6 +14078,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 5, z: 0}
   ItemName: Apple
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 994577759}
 --- !u!23 &1125305377
 MeshRenderer:
@@ -13621,11 +14224,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      propertyPath: player
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityImage
       value: 
-      objectReference: {fileID: 418647196}
-    - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: textOffset.y
       value: 5
       objectReference: {fileID: 0}
@@ -13686,6 +14293,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: ItemName
+      value: Big Rabbit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: player
       value: 
@@ -13702,7 +14325,8 @@ PrefabInstance:
       propertyPath: m_enableWordWrapping
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14541,11 +15165,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204978189}
   m_CullTransparentMesh: 1
+--- !u!1 &1244088089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 1638876691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1244088090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 1638876691}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1244088093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244088089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &1244088094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244088089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!1 &1249904426
 GameObject:
   m_ObjectHideFlags: 0
@@ -15529,6 +16198,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -15553,6 +16230,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 423777592}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 423777593}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -15958,6 +16641,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_13
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -15982,6 +16673,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1022685412}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1022685413}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -17166,6 +17863,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stick
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 155308239}
 --- !u!23 &1450753177
 MeshRenderer:
@@ -18638,6 +19338,18 @@ PrefabInstance:
       propertyPath: textOffset.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -18726,6 +19438,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 5, z: 0}
   ItemName: Apple
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 964180811}
 --- !u!23 &1597315664
 MeshRenderer:
@@ -19353,6 +20068,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_10
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -19377,6 +20100,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1244088093}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1244088094}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -19578,6 +20307,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_07
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -19602,6 +20339,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1776464334}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1776464335}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -19680,6 +20423,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stick
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 113040003}
 --- !u!23 &1644338777
 MeshRenderer:
@@ -21226,11 +21972,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773686843}
   m_CullTransparentMesh: 1
+--- !u!1 &1776464330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+  m_PrefabInstance: {fileID: 1642981395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1776464331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2659478892771243502, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
   m_PrefabInstance: {fileID: 1642981395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1776464334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776464330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: PalmTree
+  entityDescription: A sturdy palm tree.
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 1256639840}
+  proximityText: {fileID: 0}
+--- !u!65 &1776464335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776464330}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 16, y: 13, z: 16}
+  m_Center: {x: -0.02821827, y: 6.86, z: 0}
 --- !u!4 &1801728105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8711464553025768138, guid: 012248fd364a3534dae591627a44749b, type: 3}
@@ -21886,6 +22677,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stone
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 465875654}
 --- !u!4 &1877150851 stripped
 Transform:
@@ -22269,6 +23063,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stone
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 411622231}
 --- !u!4 &1908340713 stripped
 Transform:
@@ -22631,6 +23428,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_04
       objectReference: {fileID: 0}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a3d87e030ed3b3044b3a594d3b814996, type: 3}
+    - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
     - target: {fileID: 8848773190659038865, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -22655,6 +23460,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 763059791}
+    - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 763059792}
     - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -22921,6 +23732,18 @@ PrefabInstance:
       propertyPath: textOffset.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -22994,11 +23817,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
-      propertyPath: player
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: ItemName
+      value: Big Rabbit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: entityImage
       value: 
-      objectReference: {fileID: 418647196}
-    - target: {fileID: 3705534587945794221, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 3222538803702401956, guid: aa78316e1221753408c9d8078786420e, type: 3}
       propertyPath: textOffset.y
       value: 5
       objectReference: {fileID: 0}
@@ -23469,6 +24300,9 @@ MonoBehaviour:
   playerInRange: 0
   textOffset: {x: 0, y: 4, z: 0}
   ItemName: Stone
+  entityDescription: 
+  entityImage: {fileID: 0}
+  entityInfoUI: {fileID: 0}
   proximityText: {fileID: 1180057783}
 --- !u!4 &2048416962 stripped
 Transform:
@@ -23828,6 +24662,18 @@ PrefabInstance:
       propertyPath: textOffset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -23996,6 +24842,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 418647196}
     - target: {fileID: 5496170449854474083, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: textOffset.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityInfoUI
+      value: 
+      objectReference: {fileID: 1256639840}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: textOffset.y
       value: 5
       objectReference: {fileID: 0}
@@ -24236,11 +25094,11 @@ PrefabInstance:
       objectReference: {fileID: 1025300072}
     - target: {fileID: 4926482664877952326, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.957092
+      value: 0.95709205
       objectReference: {fileID: 0}
     - target: {fileID: 4926482664877952326, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.28978428
+      value: 0.2897842
       objectReference: {fileID: 0}
     - target: {fileID: 6688079951163837737, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: player
