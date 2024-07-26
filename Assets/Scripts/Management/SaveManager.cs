@@ -95,26 +95,26 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        // string[] quickSlots = GetQuickSlotsContent();
+        string[] quickSlots = GetQuickSlotsContent();
 
-        return new PlayerData(playerStats, playerTransform, inventory);
+        return new PlayerData(playerStats, playerTransform, inventory, quickSlots);
     }
 
-    // private string[] GetQuickSlotsContent()
-    // {
-    //      List<string> temp =  new List<string>();
-    //      foreach(GameObject slot in EquipSystem.Instance.quickSlotsList)
-    //      {
-    //          if (slot.transform.childCount != 0)
-    //          {
-    //              string name = slot.transform.GetChild(0).name;
-    //              string str2 = "(Clone)";
-    //              string cleanName = nameReplace(str2, "");
-    //              temp.Add(cleanName);
-    //          }
-    //      }
-    //      return temp.ToArray();
-    // }
+    private string[] GetQuickSlotsContent()
+    {
+        List<string> temp = new List<string>();
+        foreach (GameObject slot in QuickSlotsSystem.Instance.quickSlotsList)
+        {
+            if (slot.transform.childCount != 0)
+            {
+                string name = slot.transform.GetChild(0).name;
+                string str2 = "(Clone)";
+                string cleanName = name.Replace(str2, "");
+                temp.Add(cleanName);
+            }
+        }
+        return temp.ToArray();
+    }
     public void SavingTypeSwitch(AllGameData gameData, int slotNumber)
     {
         if (isSavingToJson)
@@ -203,15 +203,15 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        //foreach (string item in playerData.quickSlotsContent)
-        //{
-        //    // Sonraki bos quickslotu bul
-        //    GameObject availableSlot = EquipSystem.Instance.FindNextEmptySlot();
+        foreach (string item in playerData.quickSlotContent)
+        {
+            // Sonraki bos quickslotu bul
+            GameObject availableSlot = QuickSlotsSystem.Instance.FindNextEmptySlot();
 
-        //    var itemToAdd = Instantiate(Resources.Load<GameObject>(item));
+            var itemToAdd = Instantiate(Resources.Load<GameObject>(item));
 
-        //    itemToAdd.transform.SetParent(availableSlot.transform, false);
-        //}
+            itemToAdd.transform.SetParent(availableSlot.transform, false);
+        }
     }
 
     public void StartLoadedGame(int slotNumber)

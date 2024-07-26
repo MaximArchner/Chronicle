@@ -25711,10 +25711,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0.28978428
       objectReference: {fileID: 0}
-    - target: {fileID: 5886592939067276409, guid: 012248fd364a3534dae591627a44749b, type: 3}
-      propertyPath: resourceHealth
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 6688079951163837737, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: player
       value: 
