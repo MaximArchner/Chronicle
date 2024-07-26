@@ -78,7 +78,7 @@ public class InteractableObject : MonoBehaviour
                 }
             }
 
-            if (closestObject != null)
+            if (closestObject != null && entityInfoUI != null)
             {
                 entityInfoUI.SetActive(true);
                 entityInfoUI.transform.Find("EntityName").GetComponent<TextMeshProUGUI>().text = closestObject.ItemName;
@@ -93,7 +93,6 @@ public class InteractableObject : MonoBehaviour
         if (other.CompareTag("Player")) // Objenin collider'ina dokundugumuzda text olusturmali ve Range'inde oldugumuzu bildirmeli
         {
             playerInRange = true;
-            objectsInRange.Add(this);
 
             if (proximityText != null)
             {
@@ -115,6 +114,7 @@ public class InteractableObject : MonoBehaviour
 
             if (playerInRange && entityInfoUI != null && (CompareTag("Choppable") || CompareTag("Killable")))
             {
+                objectsInRange.Add(this);
                 entityInfoUI.SetActive(true);
                 entityInfoUI.transform.Find("EntityName").transform.GetComponent<TextMeshProUGUI>().text = ItemName;
                 entityInfoUI.transform.Find("EntityDescription").transform.GetComponent<TextMeshProUGUI>().text = entityDescription;
