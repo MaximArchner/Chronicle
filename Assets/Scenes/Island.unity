@@ -3077,6 +3077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityInfoUI
       value: 
@@ -3084,10 +3088,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1001 &251953310
 PrefabInstance:
@@ -3141,6 +3142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_11
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -3176,9 +3181,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 327240553}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1001 &259784049
 PrefabInstance:
@@ -3232,6 +3234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_08
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -3270,9 +3276,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 132654872}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &266462143
 GameObject:
@@ -6748,6 +6751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_05
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -6786,9 +6793,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 525948181}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1001 &575565933
 PrefabInstance:
@@ -6842,6 +6846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_12
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -6880,9 +6888,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 377161395}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &581433955
 GameObject:
@@ -10724,6 +10729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_06
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -10762,9 +10771,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 158940338}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1001 &878072148
 PrefabInstance:
@@ -10818,6 +10824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -10856,9 +10866,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 830981356}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1001 &886121804
 PrefabInstance:
@@ -10912,6 +10919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_09
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -10950,9 +10961,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035109376}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &903558464
 GameObject:
@@ -16563,6 +16571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -16601,9 +16613,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 423777593}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!4 &1320339191 stripped
 Transform:
@@ -17006,6 +17015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_13
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -17044,9 +17057,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1022685413}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &1328815195
 GameObject:
@@ -17187,6 +17197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753094bef2b7d084c823ba6213efbd3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 0
   GlobalState: {fileID: 905618737}
 --- !u!1 &1339865533
 GameObject:
@@ -20515,6 +20527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_10
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -20553,9 +20569,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1244088094}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &1641305469
 GameObject:
@@ -20754,6 +20767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_07
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -20792,9 +20809,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1776464335}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &1644338773
 GameObject:
@@ -23870,6 +23884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_04
       objectReference: {fileID: 0}
+    - target: {fileID: 5328119405401707630, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
+      propertyPath: toolHolder
+      value: 
+      objectReference: {fileID: 698800006}
     - target: {fileID: 8195970115582348761, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       propertyPath: entityImage
       value: 
@@ -23908,9 +23926,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3432742762866749268, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
       insertIndex: -1
       addedObject: {fileID: 763059792}
-    - targetCorrespondingSourceObject: {fileID: 4562336046108218492, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 977d3ead7516d984297a76a5863d1315, type: 3}
 --- !u!1 &1954141143
 GameObject:

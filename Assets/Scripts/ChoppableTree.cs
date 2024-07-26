@@ -13,10 +13,6 @@ public class ChoppableTree : MonoBehaviour
     public float treeMaxHealth;
     public float treeHealth;
 
-    private void Start()
-    {
-        treeHealth = 25f;
-    }
     private void Update()
     {
 
@@ -27,12 +23,6 @@ public class ChoppableTree : MonoBehaviour
         else
         {
             canBeChopped = false;
-        }
-
-        if (canBeChopped)
-        {
-            GlobalState.Instance.resourceHealth = treeHealth;
-            GlobalState.Instance.resourceMaxHealth = treeMaxHealth;
         }
 
     }
@@ -63,8 +53,6 @@ public class ChoppableTree : MonoBehaviour
     public IEnumerator Hit()
     {
         yield return new WaitForSeconds(0.2f);
-        treeHealth -= 5;
-        ResourceHealthBar healthBar = GetComponent<ResourceHealthBar>();
-        healthBar.currentHealth -= 5;
+        treeHealth -= 1;
     }
 }

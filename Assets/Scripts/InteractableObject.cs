@@ -84,6 +84,10 @@ public class InteractableObject : MonoBehaviour
                 entityInfoUI.transform.Find("EntityName").GetComponent<TextMeshProUGUI>().text = closestObject.ItemName;
                 entityInfoUI.transform.Find("EntityDescription").GetComponent<TextMeshProUGUI>().text = closestObject.entityDescription;
                 entityInfoUI.transform.Find("EntityImage").GetComponent<Image>().sprite = closestObject.entityImage;
+                if (closestObject.GetComponent<ChoppableTree>())
+                {
+                    entityInfoUI.transform.Find("EntityHealth").GetComponent<Slider>().value = closestObject.GetComponent<ChoppableTree>().treeHealth;
+                }
             }
         }
     }

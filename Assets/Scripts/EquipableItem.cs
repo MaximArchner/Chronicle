@@ -8,7 +8,7 @@ public class EquipableItem : MonoBehaviour
 {
 
     public Animator animator;
-    private ChoppableTree currentChoppableTree;
+    public ChoppableTree currentChoppableTree;
     void Start()
     {
         
@@ -20,11 +20,11 @@ public class EquipableItem : MonoBehaviour
             && InventorySystem.Instance.isOpen == false && CraftingSystem.Instance.isOpen == false)
         {
             animator.SetTrigger("hit");
-        }
 
-        if (currentChoppableTree != null)
-        {
-            currentChoppableTree.GetHit();
+            if (currentChoppableTree != null)
+            {
+                currentChoppableTree.GetHit();
+            }
         }
     }
 
