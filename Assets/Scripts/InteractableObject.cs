@@ -84,9 +84,17 @@ public class InteractableObject : MonoBehaviour
                 entityInfoUI.transform.Find("EntityName").GetComponent<TextMeshProUGUI>().text = closestObject.ItemName;
                 entityInfoUI.transform.Find("EntityDescription").GetComponent<TextMeshProUGUI>().text = closestObject.entityDescription;
                 entityInfoUI.transform.Find("EntityImage").GetComponent<Image>().sprite = closestObject.entityImage;
-                if (closestObject.GetComponent<ChoppableTree>())
+            }
+
+            if (closestObject != null && CompareTag("Choppable"))
+            {
+                if (PlayerState.Instance.playerBody.transform.Find("PlayerObj").transform.Find("ToolHolder").transform.Find("Axe_Model"))
                 {
-                    entityInfoUI.transform.Find("EntityHealth").GetComponent<Slider>().value = closestObject.GetComponent<ChoppableTree>().treeHealth;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ChoppableTree choppableTree = GetComponent<ChoppableTree>();
+                        choppableTree.GetHit();
+                    }
                 }
             }
         }

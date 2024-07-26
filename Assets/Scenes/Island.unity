@@ -10999,11 +10999,6 @@ Transform:
   - {fileID: 853893269}
   m_Father: {fileID: 302867469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &905618737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4375508756110139667, guid: 012248fd364a3534dae591627a44749b, type: 3}
-  m_PrefabInstance: {fileID: 4803581314782804189}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &913312777
 GameObject:
   m_ObjectHideFlags: 0
@@ -14598,17 +14593,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      propertyPath: entityImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 9747c3a18a7964542bb6b1d648322802, type: 3}
-    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: entityInfoUI
       value: 
       objectReference: {fileID: 1256639840}
-    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      propertyPath: textOffset.y
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -17179,9 +17166,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 1
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -17197,9 +17184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753094bef2b7d084c823ba6213efbd3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
-  GlobalState: {fileID: 905618737}
+  currentHealth: 5
+  maxHealth: 5
 --- !u!1 &1339865533
 GameObject:
   m_ObjectHideFlags: 0
@@ -25661,6 +25647,30 @@ PrefabInstance:
       propertyPath: quickSlotsPanel
       value: 
       objectReference: {fileID: 930648777}
+    - target: {fileID: 1907838804455324603, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: saveMenu
+      value: 
+      objectReference: {fileID: 559068155}
+    - target: {fileID: 1907838804455324603, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 980657083}
+    - target: {fileID: 1907838804455324603, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: MenuCanvas
+      value: 
+      objectReference: {fileID: 214219189}
+    - target: {fileID: 1907838804455324603, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: otherCanvas
+      value: 
+      objectReference: {fileID: 1508184374}
+    - target: {fileID: 1907838804455324603, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: ResumeButton
+      value: 
+      objectReference: {fileID: 561323493}
+    - target: {fileID: 1907838804455324603, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: settingsMenu
+      value: 
+      objectReference: {fileID: 1647697681}
     - target: {fileID: 2588357476155810833, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: playerBody
       value: 
