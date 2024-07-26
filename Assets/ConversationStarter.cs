@@ -6,7 +6,8 @@ using DialogueEditor;
 public class ConversationStarter : MonoBehaviour
 {
     [SerializeField] private NPCConversation myConversation;
-    [SerializeField] private MonoBehaviour cameraController; 
+    [SerializeField] private MonoBehaviour cameraController;
+    [SerializeField] private MonoBehaviour playerMovementScript;
 
     private void OnTriggerStay(Collider other)
     {
@@ -23,11 +24,15 @@ public class ConversationStarter : MonoBehaviour
     {
         if (cameraController != null)
         {
-            cameraController.enabled = false; 
+            cameraController.enabled = false;
+        }
+        if (playerMovementScript != null)
+        {
+            playerMovementScript.enabled = false;
         }
 
-        Cursor.lockState = CursorLockMode.None; 
-        Cursor.visible = true; 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         ConversationManager.Instance.StartConversation(myConversation);
 
@@ -38,11 +43,15 @@ public class ConversationStarter : MonoBehaviour
     {
         if (cameraController != null)
         {
-            cameraController.enabled = true; 
+            cameraController.enabled = true;
+        }
+        if (playerMovementScript != null)
+        {
+            playerMovementScript.enabled = true;
         }
 
-        Cursor.lockState = CursorLockMode.Locked; 
-        Cursor.visible = false; 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         ConversationManager.OnConversationEnded -= EndConversation;
     }
