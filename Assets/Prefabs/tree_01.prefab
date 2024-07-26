@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8848773190659038865
 Transform:
   m_ObjectHideFlags: 0
@@ -556,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16865fc9514ddff43adc42170b31a341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolHolder: {fileID: 0}
   playerInRange: 0
   canBeChopped: 0
   treeMaxHealth: 5

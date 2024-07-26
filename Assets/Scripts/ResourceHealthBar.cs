@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ResourceHealthBar : MonoBehaviour
 {
     private Slider slider;
-    private float currentHealth, maxHealth;
+    public float currentHealth, maxHealth;
 
     public GameObject GlobalState;
 

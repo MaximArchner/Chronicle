@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ChoppableTree : MonoBehaviour
 {
-
+    public GameObject toolHolder;
     public bool playerInRange;
     public bool canBeChopped;
 
@@ -15,12 +15,27 @@ public class ChoppableTree : MonoBehaviour
 
     private void Start()
     {
+        treeHealth = 25f;
+    }
+    private void Update()
+    {
 
-        treeHealth = treeMaxHealth;
+        if (toolHolder.transform.Find("Axe_Model(Clone)"))
+        {
+            canBeChopped = true;
+        }
+        else
+        {
+            canBeChopped = false;
+        }
+
+        if (canBeChopped)
+        {
+            GlobalState.Instance.resourceHealth = treeHealth;
+            GlobalState.Instance.resourceMaxHealth = treeMaxHealth;
+        }
 
     }
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -34,31 +49,22 @@ public class ChoppableTree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            canBeChopped = false;
         }
     }
 
     public void GetHit()
     {
-
-        StartCoroutine(hit());
+        
+        StartCoroutine(Hit());
 
     }
 
-    public IEnumerator hit()
+    public IEnumerator Hit()
     {
-        yield return new WaitForSeconds(0.6f);
-        treeHealth -= 1;
-    }
-
-    private void Update()
-    {
-
-        if (canBeChopped) 
-        {
-            GlobalState.Instance.resourceHealth = treeHealth;
-            GlobalState.Instance.resourceMaxHealth = treeMaxHealth;
-
-        }
-
+        yield return new WaitForSeconds(0.2f);
+        treeHealth -= 5;
+        ResourceHealthBar healthBar = GetComponent<ResourceHealthBar>();
+        healthBar.currentHealth -= 5;
     }
 }
