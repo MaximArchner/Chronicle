@@ -49,6 +49,7 @@ MonoBehaviour:
   quickSlotsList: []
   selectedNumber: -1
   selectedItem: {fileID: 0}
+  selectedSlot: {fileID: 0}
   toolHolder: {fileID: 0}
   selectedItemModel: {fileID: 0}
   modelPositionOffSet: {x: 0.43, y: 0.03, z: 0.1}
@@ -382,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 3808989699015726851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1533.5417, y: -405.78827, z: 939.41565}
+  m_LocalPosition: {x: -1533.5417, y: -398.92825, z: 939.41565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -512,6 +513,54 @@ MonoBehaviour:
   player: {fileID: 0}
   playerObj: {fileID: 0}
   rotationSpeed: 7
+--- !u!1 &3847177180955620627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972750807217274314}
+  - component: {fileID: 2682780468021685894}
+  m_Layer: 0
+  m_Name: AlertDialogManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972750807217274314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847177180955620627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8711464553025768138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2682780468021685894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847177180955620627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a63c0ec8e97244ca6f81e2a9f96b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 0}
+  messageText: {fileID: 0}
+  proceedButton: {fileID: 0}
+  cancelButton: {fileID: 0}
 --- !u!1 &4048427988672164559
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,8 +658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75e2d5db8a9d3745964fca3cbf1d01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceHealth: 0
-  resourceMaxHealth: 0
+  resourceHealth: 5
+  resourceMaxHealth: 5
 --- !u!1 &4445320344764347780
 GameObject:
   m_ObjectHideFlags: 3
@@ -1232,5 +1281,6 @@ Transform:
   - {fileID: 9048247398256941882}
   - {fileID: 3986190030313120196}
   - {fileID: 5176622465429913455}
+  - {fileID: 972750807217274314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

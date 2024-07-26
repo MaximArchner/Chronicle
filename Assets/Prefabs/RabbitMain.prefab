@@ -995,12 +995,12 @@ GameObject:
   - component: {fileID: 850977693127501706}
   - component: {fileID: 7880090936594050615}
   - component: {fileID: -5175573906123387503}
-  - component: {fileID: 5496170449854474083}
   - component: {fileID: 5649864489575500343}
   - component: {fileID: -5638327957825851000}
+  - component: {fileID: 7022724907893296327}
   m_Layer: 0
   m_Name: RabbitMain
-  m_TagString: Untagged
+  m_TagString: Killable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1095,23 +1095,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0.25, z: 0.05}
---- !u!114 &5496170449854474083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8182564854080949761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  player: {fileID: 0}
-  textOffset: {x: 0, y: 5, z: 0}
-  ItemName: Rabbit
-  proximityText: {fileID: 4186743344311866792}
 --- !u!114 &5649864489575500343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,6 +1132,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7022724907893296327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8182564854080949761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  textOffset: {x: 0, y: 0, z: 0}
+  ItemName: Rabbit
+  entityDescription: A cute wild rabbit.
+  entityInfoUI: {fileID: 0}
+  proximityText: {fileID: 4186743344311866792}
 --- !u!1 &8695708904197370788
 GameObject:
   m_ObjectHideFlags: 0
