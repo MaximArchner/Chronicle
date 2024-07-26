@@ -8,6 +8,7 @@ TagManager:
   - Collectible
   - QuickSlot
   - Choppable
+  - Passive Interact
   layers:
   - Default
   - TransparentFX
