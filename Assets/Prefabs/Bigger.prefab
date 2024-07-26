@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7022724907893296327, guid: 1323029e35de9a74a906556aca63d280, type: 3}
+      propertyPath: entityDescription
+      value: A big cute wild rabbit.
+      objectReference: {fileID: 0}
     - target: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       propertyPath: m_Name
       value: Bigger
@@ -77,9 +81,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3705534587945794221}
     - targetCorrespondingSourceObject: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6718064636719589113}
@@ -92,23 +93,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8182564854080949761, guid: 1323029e35de9a74a906556aca63d280, type: 3}
   m_PrefabInstance: {fileID: 5606272279670196067}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3705534587945794221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4342373353622587746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c30e74feb1d9140a9131351eb8bc41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  player: {fileID: 0}
-  textOffset: {x: 0, y: 5, z: 0}
-  ItemName: Big Rabbit
-  proximityText: {fileID: 8635430239778640587}
 --- !u!136 &6718064636719589113
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -159,14 +143,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8635430239778640587 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4186743344311866792, guid: 1323029e35de9a74a906556aca63d280, type: 3}
-  m_PrefabInstance: {fileID: 5606272279670196067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
