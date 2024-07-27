@@ -15,12 +15,21 @@ public class ResourceHealthBar : MonoBehaviour
     private void Awake()
     {
         slider = GetComponent<Slider>();
-        currentChoppableTree = GetComponent<EquipableItem>().currentChoppableTree;
+    }
+
+    private void Start()
+    {
+        EquipableItem equipableItem = GetComponent<EquipableItem>();
+        if (equipableItem != null)
+        {
+            currentChoppableTree = equipableItem.currentChoppableTree;
+        }
     }
 
     private void Update()
     {
-        if (this.transform.parent.transform.Find("EntityName").GetComponent<TextMeshProUGUI>().text.Contains("PalmTree"))
+        TextMeshProUGUI entityNameText = this.transform.parent.transform.Find("EntityName").GetComponent<TextMeshProUGUI>();
+        if (entityNameText != null && entityNameText.text.Contains("PalmTree"))
         {
             currentHealth = currentChoppableTree.treeHealth;
             maxHealth = currentChoppableTree.treeMaxHealth;
@@ -28,6 +37,5 @@ public class ResourceHealthBar : MonoBehaviour
             float fillValue = currentHealth / maxHealth; // orantisal olarak 0 ile 1 arasinda olacak (slider component icin)
             slider.value = fillValue;
         }
-
     }
 }

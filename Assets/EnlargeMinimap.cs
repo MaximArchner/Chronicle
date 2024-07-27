@@ -54,5 +54,4 @@ public class EnlargeMinimap : MonoBehaviour
             minimapRectTransform.anchoredPosition = initialAnchoredPosition;
         }
     }
-
 }
