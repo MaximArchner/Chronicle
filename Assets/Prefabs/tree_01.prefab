@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8848773190659038865}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8848773190659038865
 Transform:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8341400340948536318}
   - component: {fileID: 7027427300645439965}
   - component: {fileID: 4910136386932518086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HPText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 4932610012686519300}
   - component: {fileID: 3979238451469719925}
   - component: {fileID: 993469858324904195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 8117507204092160331}
   - component: {fileID: 1696464990751771443}
   - component: {fileID: 8225227656400671687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,6 +468,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7ae13e897b70b50408183ccad8ab8bf9, type: 3}
       propertyPath: m_Name
       value: tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ae13e897b70b50408183ccad8ab8bf9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7ae13e897b70b50408183ccad8ab8bf9, type: 3}
       propertyPath: m_TagString
