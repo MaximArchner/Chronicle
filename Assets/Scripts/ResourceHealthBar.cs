@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,7 +37,7 @@ public class ResourceHealthBar : MonoBehaviour
     {
         TextMeshProUGUI entityNameText = this.transform.parent.transform.Find("EntityName").GetComponent<TextMeshProUGUI>();
         GameObject entityInfoUI = this.transform.parent.gameObject;
-        
+
         if (entityNameText != null && entityNameText.text.Contains("PalmTree"))
         {
             if (currentChoppableTree != null)

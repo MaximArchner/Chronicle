@@ -55,7 +55,7 @@ public class InteractableObject : MonoBehaviour
             }
         }
 
-        if (playerInRange && proximityText != null && CompareTag("Collectible"))
+        if (playerInRange && proximityText != null && (CompareTag("Collectible") || CompareTag("Killable")))
         {
             proximityText.transform.position = proximityText.transform.parent.position + textOffset;
             proximityText.transform.LookAt(player.transform);
@@ -135,7 +135,7 @@ public class InteractableObject : MonoBehaviour
                 proximityText.gameObject.SetActive(false);
             }
 
-            if (CompareTag("Choppable") || CompareTag("Killable") && entityInfoUI != null)
+            if ((CompareTag("Choppable") || CompareTag("Killable")) && entityInfoUI != null)
             {
                 entityInfoUI.SetActive(false);
             }
