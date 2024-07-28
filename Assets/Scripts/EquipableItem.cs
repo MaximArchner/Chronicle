@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-
 public class EquipableItem : MonoBehaviour
 {
-
     public Animator animator;
     public ChoppableTree currentChoppableTree;
+    public KillableRabbit currentKillableRabbit;
+    public float detectionRadius = Mathf.Infinity;
+    public LayerMask treeLayerMask;
+    public LayerMask animalLayerMask;
+
     void Start()
     {
-        
         animator = GetComponent<Animator>();
     }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)  // 0 sol týk
-            && InventorySystem.Instance.isOpen == false && CraftingSystem.Instance.isOpen == false)
+        if (Input.GetMouseButtonDown(0) &&
+            InventorySystem.Instance.isOpen == false &&
+            CraftingSystem.Instance.isOpen == false)
         {
             animator.SetTrigger("hit");
 
@@ -25,21 +29,82 @@ public class EquipableItem : MonoBehaviour
             {
                 currentChoppableTree.GetHit();
             }
+            
+            if (currentKillableRabbit != null)
+            {
+                currentKillableRabbit.GetHit();
+            }
         }
+
+        UpdateClosestTree();
+        UpdateClosestRabbit();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void UpdateClosestTree()
     {
-        if (other.CompareTag("Choppable"))
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, treeLayerMask);
+        float closestDistance = detectionRadius;
+        ChoppableTree closestTree = null;
+
+        foreach (var hitCollider in hitColliders)
         {
-            currentChoppableTree = other.GetComponent<ChoppableTree>();
+            ChoppableTree tree = hitCollider.GetComponent<ChoppableTree>();
+            if (tree != null)
+            {
+                float distance = Vector3.Distance(transform.position, tree.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestTree = tree;
+                }
+            }
         }
+
+        currentChoppableTree = closestTree;
+        UpdateResourceHealthBar();
     }
-    private void OnTriggerExit(Collider other)
+
+    void UpdateClosestRabbit()
     {
-        if (other.CompareTag("Choppable"))
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, animalLayerMask);
+        float closestDistance = detectionRadius;
+        KillableRabbit closestRabbit = null;
+
+        foreach (var hitCollider in hitColliders)
         {
-            currentChoppableTree = null;
+            KillableRabbit rabbit = hitCollider.GetComponent<KillableRabbit>();
+            if (rabbit != null)
+            {
+                float distance = Vector3.Distance(transform.position, rabbit.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestRabbit = rabbit;
+                }
+            }
+        }
+
+        currentKillableRabbit = closestRabbit;
+        UpdateResourceHealthBar();
+    }
+
+    void UpdateResourceHealthBar()
+    {
+        ResourceHealthBar resourceHealthBar = FindObjectOfType<ResourceHealthBar>();
+        if (resourceHealthBar != null)
+        {
+            resourceHealthBar.SetCurrentChoppableTree(currentChoppableTree);
+            resourceHealthBar.SetCurrentKillableRabbit(currentKillableRabbit);
+
+            if (currentChoppableTree != null)
+            {
+                InteractableObject interactableObject = currentChoppableTree.GetComponent<InteractableObject>();
+                resourceHealthBar.SetInteractableObject(interactableObject);
+            }
+            else
+            {
+                resourceHealthBar.SetInteractableObject(null);
+            }
         }
     }
 }

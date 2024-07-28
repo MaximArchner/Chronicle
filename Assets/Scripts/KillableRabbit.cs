@@ -2,29 +2,29 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class ChoppableTree : MonoBehaviour
+public class KillableRabbit : MonoBehaviour
 {
     public GameObject toolHolder;
     public bool playerInRange;
-    public bool canBeChopped;
+    public bool canBeKilled;
 
-    public float treeMaxHealth;
-    public float treeHealth;
+    public float rabbitMaxHealth;
+    public float rabbitHealth;
 
     private void Start()
     {
-        treeHealth = treeMaxHealth;
-        treeMaxHealth = 5;
+        rabbitHealth = rabbitMaxHealth;
+        rabbitMaxHealth = 5;
     }
     private void Update()
     {
         if (toolHolder.transform.Find("Axe_Model(Clone)") && playerInRange == true)
         {
-            canBeChopped = true;
+            canBeKilled = true;
         }
         else
         {
-            canBeChopped = false;
+            canBeKilled = false;
         }
     }
 
@@ -41,7 +41,7 @@ public class ChoppableTree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            canBeChopped = false;
+            canBeKilled = false;
         }
     }
 
@@ -53,6 +53,6 @@ public class ChoppableTree : MonoBehaviour
     public IEnumerator Hit()
     {
         yield return new WaitForSeconds(0.2f);
-        treeHealth -= 1;
+        rabbitHealth -= 1;
     }
 }

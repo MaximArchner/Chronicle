@@ -1,41 +1,95 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.UI;
-
 
 public class ResourceHealthBar : MonoBehaviour
 {
     private Slider slider;
     public float currentHealth, maxHealth;
     private ChoppableTree currentChoppableTree;
+    private KillableRabbit currentKillableRabbit;
+    private InteractableObject interactableObject;
 
     private void Awake()
     {
         slider = GetComponent<Slider>();
     }
 
-    private void Start()
+    public void SetCurrentChoppableTree(ChoppableTree tree)
     {
-        EquipableItem equipableItem = GetComponent<EquipableItem>();
-        if (equipableItem != null)
-        {
-            currentChoppableTree = equipableItem.currentChoppableTree;
-        }
+        currentChoppableTree = tree;
+    }
+
+    public void SetCurrentKillableRabbit(KillableRabbit rabbit)
+    {
+        currentKillableRabbit = rabbit;
+    }
+
+    public void SetInteractableObject(InteractableObject interactable)
+    {
+        interactableObject = interactable;
     }
 
     private void Update()
     {
         TextMeshProUGUI entityNameText = this.transform.parent.transform.Find("EntityName").GetComponent<TextMeshProUGUI>();
+        GameObject entityInfoUI = this.transform.parent.gameObject;
+        
         if (entityNameText != null && entityNameText.text.Contains("PalmTree"))
         {
-            currentHealth = currentChoppableTree.treeHealth;
-            maxHealth = currentChoppableTree.treeMaxHealth;
+            if (currentChoppableTree != null)
+            {
+                currentHealth = currentChoppableTree.treeHealth;
+                maxHealth = currentChoppableTree.treeMaxHealth;
 
-            float fillValue = currentHealth / maxHealth; // orantisal olarak 0 ile 1 arasinda olacak (slider component icin)
-            slider.value = fillValue;
+                float fillValue = currentHealth;
+                this.transform.Find("HpText").GetComponent<TextMeshProUGUI>().text = fillValue + "/5";
+                slider.value = fillValue;
+
+                if (slider.value == 0)
+                {
+                    if(currentChoppableTree != null)
+                    {
+                        Destroy(currentChoppableTree.gameObject);
+                        currentChoppableTree = null;
+                        entityInfoUI.SetActive(false);
+                    }
+
+                    if (interactableObject != null)
+                    {
+                        interactableObject.closestObject = null;
+                    }
+                }
+            }
+        }
+        else if (entityNameText != null && (entityNameText.text.Contains("Rabbit") || entityNameText.text.Contains("Big Rabbit")))
+        {
+            if (currentKillableRabbit != null)
+            {
+                currentHealth = currentKillableRabbit.rabbitHealth;
+                maxHealth = currentKillableRabbit.rabbitHealth;
+
+                float fillValue = currentHealth;
+                this.transform.Find("HpText").GetComponent<TextMeshProUGUI>().text = fillValue + "/5";
+                slider.value = fillValue;
+
+                if (slider.value == 0)
+                {
+                    if(currentKillableRabbit != null)
+                    {
+                        Destroy(currentKillableRabbit.gameObject);
+                        currentKillableRabbit = null;
+                        entityInfoUI.SetActive(false);
+                    }
+
+                    if (interactableObject != null)
+                    {
+                        interactableObject.closestObject = null;
+                    }
+                }
+            }
         }
     }
 }

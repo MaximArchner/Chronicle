@@ -14,9 +14,10 @@ public class InteractableObject : MonoBehaviour
     public Sprite entityImage;
     public GameObject entityInfoUI;
 
-    public TextMeshPro proximityText; // yakina gelince bu objeyi tweaklemeli
+    public TextMeshPro proximityText;
 
     private static List<InteractableObject> objectsInRange = new List<InteractableObject>();
+    public InteractableObject closestObject { get; set; }
 
     public string GetItemName()
     {
@@ -39,14 +40,12 @@ public class InteractableObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible")) // Objenin collider'ina dokunuyorken ve objenin tag'i Collectible ise
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible"))
         {
             if (InventorySystem.Instance.CheckSlotsAvailable(1))
             {
                 InventorySystem.Instance.AddToInventory(ItemName, true);
-
                 InventorySystem.Instance.itemsPickedup.Add(gameObject.name);
-
                 Debug.Log("Item added into the inventory.");
                 Destroy(gameObject);
             }
@@ -65,11 +64,13 @@ public class InteractableObject : MonoBehaviour
 
         if (entityInfoUI != null && (CompareTag("Choppable") || CompareTag("Killable")))
         {
-            InteractableObject closestObject = null;
+            closestObject = null;
             float closestDistance = float.MaxValue;
 
             foreach (var obj in objectsInRange)
             {
+                if (obj == null) continue;
+
                 float distance = Vector3.Distance(player.position, obj.transform.position);
                 if (distance < closestDistance)
                 {
@@ -85,24 +86,12 @@ public class InteractableObject : MonoBehaviour
                 entityInfoUI.transform.Find("EntityDescription").GetComponent<TextMeshProUGUI>().text = closestObject.entityDescription;
                 entityInfoUI.transform.Find("EntityImage").GetComponent<Image>().sprite = closestObject.entityImage;
             }
-
-            if (closestObject != null && CompareTag("Choppable"))
-            {
-                if (PlayerState.Instance.playerBody.transform.Find("PlayerObj").transform.Find("ToolHolder").transform.Find("Axe_Model"))
-                {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        ChoppableTree choppableTree = GetComponent<ChoppableTree>();
-                        choppableTree.GetHit();
-                    }
-                }
-            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Objenin collider'ina dokundugumuzda text olusturmali ve Range'inde oldugumuzu bildirmeli
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
 
@@ -122,7 +111,6 @@ public class InteractableObject : MonoBehaviour
                     proximityText.text = ItemName;
                 }
             }
-            
 
             if (playerInRange && entityInfoUI != null && (CompareTag("Choppable") || CompareTag("Killable")))
             {

@@ -35,7 +35,7 @@ public class EnlargeMinimap : MonoBehaviour
             {
                 // Enlarge the minimap
                 isMapEnlarged = true;
-                minimapCamera.orthographicSize = 70;
+                minimapCamera.orthographicSize = 90;
                 minimapRectTransform.sizeDelta = new Vector2(300, 300);
                 minimapRectTransform.anchoredPosition = new Vector3(-200, -200, 0);
             }
