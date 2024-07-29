@@ -9,6 +9,7 @@ TagManager:
   - QuickSlot
   - Choppable
   - Killable
+  - NPC
   layers:
   - Default
   - TransparentFX

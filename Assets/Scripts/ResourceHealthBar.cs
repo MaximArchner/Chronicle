@@ -60,7 +60,7 @@ public class ResourceHealthBar : MonoBehaviour
 
                     if (interactableObject != null)
                     {
-                        interactableObject.closestObject = null;
+                        interactableObject.ClosestObject = null;
                     }
                 }
             }
@@ -87,7 +87,7 @@ public class ResourceHealthBar : MonoBehaviour
 
                     if (interactableObject != null)
                     {
-                        interactableObject.closestObject = null;
+                        interactableObject.ClosestObject = null;
                     }
                 }
             }
