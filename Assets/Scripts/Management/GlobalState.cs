@@ -21,5 +21,7 @@ public class GlobalState : MonoBehaviour
         }
     }
 
-
+    private void Update()
+    {
+    }
 }

@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnvironmentManager : MonoBehaviour
 {
     public static EnvironmentManager Instance { get; set; }
+    public EnvironmentData environmentData;
 
     public GameObject collectibles;
+    public GameObject entities;
 
     private void Awake()
     {
@@ -20,3 +22,4 @@ public class EnvironmentManager : MonoBehaviour
         }
     }
 }
+

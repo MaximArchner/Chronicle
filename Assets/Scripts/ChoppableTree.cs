@@ -52,7 +52,7 @@ public class ChoppableTree : MonoBehaviour
 
     public IEnumerator Hit()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         treeHealth -= 1;
     }
 }

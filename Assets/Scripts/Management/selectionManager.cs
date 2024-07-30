@@ -4,14 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisinda yaptigimiz mouse mekanigiyle alakali bir script bu, eger mouse yoksa buna da gerek yok
+public class selectionManager : MonoBehaviour
 {
-        TextMeshProUGUI interaction_text;
     public static selectionManager Instance { get; set; }
-    
-    public bool onTarget;
 
-    public GameObject selectedObject;
+    public bool onTarget;
+    public GameObject selectedEntity;
+    public GameObject lastSelectedNPC;
+    public Transform player;
+    public float detectionRadius = 5f;
+    public LayerMask detectionLayer;
+    public GameObject entityInfoUI;
+    public float selectedEntityHealth;
+
+    public List<string> removedEntities;
 
     private void Start()
     {
@@ -32,27 +38,79 @@ public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisin
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // gelecek kodlarda tamamen bunu birakabiliriz, tam su anda hic kullanmiyoruz, bos duruyor yani
-        RaycastHit hit; // bir ustteki 37. satirdaki kodla birlikte, mouse'un uzerinde durdugu noktadan bir isin gonderiyor ve carptigi nesneyi ele aliyor
-        if (Physics.Raycast(ray, out hit))
-        {
-            var selectionTransform = hit.transform; // netlestirmek icin isinin denk geldigi objenin (hit) transform degerlerini selectionTransform diye yeniden adlandirip
+        Collider[] hitColliders = Physics.OverlapSphere(player.position, detectionRadius, detectionLayer);
+        onTarget = false;
 
-            InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
+        foreach (var hitCollider in hitColliders)
+        {
+            InteractableObject interactable = hitCollider.GetComponent<InteractableObject>();
 
             if (interactable && interactable.playerInRange)
             {
                 onTarget = true;
-                selectedObject = interactable.gameObject;
-            }
-            else //hit durumu var ama Interactable Object'e deðil
-            {
-                onTarget = false;
+                selectedEntity = interactable.gameObject;
+                break;
             }
         }
-        else //hit durumu hiç yok, herhangi bir objeye bakmýyoruz
+
+        if (!onTarget)
         {
-            onTarget = false;
+            selectedEntity = null;
         }
+
+        if (selectedEntity != null && !selectedEntity.CompareTag("NPC"))
+        {
+            InteractableObject entityDetails = selectedEntity.GetComponent<InteractableObject>();
+
+            entityInfoUI.SetActive(true);
+            entityInfoUI.transform.Find("EntityName").GetComponent<TextMeshProUGUI>().text = entityDetails.ItemName;
+            entityInfoUI.transform.Find("EntityDescription").GetComponent<TextMeshProUGUI>().text = entityDetails.entityDescription;
+            entityInfoUI.transform.Find("EntityImage").GetComponent<Image>().sprite = entityDetails.entityImage;
+
+            if (selectedEntity.CompareTag("Killable"))
+            {
+                float rabbitHealth = selectedEntity.GetComponent<KillableRabbit>().rabbitHealth;
+                selectedEntityHealth = rabbitHealth;
+            }
+            else if (selectedEntity.CompareTag("Choppable"))
+            {
+                float treeHealth = selectedEntity.GetComponent<ChoppableTree>().treeHealth;
+                selectedEntityHealth = treeHealth;
+            }
+
+            entityInfoUI.transform.Find("EntityHealth").transform.Find("HpText").GetComponent<TextMeshProUGUI>().text = selectedEntityHealth + "/5";
+            entityInfoUI.transform.Find("EntityHealth").GetComponent<Slider>().value = selectedEntityHealth;
+
+            if (selectedEntityHealth <= 0 && !entityDetails.isBeingDestroyed)
+            {
+                entityDetails.isBeingDestroyed = true;
+                removedEntities.Add(selectedEntity.name);
+                StartCoroutine(DestroyObjectWithDelay(selectedEntity, entityDetails.entityInfoUI));
+            }
+        }
+        else if(selectedEntity != null && selectedEntity.CompareTag("NPC"))
+        {
+            lastSelectedNPC = selectedEntity;
+            InteractableObject entityDetails = selectedEntity.GetComponent<InteractableObject>();
+
+            if (lastSelectedNPC.name.Contains("Samantha") && Input.GetKeyDown(KeyCode.F))
+            {
+                entityDetails.proximityText.text = lastSelectedNPC.name;
+                entityDetails.ItemName = lastSelectedNPC.name;
+            }
+        }
+    }
+
+    IEnumerator DestroyObjectWithDelay(GameObject selectedEntity, GameObject entityInfoUI)
+    {
+        yield return new WaitForSeconds(0.3f);
+        Destroy(selectedEntity);
+        entityInfoUI.SetActive(false);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
