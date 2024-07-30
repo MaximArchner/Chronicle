@@ -10,6 +10,7 @@ TagManager:
   - Choppable
   - Killable
   - NPC
+  - Water
   layers:
   - Default
   - TransparentFX
