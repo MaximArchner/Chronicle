@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -9,9 +10,14 @@ public class InteractableObject : MonoBehaviour
     private Transform player;
     public Vector3 textOffset = new Vector3(0, 0, 0);
     public string ItemName;
+    public string entityDescription;
+    public Sprite entityImage;
+    public GameObject entityInfoUI;
+    public string npcName;
 
-    public TextMeshPro proximityText; // yakina gelince bu objeyi tweaklemeli
+    public bool isBeingDestroyed = false;
 
+    public TextMeshPro proximityText;
     public string GetItemName()
     {
         return ItemName;
@@ -20,18 +26,25 @@ public class InteractableObject : MonoBehaviour
     private void Start()
     {
         player = PlayerState.Instance.playerBody.transform.Find("Main Camera").transform;
+
+        if (CompareTag("Collectible") || CompareTag("NPC"))
+        {
+            entityInfoUI = null;
+        }
+        else if (CompareTag("Choppable"))
+        {
+            proximityText = null;
+        }
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible")) // Objenin collider'ina dokunuyorken ve objenin tag'i Collectible ise
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible"))
         {
             if (InventorySystem.Instance.CheckSlotsAvailable(1))
             {
                 InventorySystem.Instance.AddToInventory(ItemName, true);
-
                 InventorySystem.Instance.itemsPickedup.Add(gameObject.name);
-
                 Debug.Log("Item added into the inventory.");
                 Destroy(gameObject);
             }
@@ -41,7 +54,7 @@ public class InteractableObject : MonoBehaviour
             }
         }
 
-        if (playerInRange)
+        if (playerInRange && proximityText != null && (CompareTag("Collectible") || CompareTag("Killable") || CompareTag("NPC")))
         {
             proximityText.transform.position = proximityText.transform.parent.position + textOffset;
             proximityText.transform.LookAt(player.transform);
@@ -51,20 +64,26 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Objenin collider'ina dokundugumuzda text olusturmali ve Range'inde oldugumuzu bildirmeli
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            proximityText.gameObject.SetActive(true);
-            proximityText.transform.position = proximityText.transform.parent.position + textOffset;
-            proximityText.transform.LookAt(player.transform);
-            proximityText.transform.Rotate(0, 180, 0);
-            if (CompareTag("Collectible"))
+            NPC npc = GetComponent<NPC>();
+
+            if (proximityText != null)
             {
-                proximityText.text = ItemName + " [E]";
-            }
-            else if (!CompareTag("Collectible"))
-            {
-                proximityText.text = ItemName;
+                proximityText.gameObject.SetActive(true);
+                proximityText.transform.position = proximityText.transform.parent.position + textOffset;
+                proximityText.transform.LookAt(player.transform);
+                proximityText.transform.Rotate(0, 180, 0);
+
+                if (CompareTag("Collectible"))
+                {
+                    proximityText.text = ItemName + " [E]";
+                }
+                else if (CompareTag("Killable") || !npc.nameLearned)
+                {
+                    proximityText.text = ItemName;
+                }
             }
         }
     }
@@ -74,7 +93,16 @@ public class InteractableObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            proximityText.gameObject.SetActive(false);
+
+            if (proximityText != null && (CompareTag("Collectible") || CompareTag("Killable") || CompareTag("NPC")))
+            {
+                proximityText.gameObject.SetActive(false);
+            }
+
+            if ((CompareTag("Choppable") || CompareTag("Killable")) && entityInfoUI != null)
+            {
+                entityInfoUI.SetActive(false);
+            }
         }
     }
 }

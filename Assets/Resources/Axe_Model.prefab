@@ -144,3 +144,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7360229006983209385}
+  currentChoppableTree: {fileID: 0}
+  currentKillableRabbit: {fileID: 0}
+  detectionRadius: 5
+  treeLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  animalLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024

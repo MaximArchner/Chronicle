@@ -6,9 +6,12 @@ using UnityEngine;
 public class EnvironmentData
 {
     public List<string> pickedUpItems;
+    public List<string> entitiesRemoved;
 
-    public EnvironmentData(List<string> _pickedUpItems)
+    public EnvironmentData(List<string> _pickedUpItems, List<string> _entitiesRemoved)
     {
         pickedUpItems = _pickedUpItems;
+        entitiesRemoved = _entitiesRemoved;
     }
 }
+

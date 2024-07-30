@@ -3,25 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-
 public class EquipableItem : MonoBehaviour
 {
-
     public Animator animator;
+
     void Start()
     {
-        
         animator = GetComponent<Animator>();
-
     }
+
     void Update()
     {
+        GameObject selectedEntity = selectionManager.Instance.selectedEntity;
 
-        if (Input.GetMouseButtonDown(0)  // 0 sol týk
-            && InventorySystem.Instance.isOpen == false && CraftingSystem.Instance.isOpen == false)
+        if (Input.GetMouseButtonDown(0) &&
+            InventorySystem.Instance.isOpen == false &&
+            CraftingSystem.Instance.isOpen == false)
         {
             animator.SetTrigger("hit");
-        }
 
-    }
+            if (selectedEntity != null)
+            {
+                if (selectedEntity.CompareTag("Choppable"))
+                {
+                    selectedEntity.GetComponent<ChoppableTree>().GetHit();
+                }
+                else if (selectedEntity.CompareTag("Killable"))
+                {
+                    selectedEntity.GetComponent<KillableRabbit>().GetHit();
+                }
+            }
+        }
+    }    
 }

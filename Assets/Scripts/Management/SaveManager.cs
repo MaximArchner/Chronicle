@@ -10,8 +10,6 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; set; }
     private void Awake()
-
-
     {
         if (Instance != null && Instance != this)
         {
@@ -40,11 +38,15 @@ public class SaveManager : MonoBehaviour
 
     public Canvas loadingScreen;
 
+    private InteractableObject interactableObject;
+
     private void Start()
     {
         jsonPathProject = Application.dataPath + Path.AltDirectorySeparatorChar;
         jsonPathPersistent = Application.persistentDataPath + Path.AltDirectorySeparatorChar;
         binaryPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar;
+
+        interactableObject = FindObjectOfType<InteractableObject>();
     }
 
     #region || General Section ||
@@ -64,8 +66,9 @@ public class SaveManager : MonoBehaviour
     private EnvironmentData GetEnvironmentData()
     {
         List<string> itemsPickedup = InventorySystem.Instance.itemsPickedup;
+        List<string> entitiesRemoved = selectionManager.Instance.removedEntities;
 
-        return new EnvironmentData(itemsPickedup);
+        return new EnvironmentData(itemsPickedup, entitiesRemoved);
     }
 
     public PlayerData GetPlayerData()
@@ -95,26 +98,26 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        // string[] quickSlots = GetQuickSlotsContent();
+        string[] quickSlots = GetQuickSlotsContent();
 
-        return new PlayerData(playerStats, playerTransform, inventory);
+        return new PlayerData(playerStats, playerTransform, inventory, quickSlots);
     }
 
-    // private string[] GetQuickSlotsContent()
-    // {
-    //      List<string> temp =  new List<string>();
-    //      foreach(GameObject slot in EquipSystem.Instance.quickSlotsList)
-    //      {
-    //          if (slot.transform.childCount != 0)
-    //          {
-    //              string name = slot.transform.GetChild(0).name;
-    //              string str2 = "(Clone)";
-    //              string cleanName = nameReplace(str2, "");
-    //              temp.Add(cleanName);
-    //          }
-    //      }
-    //      return temp.ToArray();
-    // }
+    private string[] GetQuickSlotsContent()
+    {
+        List<string> temp = new List<string>();
+        foreach (GameObject slot in QuickSlotsSystem.Instance.quickSlotsList)
+        {
+            if (slot.transform.childCount != 0)
+            {
+                string name = slot.transform.GetChild(0).name;
+                string str2 = "(Clone)";
+                string cleanName = name.Replace(str2, "");
+                temp.Add(cleanName);
+            }
+        }
+        return temp.ToArray();
+    }
     public void SavingTypeSwitch(AllGameData gameData, int slotNumber)
     {
         if (isSavingToJson)
@@ -157,6 +160,18 @@ public class SaveManager : MonoBehaviour
 
     private void SetEnvironmentData(EnvironmentData environmentData)
     {
+        if (environmentData.entitiesRemoved == null || environmentData.entitiesRemoved.Count == 0)
+        {
+            Debug.LogError("environmentData.entitiesRemoved is null or empty.");
+            return;
+        }
+
+        Debug.Log("environmentData.entitiesRemoved contains the following entities:");
+        foreach (var entityName in environmentData.entitiesRemoved)
+        {
+            Debug.Log("Entity to remove: " + entityName);
+        }
+
         foreach (Transform itemType in EnvironmentManager.Instance.collectibles.transform)
         {
             foreach (Transform item in itemType.transform)
@@ -168,7 +183,20 @@ public class SaveManager : MonoBehaviour
             }
         }
 
+        foreach (Transform entityType in EnvironmentManager.Instance.entities.transform)
+        {
+            foreach (Transform entity in entityType.transform)
+            {
+                if (environmentData.entitiesRemoved.Contains(entity.name))
+                {
+                    Debug.Log("An entity has been killed.");
+                    Destroy(entity.gameObject);
+                }
+            }
+        }
+
         InventorySystem.Instance.itemsPickedup = environmentData.pickedUpItems;
+        selectionManager.Instance.removedEntities = environmentData.entitiesRemoved;
     }
 
     private void SetPlayerData(PlayerData playerData)
@@ -203,15 +231,15 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        //foreach (string item in playerData.quickSlotsContent)
-        //{
-        //    // Sonraki bos quickslotu bul
-        //    GameObject availableSlot = EquipSystem.Instance.FindNextEmptySlot();
+        foreach (string item in playerData.quickSlotContent)
+        {
+            // Sonraki bos quickslotu bul
+            GameObject availableSlot = QuickSlotsSystem.Instance.FindNextEmptySlot();
 
-        //    var itemToAdd = Instantiate(Resources.Load<GameObject>(item));
+            var itemToAdd = Instantiate(Resources.Load<GameObject>(item));
 
-        //    itemToAdd.transform.SetParent(availableSlot.transform, false);
-        //}
+            itemToAdd.transform.SetParent(availableSlot.transform, false);
+        }
     }
 
     public void StartLoadedGame(int slotNumber)

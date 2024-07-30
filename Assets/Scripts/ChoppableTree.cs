@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-
 public class ChoppableTree : MonoBehaviour
 {
-
+    public GameObject toolHolder;
     public bool playerInRange;
     public bool canBeChopped;
 
@@ -15,11 +13,20 @@ public class ChoppableTree : MonoBehaviour
 
     private void Start()
     {
-
         treeHealth = treeMaxHealth;
-
+        treeMaxHealth = 5;
     }
-
+    private void Update()
+    {
+        if (toolHolder.transform.Find("Axe_Model(Clone)") && playerInRange == true)
+        {
+            canBeChopped = true;
+        }
+        else
+        {
+            canBeChopped = false;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,31 +41,18 @@ public class ChoppableTree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            canBeChopped = false;
         }
     }
 
     public void GetHit()
     {
-
-        StartCoroutine(hit());
-
+        StartCoroutine(Hit());
     }
 
-    public IEnumerator hit()
+    public IEnumerator Hit()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.4f);
         treeHealth -= 1;
-    }
-
-    private void Update()
-    {
-
-        if (canBeChopped) 
-        {
-            GlobalState.Instance.resourceHealth = treeHealth;
-            GlobalState.Instance.resourceMaxHealth = treeMaxHealth;
-
-        }
-
     }
 }
