@@ -190,6 +190,7 @@ public class InventorySystem : MonoBehaviour
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
     }
+
     public void ReCalculateList()
     {
 

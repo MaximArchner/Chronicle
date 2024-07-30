@@ -45,12 +45,12 @@ public class selectionManager : MonoBehaviour // tamamen 1st person bakis acisin
                 onTarget = true;
                 selectedObject = interactable.gameObject;
             }
-            else //hit durumu var ama Interactable Object'e deðil
+            else //hit durumu var ama Interactable Object'e deï¿½il
             {
                 onTarget = false;
             }
         }
-        else //hit durumu hiç yok, herhangi bir objeye bakmýyoruz
+        else //hit durumu hiï¿½ yok, herhangi bir objeye bakmï¿½yoruz
         {
             onTarget = false;
         }
