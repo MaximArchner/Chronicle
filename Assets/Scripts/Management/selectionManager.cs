@@ -89,7 +89,14 @@ public class selectionManager : MonoBehaviour
             if (selectedEntityHealth <= 0 && !entityDetails.isBeingDestroyed)
             {
                 entityDetails.isBeingDestroyed = true;
-                removedEntities.Add(selectedEntity.name);
+                if (!selectedEntity.name.Contains("PalmTree"))
+                {
+                    removedEntities.Add(selectedEntity.name);
+                }
+                else if (selectedEntity.name.Contains("PalmTree"))
+                {
+                    removedEntities.Add(selectedEntity.transform.parent.name);
+                }
                 StartCoroutine(DestroyObjectWithDelay(selectedEntity, entityDetails.entityInfoUI));
             }
         }

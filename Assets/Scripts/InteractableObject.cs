@@ -36,16 +36,15 @@ public class InteractableObject : MonoBehaviour
             proximityText = null;
         }
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange && CompareTag("Collectible"))
         {
+
             if (InventorySystem.Instance.CheckSlotsAvailable(1))
             {
                 InventorySystem.Instance.AddToInventory(ItemName, true);
                 InventorySystem.Instance.itemsPickedup.Add(gameObject.name);
-                Debug.Log("Item added into the inventory.");
                 Destroy(gameObject);
             }
             else
@@ -61,6 +60,7 @@ public class InteractableObject : MonoBehaviour
             proximityText.transform.Rotate(0, 180, 0);
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {

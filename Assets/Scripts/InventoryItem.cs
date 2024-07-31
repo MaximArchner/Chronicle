@@ -45,6 +45,11 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemName = itemInfoUI.transform.Find("itemName").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemDescription = itemInfoUI.transform.Find("itemDescription").GetComponent<TextMeshProUGUI>();
         itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<TextMeshProUGUI>();
+
+        if (itemInfoUI_itemName == null || itemInfoUI_itemDescription == null || itemInfoUI_itemFunctionality == null)
+        {
+            Debug.LogError("Failed to find required UI components.");
+        }
     }
 
     void Update ()

@@ -29,7 +29,6 @@ public class InventorySlot : MonoBehaviour
             ItemCount.text = $"{itemInSlot.amountInInventory}";
             ItemCount.transform.SetAsLastSibling();
         }
-
         else
         {
             ItemCount.gameObject.SetActive(false);

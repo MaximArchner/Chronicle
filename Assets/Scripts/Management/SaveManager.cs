@@ -67,8 +67,9 @@ public class SaveManager : MonoBehaviour
     {
         List<string> itemsPickedup = InventorySystem.Instance.itemsPickedup;
         List<string> entitiesRemoved = selectionManager.Instance.removedEntities;
+        List<string> entitiesAdded = EnvironmentManager.Instance.entitiesAdded;
 
-        return new EnvironmentData(itemsPickedup, entitiesRemoved);
+        return new EnvironmentData(itemsPickedup, entitiesRemoved, entitiesAdded);
     }
 
     public PlayerData GetPlayerData()
@@ -195,8 +196,20 @@ public class SaveManager : MonoBehaviour
             }
         }
 
+        foreach (Transform entityType in EnvironmentManager.Instance.entities.transform)
+        {
+            foreach (Transform entity in entityType.transform)
+            {
+                if (environmentData.entitiesAdded.Contains(entity.name)) 
+                { 
+                    Instantiate(entity.gameObject);
+                }
+            }
+        }
+
         InventorySystem.Instance.itemsPickedup = environmentData.pickedUpItems;
         selectionManager.Instance.removedEntities = environmentData.entitiesRemoved;
+        EnvironmentManager.Instance.entitiesAdded = environmentData.entitiesAdded;
     }
 
     private void SetPlayerData(PlayerData playerData)
