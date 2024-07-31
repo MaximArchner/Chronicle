@@ -54,6 +54,8 @@ public class ChoppableTree : MonoBehaviour
 
     public void GetHit()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Instance.choppingSound);
+
         StartCoroutine(Hit());
     }
 

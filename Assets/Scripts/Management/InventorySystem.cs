@@ -94,6 +94,9 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName, bool shouldStack) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
+
+        SoundManager.Instance.PlaySound(SoundManager.Instance.pickItemSound);
+
         GameObject stack = CheckIfStackExists(itemName);
 
         if (stack != null && shouldStack)
