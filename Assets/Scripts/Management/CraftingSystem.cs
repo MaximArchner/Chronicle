@@ -69,7 +69,6 @@ public class CraftingSystem : MonoBehaviour
         craftPlankButton = refineScreenUI.transform.Find("Plank").transform.Find("CraftButton").GetComponent<Button>();
         craftPlankButton.onClick.AddListener(delegate { CraftAnyItem(PlankBP); });
     }
-
     void OpenToolsCategory()
     {
         craftingMainScreenUI.SetActive(false);
@@ -79,7 +78,6 @@ public class CraftingSystem : MonoBehaviour
         refineScreenUI.SetActive(false);
         survivalScreenUI.SetActive(false);
     }
-
     void OpenSurvivalCategory()
     {
         craftingMainScreenUI.SetActive(false);
@@ -89,8 +87,6 @@ public class CraftingSystem : MonoBehaviour
         survivalScreenUI.SetActive(true);
 
     }
-
-
     void OpenRefineCategory()
     {
         craftingMainScreenUI.SetActive(false);
@@ -99,11 +95,6 @@ public class CraftingSystem : MonoBehaviour
 
         refineScreenUI.SetActive(true);
     }
-
-
-
-
-
     void CraftAnyItem(ItemBP blueprintToCraft)
     {
 
@@ -121,9 +112,6 @@ public class CraftingSystem : MonoBehaviour
                 InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, true);
             }
         }
-
-
-
 
         // Envanterden kaynak silme
         if (blueprintToCraft.numOfReq == 1)
