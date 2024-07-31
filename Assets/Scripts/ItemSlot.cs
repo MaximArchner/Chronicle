@@ -29,6 +29,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         if (transform.childCount == 1) //mevcut slot bos ise
         {
 
+            SoundManager.Instance.PlayDropSound();
+
             DragDrop.itemBeingDragged.transform.SetParent(transform);
             DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
 
