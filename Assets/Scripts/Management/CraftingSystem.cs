@@ -110,8 +110,14 @@ public class CraftingSystem : MonoBehaviour
         for (var i = 0; i < blueprintToCraft.numberOfItemsProduce; i ++)
         {
             // Envantere item ekleme
-            InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, false);
-
+           if(blueprintToCraft == AxeBP) // Eger craftlanan item bir aletse
+            {
+                InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, false);
+            }
+           else if(blueprintToCraft == PlankBP) // Eger craftlanan item bir materyalse
+            {
+                InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, true);
+            }
         }
 
 
