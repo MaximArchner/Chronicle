@@ -21,11 +21,9 @@ public class EquipableItem : MonoBehaviour
             CraftingSystem.Instance.isOpen == false)
         {
 
-
-
             animator.SetTrigger("hit");
             SoundManager.Instance.PlaySound(SoundManager.Instance.toolSound);
-            if (currentChoppableTree != null)
+            if (selectedEntity != null)
             {
                 if (selectedEntity.CompareTag("Choppable"))
                 {
