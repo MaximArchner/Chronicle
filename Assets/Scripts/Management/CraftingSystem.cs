@@ -107,6 +107,8 @@ public class CraftingSystem : MonoBehaviour
     void CraftAnyItem(ItemBP blueprintToCraft)
     {
 
+        SoundManager.Instance.PlaySound(SoundManager.Instance.craftingSound);
+
         for (var i = 0; i < blueprintToCraft.numberOfItemsProduce; i ++)
         {
             // Envantere item ekleme

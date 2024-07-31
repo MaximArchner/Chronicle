@@ -11,23 +11,14 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource toolSound;
 
+    public AudioSource craftingSound;
+
     public AudioSource choppingSound;
 
     public AudioSource pickItemSound;
 
     public AudioSource walkOnGrassSound;
 
-
-
-    public void PlayDropSound()
-    {
-
-        if (dropItemSound.isPlaying == false)
-        {
-            dropItemSound.Play();
-        }
-
-    }
 
     private void Awake()
     {
@@ -40,4 +31,17 @@ public class SoundManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    public void PlaySound(AudioSource soundToPlay)
+    {
+
+        if (soundToPlay.isPlaying == false)
+        {
+            soundToPlay.Play();
+        }
+
+    }
+
+
+
 }
