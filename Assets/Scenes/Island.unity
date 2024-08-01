@@ -125991,6 +125991,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 436715184342503535, guid: ca4571c29f6a16748a0dd66a6a421be0, type: 3}
   m_PrefabInstance: {fileID: 1564499938}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1564657167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564657170}
+  - component: {fileID: 1564657169}
+  - component: {fileID: 1564657168}
+  m_Layer: 0
+  m_Name: LighthouseDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1564657168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564657167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee7474e06cfe3142a5eb7c1b835b94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+--- !u!136 &1564657169
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564657167}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1564657170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564657167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -208.81131, y: 51.3, z: -356.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1565575566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175393,6 +175462,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 616544441}
+    - target: {fileID: 193266321411156340, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1323550461186835773, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: toolHolder
       value: 
@@ -175465,6 +175538,10 @@ PrefabInstance:
       propertyPath: entityInfoUI
       value: 
       objectReference: {fileID: 1256639840}
+    - target: {fileID: 3752197904370837527, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4494426576160161778, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: refineScreenUI
       value: 
@@ -175489,6 +175566,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0.28978428
       objectReference: {fileID: 0}
+    - target: {fileID: 5102714392266044307, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120529785844105260, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496933229951884104, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6688079951163837737, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: player
       value: 
@@ -175501,6 +175590,14 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 165738297}
+    - target: {fileID: 7204250333032362289, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223326298990914679, guid: 012248fd364a3534dae591627a44749b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8711464553025768138, guid: 012248fd364a3534dae591627a44749b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 891.54175
@@ -175998,3 +176095,4 @@ SceneRoots:
   - {fileID: 1005339353}
   - {fileID: 1604646068}
   - {fileID: 629389960}
+  - {fileID: 1564657170}
