@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class selectionManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class selectionManager : MonoBehaviour
     public GameObject entityInfoUI;
     public float selectedEntityHealth;
     public float selectedEntityMaxHealth;
+
+    public Animator animator;
 
     public List<string> removedEntities;
 
@@ -97,7 +100,19 @@ public class selectionManager : MonoBehaviour
                 {
                     removedEntities.Add(selectedEntity.transform.parent.name);
                 }
-                StartCoroutine(DestroyObjectWithDelay(selectedEntity, entityDetails.entityInfoUI));
+
+                if (selectedEntity.CompareTag("Killable"))
+                {
+                    Animator selectedAnimator = selectedEntity.transform.GetComponent<Animator>();
+                        
+                    selectedAnimator.SetBool("isDead", true);
+                    StartCoroutine(WaitBeforeDestroying());
+                }
+
+                if (!selectedEntity.CompareTag("Killable"))
+                {
+                    StartCoroutine(DestroyObjectWithDelay(selectedEntity, entityDetails.entityInfoUI));
+                }
             }
         }
         else if(selectedEntity != null && selectedEntity.CompareTag("NPC"))
@@ -125,6 +140,14 @@ public class selectionManager : MonoBehaviour
             Destroy(selectedEntity.transform.parent.gameObject);
         }
         entityInfoUI.SetActive(false);
+    }
+
+    IEnumerator WaitBeforeDestroying()
+    {
+        InteractableObject entityDetails = selectedEntity.GetComponent<InteractableObject>();
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(DestroyObjectWithDelay(selectedEntity, entityDetails.entityInfoUI));
     }
 
     private void OnDrawGizmosSelected()
