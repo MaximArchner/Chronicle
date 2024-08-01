@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_snow_dark_step_002
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: b720916f84c05c445a1e56e7d5ac7c34, type: 2}
+  m_Parent: {fileID: 2100000, guid: 02d0e7cdd83ae6c4d8193eac3e8430bc, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []

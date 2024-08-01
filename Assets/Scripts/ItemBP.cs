@@ -14,10 +14,17 @@ public class ItemBP
 
     public int numOfReq;
 
-    public ItemBP(string name, int reqNUM,string R1,int R1num, string R2, int R2num)
+    public int numberOfItemsProduce;
+
+
+    public ItemBP(string name, int producedItems, int reqNUM,string R1,int R1num, string R2, int R2num)
     {
         itemName = name;
+
         numOfReq = reqNUM;
+
+        numberOfItemsProduce = producedItems;
+
         Req1 = R1; 
         Req2 = R2;
         Req1amount = R1num; 

@@ -7,24 +7,28 @@ using TMPro;
 public class CraftingSystem : MonoBehaviour
 {
     public GameObject craftingMainScreenUI;
-    public GameObject craftingToolsScreenUI;
+    public GameObject craftingToolsScreenUI, survivalScreenUI, refineScreenUI;
 
 
     public List<string> inventoryItemList = new List<string>();
 
     // Kategori Buttonu
-    Button toolsButton;
+    Button toolsButton, survivalButton, refineButton;
 
-    // Oluþtur Buttonu
-    Button craftAxeButton;
+    // Oluï¿½tur Buttonu
+    Button craftAxeButton, craftPlankButton;
 
-    // Gereklilik Yazýsý
-    TextMeshProUGUI AxeReq1, AxeReq2;
+    // Gereklilik Yazï¿½sï¿½
+    TextMeshProUGUI AxeReq1, AxeReq2, PlankReq1;
 
     public bool isOpen;
 
     // All BP
-    public ItemBP AxeBP = new ItemBP("Axe", 2, "Stone", 3, "Stick", 3 );
+    public ItemBP AxeBP = new ItemBP("Axe", 1, 2, "Stone", 3, "Stick", 3 );
+    public ItemBP PlankBP = new ItemBP("Plank", 2, 1, "Log", 1, "", 0);
+
+
+
 
     public static CraftingSystem Instance { get; set; }
     private void Awake()
@@ -46,24 +50,68 @@ public class CraftingSystem : MonoBehaviour
         toolsButton = craftingMainScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
         toolsButton.onClick.AddListener(delegate { OpenToolsCategory(); });
 
+        survivalButton = craftingMainScreenUI.transform.Find("SurvivalButton").GetComponent<Button>();
+        survivalButton.onClick.AddListener(delegate { OpenSurvivalCategory(); });
+
+        refineButton = craftingMainScreenUI.transform.Find("RefineButton").GetComponent<Button>();
+        refineButton.onClick.AddListener(delegate { OpenRefineCategory(); });
+
         // Balta
         AxeReq1 = craftingToolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<TextMeshProUGUI>();
         AxeReq2 = craftingToolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<TextMeshProUGUI>();
 
         craftAxeButton = craftingToolsScreenUI.transform.Find("Axe").transform.Find("CraftButton").GetComponent<Button>();
         craftAxeButton.onClick.AddListener(delegate { CraftAnyItem(AxeBP); });
-    }
 
+        // Tahta
+        PlankReq1 = refineScreenUI.transform.Find("Plank").transform.Find("req1").GetComponent<TextMeshProUGUI>();
+
+        craftPlankButton = refineScreenUI.transform.Find("Plank").transform.Find("CraftButton").GetComponent<Button>();
+        craftPlankButton.onClick.AddListener(delegate { CraftAnyItem(PlankBP); });
+    }
     void OpenToolsCategory()
     {
         craftingMainScreenUI.SetActive(false);
-        craftingToolsScreenUI.SetActive(true);
-    }
 
+        craftingToolsScreenUI.SetActive(true);
+
+        refineScreenUI.SetActive(false);
+        survivalScreenUI.SetActive(false);
+    }
+    void OpenSurvivalCategory()
+    {
+        craftingMainScreenUI.SetActive(false);
+        craftingToolsScreenUI.SetActive(false);
+        refineScreenUI.SetActive(false);
+
+        survivalScreenUI.SetActive(true);
+
+    }
+    void OpenRefineCategory()
+    {
+        craftingMainScreenUI.SetActive(false);
+        craftingToolsScreenUI.SetActive(false);
+        survivalScreenUI.SetActive(false);
+
+        refineScreenUI.SetActive(true);
+    }
     void CraftAnyItem(ItemBP blueprintToCraft)
     {
-        // Envantere item ekleme
-        InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, false);
+
+        SoundManager.Instance.PlaySound(SoundManager.Instance.craftingSound);
+
+        for (var i = 0; i < blueprintToCraft.numberOfItemsProduce; i ++)
+        {
+            // Envantere item ekleme
+           if(blueprintToCraft == AxeBP) // Eger craftlanan item bir aletse
+            {
+                InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, false);
+            }
+           else if(blueprintToCraft == PlankBP) // Eger craftlanan item bir materyalse
+            {
+                InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName, true);
+            }
+        }
 
         // Envanterden kaynak silme
         if (blueprintToCraft.numOfReq == 1)
@@ -76,7 +124,7 @@ public class CraftingSystem : MonoBehaviour
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);
         }
 
-        // Listeyi güncelle
+        // Listeyi gï¿½ncelle
         StartCoroutine(Calculate());
     }
 
@@ -101,7 +149,7 @@ public class CraftingSystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.C) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri açma
+        if (Input.GetKeyDown(KeyCode.C) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri aï¿½ma
         {
             craftingMainScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
@@ -113,6 +161,10 @@ public class CraftingSystem : MonoBehaviour
         {
             craftingMainScreenUI.SetActive(false);
             craftingToolsScreenUI.SetActive(false);
+            survivalScreenUI.SetActive(false);
+            refineScreenUI.SetActive(false);
+
+
 
             if (InventorySystem.Instance.isOpen == false)
             {
@@ -128,6 +180,7 @@ public class CraftingSystem : MonoBehaviour
     {
         int stone_count = 0;
         int stick_count = 0;
+        int log_count = 0;
 
         inventoryItemList = InventorySystem.Instance.itemList;
 
@@ -142,6 +195,10 @@ public class CraftingSystem : MonoBehaviour
                 case "Stick":
                     stick_count += 1;
                     break;
+                
+                case "Log":
+                    log_count += 1;
+                    break;
             }
         }
 
@@ -149,7 +206,7 @@ public class CraftingSystem : MonoBehaviour
         AxeReq1.text = "3 Stone[" + stone_count + "]";
         AxeReq2.text = "3 Stick[" + stick_count + "]";
 
-        if (stone_count >= 3 && stick_count >= 3) 
+        if (stone_count >= 3 && stick_count >= 3 && InventorySystem.Instance.CheckSlotsAvailable(1)) 
         {
             craftAxeButton.gameObject.SetActive(true);
         }
@@ -157,5 +214,19 @@ public class CraftingSystem : MonoBehaviour
         {
             craftAxeButton.gameObject.SetActive(false);
         }
+
+
+        // Tahta x2
+        PlankReq1.text = "1 Log [" + log_count + "]";
+
+        if (log_count >= 1 && InventorySystem.Instance.CheckSlotsAvailable(2))
+        {
+            craftPlankButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            craftPlankButton.gameObject.SetActive(false);
+        }
+
     }
 }

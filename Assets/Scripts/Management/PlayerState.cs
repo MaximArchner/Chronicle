@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class PlayerState : MonoBehaviour
     public float maxThirstPercent;
 
     public bool isThirstActive;
+
+    public GameObject mainMapCanvas;
+    public bool mainIsOpen;
 
     private void Awake()
     {
@@ -67,14 +71,28 @@ public class PlayerState : MonoBehaviour
             currentHunger -= 0.5f;
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             currentHealth -= 0.05f * maxHealth;
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             currentHealth += 0.05f * maxHealth;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Island")
+        {
+            if (Input.GetKeyDown(KeyCode.M) && !mainIsOpen)
+            {
+                mainIsOpen = true;
+                mainMapCanvas.SetActive(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.M) && mainIsOpen)
+            {
+                mainMapCanvas.SetActive(false);
+                mainIsOpen = false;
+            }
         }
     }
 

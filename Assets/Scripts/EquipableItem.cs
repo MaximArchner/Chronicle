@@ -20,8 +20,9 @@ public class EquipableItem : MonoBehaviour
             InventorySystem.Instance.isOpen == false &&
             CraftingSystem.Instance.isOpen == false)
         {
-            animator.SetTrigger("hit");
 
+            animator.SetTrigger("hit");
+            SoundManager.Instance.PlaySound(SoundManager.Instance.toolSound);
             if (selectedEntity != null)
             {
                 if (selectedEntity.CompareTag("Choppable"))

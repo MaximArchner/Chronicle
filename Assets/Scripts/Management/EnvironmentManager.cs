@@ -10,6 +10,8 @@ public class EnvironmentManager : MonoBehaviour
     public GameObject collectibles;
     public GameObject entities;
 
+    public List<string> entitiesAdded = new List<string>();
+
     private void Awake()
     {
         if (Instance != null & Instance != this)

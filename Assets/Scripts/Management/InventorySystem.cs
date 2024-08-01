@@ -94,34 +94,60 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName, bool shouldStack) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
+
+        SoundManager.Instance.PlaySound(SoundManager.Instance.pickItemSound);
+
         GameObject stack = CheckIfStackExists(itemName);
-
-        // if(SaveManager.Instance.isLoading == false)
-        // {
-        // SoundManager.Instance.PlaySound(SoundManager.Instance.pickupItemSound());
-        // }
-
 
         if (stack != null && shouldStack)
         {
-            stack.GetComponent<InventorySlot>().itemInSlot.amountInInventory++;
-            stack.GetComponent<InventorySlot>().UpdateItemInSlot();
+            InventorySlot slot = stack.GetComponent<InventorySlot>();
+            if (slot != null && slot.itemInSlot != null)
+            {
+                slot.itemInSlot.amountInInventory++;
+                slot.UpdateItemInSlot();
+            }
         }
         else
         {
             nextEmptySlot = FindNextEmptySlot();
-
-            itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
-            itemToAdd.transform.SetParent(nextEmptySlot.transform);
-            
-            itemList.Add(itemName);
+            if (nextEmptySlot != null)
+            {
+                Debug.Log("Next empty slot found: " + nextEmptySlot.name);
+                Debug.Log("Attempting to load item from Resources: " + itemName);
+                GameObject itemPrefab = Resources.Load<GameObject>(itemName);
+                if (itemPrefab != null)
+                {
+                    Debug.Log("Item loaded from Resources: " + itemPrefab.name);
+                    itemToAdd = Instantiate(itemPrefab, nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
+                    if (itemToAdd != null)
+                    {
+                        itemToAdd.transform.SetParent(nextEmptySlot.transform);
+                        itemList.Add(itemName);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Failed to load item from Resources: " + itemName);
+                }
+            }
+            else
+            {
+                Debug.LogError("No empty slot found!");
+            }
         }
-        
-        
+
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
 
-        TriggerPickupPopUp(itemName, itemToAdd.GetComponent<UnityEngine.UI.Image>().sprite);
+        if (itemToAdd != null)
+        {
+            TriggerPickupPopUp(itemName, itemToAdd.GetComponent<UnityEngine.UI.Image>().sprite);
+        }
+        else
+        {
+            Debug.LogError("itemToAdd is null after attempting to add to inventory.");
+        }
     }
 
     void TriggerPickupPopUp(string itemName, Sprite itemSprite)
@@ -190,6 +216,7 @@ public class InventorySystem : MonoBehaviour
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
     }
+
     public void ReCalculateList()
     {
 

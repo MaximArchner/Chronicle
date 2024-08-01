@@ -16,6 +16,7 @@ public class selectionManager : MonoBehaviour
     public LayerMask detectionLayer;
     public GameObject entityInfoUI;
     public float selectedEntityHealth;
+    public float selectedEntityMaxHealth;
 
     public List<string> removedEntities;
 
@@ -70,21 +71,32 @@ public class selectionManager : MonoBehaviour
             if (selectedEntity.CompareTag("Killable"))
             {
                 float rabbitHealth = selectedEntity.GetComponent<KillableRabbit>().rabbitHealth;
+                float rabbitMaxHealth = selectedEntity.GetComponent<KillableRabbit>().rabbitMaxHealth;
                 selectedEntityHealth = rabbitHealth;
+                selectedEntityMaxHealth = rabbitMaxHealth;
             }
             else if (selectedEntity.CompareTag("Choppable"))
             {
                 float treeHealth = selectedEntity.GetComponent<ChoppableTree>().treeHealth;
+                float treeMaxHealth = selectedEntity.GetComponent<ChoppableTree>().treeMaxHealth;
                 selectedEntityHealth = treeHealth;
+                selectedEntityMaxHealth = treeMaxHealth;
             }
 
-            entityInfoUI.transform.Find("EntityHealth").transform.Find("HpText").GetComponent<TextMeshProUGUI>().text = selectedEntityHealth + "/5";
+            entityInfoUI.transform.Find("EntityHealth").transform.Find("HpText").GetComponent<TextMeshProUGUI>().text = selectedEntityHealth + "/" + selectedEntityMaxHealth;
             entityInfoUI.transform.Find("EntityHealth").GetComponent<Slider>().value = selectedEntityHealth;
 
             if (selectedEntityHealth <= 0 && !entityDetails.isBeingDestroyed)
             {
                 entityDetails.isBeingDestroyed = true;
-                removedEntities.Add(selectedEntity.name);
+                if (!selectedEntity.name.Contains("PalmTree"))
+                {
+                    removedEntities.Add(selectedEntity.name);
+                }
+                else if (selectedEntity.name.Contains("PalmTree"))
+                {
+                    removedEntities.Add(selectedEntity.transform.parent.name);
+                }
                 StartCoroutine(DestroyObjectWithDelay(selectedEntity, entityDetails.entityInfoUI));
             }
         }
@@ -103,8 +115,15 @@ public class selectionManager : MonoBehaviour
 
     IEnumerator DestroyObjectWithDelay(GameObject selectedEntity, GameObject entityInfoUI)
     {
-        yield return new WaitForSeconds(0.3f);
-        Destroy(selectedEntity);
+        yield return new WaitForSeconds(0.2f);
+        if (selectedEntity.CompareTag("Killable"))
+        {
+            Destroy(selectedEntity);
+        }
+        else if (selectedEntity.CompareTag("Choppable"))
+        {
+            Destroy(selectedEntity.transform.parent.gameObject);
+        }
         entityInfoUI.SetActive(false);
     }
 

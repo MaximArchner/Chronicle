@@ -26,6 +26,10 @@ public class playerMovement : MonoBehaviour
     public bool isGrounded;
     public bool isSprinting;
 
+    private Vector3 lastPosition = new Vector3(0f,0f,0f);
+
+    public bool isMoving;
+
     private void Start()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -35,7 +39,7 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-        if (InventorySystem.Instance.isOpen == false) // Envanter paneli acik degilse
+        if (InventorySystem.Instance.isOpen == false || !CraftingSystem.Instance.isOpen || !PlayerState.Instance.mainIsOpen) // Envanter paneli acik degilse
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // groundCheck objesine dayanarak yere degiyor muyuz kontrol et
 
@@ -87,7 +91,27 @@ public class playerMovement : MonoBehaviour
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
+
+
+            if (lastPosition!= gameObject.transform.position && isGrounded == true)
+            {
+                isMoving = true;
+
+                SoundManager.Instance.PlaySound(SoundManager.Instance.walkOnGrassSound);
+            }
+            else
+            {
+
+                isMoving = false;
+
+                SoundManager.Instance.walkOnGrassSound.Stop();
+
+            }
+            lastPosition= gameObject.transform.position;
+
         }
+
+
     }
 
     private IEnumerator Jump()
