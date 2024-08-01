@@ -10,21 +10,11 @@ public class NPC : MonoBehaviour
     private InteractableObject interactable;
     string npcName;
     public bool nameLearned;
-    //private ThirdPersonCam thirdPCam;
 
     private void Start()
     {
         interactable = GetComponent<InteractableObject>();
-        npcName = GetComponent<InteractableObject>().npcName; 
-        //GameObject thirdPersonCamObj = GameObject.FindWithTag("ThirdPersonCam");
-        //if (thirdPersonCamObj != null)
-        //{
-        //    thirdPCam = thirdPersonCamObj.GetComponent<ThirdPersonCam>();
-        //    if (thirdPCam == null)
-        //    {
-        //        Debug.LogError("ThirdPersonCam component not found on the ThirdPersonCam object.");
-        //    }
-        //}
+        npcName = GetComponent<InteractableObject>().npcName;
     }
 
     private void Update()
@@ -53,6 +43,5 @@ public class NPC : MonoBehaviour
     internal void StartConversation()
     {
         isTalkingWithPlayer = true;
-        //thirdPCam.FocusOnNPC(this.transform);
     }
 }
