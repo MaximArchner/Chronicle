@@ -9,6 +9,7 @@ public class LightHouseLoader : MonoBehaviour
     public bool playerInRange = false;
     public GameObject lighthouseText;
     public Transform player;
+    public GameObject inventory;
 
     private void Start()
     {
