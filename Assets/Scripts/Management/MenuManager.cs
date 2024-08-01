@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject MenuCanvas;
     public GameObject otherCanvas;
+    public GameObject mapCanvas;
 
     public GameObject saveMenu;
     public GameObject settingsMenu;
@@ -38,6 +39,7 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) && !isMenuOpen)
         {
             otherCanvas.SetActive(false);
+            mapCanvas.SetActive(false);
             MenuCanvas.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
