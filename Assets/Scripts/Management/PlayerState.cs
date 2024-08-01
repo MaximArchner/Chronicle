@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -80,16 +81,18 @@ public class PlayerState : MonoBehaviour
             currentHealth += 0.05f * maxHealth;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.M) && !mainIsOpen)
+        if (SceneManager.GetActiveScene().name == "Island")
         {
-            mainIsOpen = true;
-            mainMapCanvas.SetActive(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.M) && mainIsOpen)
-        {
-            mainMapCanvas.SetActive(false);
-            mainIsOpen = false;
+            if (Input.GetKeyDown(KeyCode.M) && !mainIsOpen)
+            {
+                mainIsOpen = true;
+                mainMapCanvas.SetActive(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.M) && mainIsOpen)
+            {
+                mainMapCanvas.SetActive(false);
+                mainIsOpen = false;
+            }
         }
     }
 
