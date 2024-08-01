@@ -27,6 +27,7 @@ public class PlayerState : MonoBehaviour
 
     public bool isThirstActive;
 
+    public GameObject mainMapCamera;
     public GameObject mainMapCanvas;
     public bool mainIsOpen;
 
@@ -49,6 +50,7 @@ public class PlayerState : MonoBehaviour
         currentThirstPercent = maxThirstPercent;
 
         StartCoroutine(decreaseThirst());
+        mainMapCamera.SetActive(false);
     }
 
     IEnumerator decreaseThirst() // Coroutine'in hangi araliklarla gerceklesecegini belirliyor (su an 5 saniyede bir -1 veriyor Thirst'e)
@@ -86,10 +88,12 @@ public class PlayerState : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M) && !mainIsOpen)
             {
                 mainIsOpen = true;
+                mainMapCamera.SetActive(true);
                 mainMapCanvas.SetActive(true);
             }
             else if (Input.GetKeyDown(KeyCode.M) && mainIsOpen)
             {
+                mainMapCamera.SetActive(false);
                 mainMapCanvas.SetActive(false);
                 mainIsOpen = false;
             }
