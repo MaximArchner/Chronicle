@@ -172,5 +172,18 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/30741841-42f3-45e0-bbee-1ddc5646be34" width="400"></img>
 <img src="https://github.com/user-attachments/assets/17fd7834-1f62-4294-99a4-820a7aa55202" width="400"></img>
 <img src="https://github.com/user-attachments/assets/3f6075f8-d0d2-419b-975e-31938ca28476" width="700"></img>
-<img src="(https://github.com/user-attachments/assets/4c9da6cc-b6e5-464b-9e0d-0174ebd9be1e" width="600"></img>
+<img src="https://github.com/user-attachments/assets/4c9da6cc-b6e5-464b-9e0d-0174ebd9be1e" width="600"></img>
+
+
+
+<video src="https://github.com/user-attachments/assets/c1615549-16a5-4211-98de-12c29cf2f6de" width="600"></video>
+<video src="https://github.com/user-attachments/assets/11a4a40d-7138-41a4-bc06-f26d53d341f6" width="600"></video>
+
+
+
+
+![WhatsAppVideo2024-08-02saat01 43 06_e7b5a69e-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/06f3c87a-fe70-4b9e-b067-6b2b552e634b)
+
+
+
 
