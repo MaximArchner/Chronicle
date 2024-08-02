@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class InventorySlot : MonoBehaviour
 {
     public TextMeshProUGUI ItemCount;
     public InventoryItem itemInSlot;
 
+    private void Start()
+    {
+        InventoryItem item = CheckInventoryItem();
+    }
     private void Update()
     {
         InventoryItem item = CheckInventoryItem();
@@ -17,7 +20,6 @@ public class InventorySlot : MonoBehaviour
         {
             itemInSlot = item;
         }
-
         else
         {
             itemInSlot = null;

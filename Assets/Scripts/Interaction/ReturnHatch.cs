@@ -30,6 +30,7 @@ public class ReturnHatch : MonoBehaviour
             ActivateLoadingScreen();
             RenderSettings.skybox = clouds;
             SceneManager.LoadScene("Island");
+            SaveManager.Instance.SaveGame(0);
         }
     }
 

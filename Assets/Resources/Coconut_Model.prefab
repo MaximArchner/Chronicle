@@ -255,6 +255,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 771fa6f59c5d176429bef5a6a7044666, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1788570234961424367}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 771fa6f59c5d176429bef5a6a7044666, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7117180493028958225}
   m_SourcePrefab: {fileID: 100100000, guid: 771fa6f59c5d176429bef5a6a7044666, type: 3}
 --- !u!4 &2622232223258861960 stripped
 Transform:
@@ -279,14 +282,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  textOffset: {x: 0, y: 0, z: 0}
-  ItemName: 
+  textOffset: {x: 0, y: 3, z: 0}
+  ItemName: Coconut
   entityDescription: 
   entityImage: {fileID: 0}
   entityInfoUI: {fileID: 0}
   npcName: 
   isBeingDestroyed: 0
-  proximityText: {fileID: 0}
+  proximityText: {fileID: 4494740098455447806}
 --- !u!54 &8817264400762759335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -337,3 +340,24 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 0
   m_Center: {x: 0.7, y: 0, z: 0}
+--- !u!65 &7117180493028958225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400177022832294706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}

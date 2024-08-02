@@ -107,8 +107,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3297095919833928520}
   - {fileID: 2649633433227197007}
+  - {fileID: 3297095919833928520}
   m_Father: {fileID: 2590823215925785054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1798,8 +1798,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3345081766151909777}
   - {fileID: 177088673097444500}
+  - {fileID: 3345081766151909777}
   m_Father: {fileID: 2590823215925785054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4175,6 +4175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimapCamera: {fileID: 0}
   minimapRectTransform: {fileID: 2280372730530377590}
+  questTrackerScrollView: {fileID: 0}
 --- !u!1 &6500452324205724214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,8 +5493,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5684154625454392672}
   - {fileID: 8667767471223743594}
+  - {fileID: 5684154625454392672}
   m_Father: {fileID: 2590823215925785054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
