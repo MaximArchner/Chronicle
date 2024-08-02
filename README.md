@@ -139,9 +139,25 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * <strong> Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. Sprint 2 için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
-[Unity71 - Sprint 3 Daily Scrum Screenshots]
+[Unity71 - Sprint 3 Daily Scrum Screenshots](https://imgur.com/a/sprint-3-daily-scrum-4yeiUez)
 
 * Sprint 3 Board Update: <br>
 ![sprint3](https://github.com/user-attachments/assets/be5317e1-0770-445a-a75b-68470c535db9)
 <br>
 <br>
+
+<strong> Sprint Review: </strong>
+
+* Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
+* Sprint 3 sonunda ekip ile toplanılmış ve sprint gözden geçirilmiştir.
+* Tamamlanması hedeflenen puana ulaşılmıştır. Sprint sonunda 110 puan toplanmıştır.
+* Sprint Review katılımcıları: Berke Aytan, Burak Arda Ari, Deniz Yıldız, Dilara Karayel, Zilan Karataş
+
+<strong> Sprint Retrospective: </strong>
+
+* Tasarım ekibi tarafından Ada içerisine yerleştirilen çeşitli meyveler, evler, odun parçaları, kamp ateşi, çadır, anahtar, benzin bidonu ve NPC karakterleri modellenmiştir.
+* Deniz feneri sahnesi için level design tamamlanmıştır. 
+* Kod ekibi tarafından ağaç kesme, envanter toplama, alet kullanma, karakterin NPC etkileşimleri geliştirilmiştir.
+* Ada içerisinde NPC'lerle girilen diyaloglar ile karakterin çeşitli görevlerle hareket etmesini içeren bir hikaye yaratılmıştır.
+* Toplanan yiyecekler ile düşen canı yükseltme mekaniği ve yürüdükçe koştukça yorulma mekaniği karaktere entegre edilmiştir.
+
