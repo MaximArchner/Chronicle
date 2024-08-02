@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Quest
 {
+    public string questName;
+    public string questGiver;
+
     [Header("Bools")]
     public bool accepted;
     public bool declined;
