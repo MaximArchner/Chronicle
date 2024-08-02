@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc23288b6d93aab489cf401afc66c4b7, type: 3}
+  m_Name: SecondNPC_Quest1
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - Hey! I'm Dike. Pleased to meet you. I'm so sorry for what you've been through,
+    but on the bright side, we are here to survive together. At this camp, you can
+    count on us to keep your back.
+  - Since you're new to this whole survival thing, I guess it's best you learn how
+    to craft tool. And in order to do that, you have to gather the materials.
+  - Can you go ahead and collect 5 stones from the beach and 5 sticks from the woods?
+    They'll be needed for crafting a basic tool.
+  acceptOption: Okay I'm on my way.
+  acceptAnswer: Great! I'll be waiting here. Come back when you're done.
+  declineOption: I have other things to do, maybe I'll consider later.
+  declineAnswer: Okie dokie, whatever suits you, man. Come back if you change your
+    mind.
+  comebackAfterDecline: Oh, have you changed your mind yet?
+  comebackInProgress: You have to gather just a little more. You can check how many
+    materials you have collected by pressing I and open your inventory.
+  comebackCompleted: Well done, man! Hunting, gathering and foraging, that's the
+    essential in survival.
+  finalWords: With these materials, you can craft a tool, like an axe. Press C to
+    open the Crafting Menu, and you'll see what I mean.
+  rewardItem1: 
+  rewardItem1Amount: 0
+  rewardItem2: 
+  firstRequirementItem: Stone
+  firstRequirementAmount: 5
+  secondRequirementItem: Stick
+  secondRequirementAmount: 5

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc23288b6d93aab489cf401afc66c4b7, type: 3}
+  m_Name: FifthNPC_Quest1
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - The best thing about this island is those apples. They are so delicious! Oh,
+    hi, by the way! I'm Michelle. Pleased to meet you!
+  - I wish I could share my apples with you but I've just gone out of stock. And
+    I've got some tasks to do. But if you're free, you could gather some apples for
+    both of us. I'd promise I'd share but I'm too tempted by their redness...
+  - There's lots of apples in the woods, gather 15 Apples for me and I'll give you
+    some. Maybe.
+  acceptOption: Okay, I'll be on it.
+  acceptAnswer: Thanks! I'm dreaming of those sweets of deliciousness.
+  declineOption: I'll reconsider when I'm free, Apple Lady.
+  declineAnswer: Apple-Lady, huh? Well, that couldn't be more true. Let me know when
+    you find the time.
+  comebackAfterDecline: Apple-Lady to Major Tom. Have you finally decided to start
+    on your Apple Career?
+  comebackInProgress: The apples are surprisingly abundant in this island, I wonder
+    who planted them here. But I'm glad they did, and I believe you will find the
+    rest in no time.
+  comebackCompleted: See! I told you they're delicious. You're the best of best!
+    Okay, here's as promised, some apples.
+  finalWords: Oh, by the way, I saw something shining near to the closed cave entrance
+    while collecting apples in the woods. But I'm too scared to approach there, it's
+    scary. What if there's a ghost or something? Ghosts, stay away from my apples!!!
+  rewardItem1: Apple
+  rewardItem1Amount: 4
+  rewardItem2: 
+  firstRequirementItem: Apple
+  firstRequirementAmount: 15
+  secondRequirementItem: 
+  secondRequirementAmount: 0

@@ -40,7 +40,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         if (!InventorySystem.Instance.isOpen && !CraftingSystem.Instance.isOpen && !MenuManager.Instance.isMenuOpen 
-            && !PlayerState.Instance.mainIsOpen && !DialogSystem.Instance.dialogUIActive) // Envanter paneli acik degilse
+            && !PlayerState.Instance.mainIsOpen) // Envanter paneli acik degilse
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // groundCheck objesine dayanarak yere degiyor muyuz kontrol et
 

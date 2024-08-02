@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -43,8 +42,14 @@ public class MenuManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.P) && !isMenuOpen)
         {
-            otherCanvas.SetActive(false);
-            mapCanvas.SetActive(false);
+            if (otherCanvas != null)
+            {
+                otherCanvas.SetActive(false);
+            }
+            if (mapCanvas != null)
+            {
+                mapCanvas.SetActive(false);
+            }
             MenuCanvas.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

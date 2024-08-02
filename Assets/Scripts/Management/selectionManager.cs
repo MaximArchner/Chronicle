@@ -120,7 +120,7 @@ public class selectionManager : MonoBehaviour
             lastSelectedNPC = selectedEntity;
             InteractableObject entityDetails = selectedEntity.GetComponent<InteractableObject>();
 
-            if (lastSelectedNPC.name.Contains("Samantha") && Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 entityDetails.proximityText.text = lastSelectedNPC.name;
                 entityDetails.ItemName = lastSelectedNPC.name;

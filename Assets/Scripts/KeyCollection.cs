@@ -5,15 +5,34 @@ using UnityEngine;
 public class KeyCollection : MonoBehaviour
 {
     public bool playerInRange = false;
-    public string ItemName = "Key";
+    public string ItemName;
 
+    private void Start()
+    {
+        if (transform.gameObject.name.Contains("_Model"))
+        {
+            ItemName = transform.gameObject.name.Replace("_Model", "");
+        }
+        else
+        {
+            ItemName=transform.gameObject.name;
+        }
+    }
     private void Update()
     {
+        
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             if (InventorySystem.Instance.CheckSlotsAvailable(1))
             {
-                InventorySystem.Instance.AddToInventory(ItemName, false);
+                if (transform.gameObject.name.Contains("Key"))
+                {
+                    InventorySystem.Instance.AddToInventory(ItemName, false);
+                }
+                else
+                {
+                    InventorySystem.Instance.AddToInventory(ItemName, true);
+                }
                 InventorySystem.Instance.itemsPickedup.Add(gameObject.name);
                 Destroy(gameObject);
             }

@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
     public bool playerInRange;
     public bool isTalkingWithPlayer = false;
     private InteractableObject interactable;
-    string npcName;
+    public string npcName;
     public bool nameLearned;
 
     TextMeshProUGUI npcDialogText;
@@ -35,7 +35,7 @@ public class NPC : MonoBehaviour
     private void Start()
     {
         interactable = GetComponent<InteractableObject>();
-        npcName = GetComponent<InteractableObject>().npcName;
+        npcName = this.gameObject.name;
 
         npcDialogText = DialogSystem.Instance.dialogText;
         option1 = DialogSystem.Instance.option1;
@@ -50,12 +50,6 @@ public class NPC : MonoBehaviour
     private void Update()
     {
         playerInRange = interactable.playerInRange;
-        
-        if (this.gameObject.transform.name.Contains("Samantha"))
-        {
-            npcName = "Samantha";
-            interactable.npcName = npcName;
-        }
 
         if (playerInRange == true)
         {
