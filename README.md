@@ -145,7 +145,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 ![sprint3](https://github.com/user-attachments/assets/be5317e1-0770-445a-a75b-68470c535db9)
 <br>
 <br>
-
 <strong> Sprint Review: </strong>
 
 * Günlük olarak mekanik yazılımları ve modellemeler yapılmıştır.
