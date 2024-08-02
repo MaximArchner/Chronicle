@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
@@ -70,7 +72,7 @@ public class QuestManager : MonoBehaviour
             }
             else
             {
-                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " 0/" + $"{trackedQuest.info.firstRequirementAmount}\n";
+                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " " + InventorySystem.Instance.CheckItemAmount(trackedQuest.info.secondRequirementItem) + "/" + $"{trackedQuest.info.firstRequirementAmount}\n";
             }
         }
     }
@@ -97,6 +99,7 @@ public class QuestManager : MonoBehaviour
             }
         }
     }
+
     public void AddActiveQuest(Quest quest)
     {
         allActiveQuests.Add(quest);
@@ -106,16 +109,14 @@ public class QuestManager : MonoBehaviour
 
     public void MarkQuestCompleted(Quest quest)
     {
-        // Gorevi aktif gorevler listesinden silme
         allActiveQuests.Remove(quest);
-
-        // Gorevi tamamlanmis gorevler listesine ekleme
         allCompletedQuests.Add(quest);
 
         UntrackQuest(quest);
 
         RefreshQuestList();
     }
+
     public void RefreshQuestList()
     {
         foreach (Transform child in questMenuContent.transform)
@@ -136,13 +137,28 @@ public class QuestManager : MonoBehaviour
             quests.isActive = true;
             quests.isTracking = true;
 
-            // quests.countableReward.sprite = "";
-            quests.countableRewardAmount.text = "0";
+            if (activeQuest.info.rewardItem1 != "")
+            {
+                quests.countableReward.sprite = GetSpriteForItem(activeQuest.info.rewardItem1);
+                quests.countableRewardAmount.text = activeQuest.info.rewardItem1Amount.ToString();
+            }
+            else
+            {
+                quests.countableReward.gameObject.SetActive(false);
+                quests.countableRewardAmount.text = "";
+            }
 
-            // quests.uncountableReward.sprite = "";
+            if (activeQuest.info.rewardItem2 != "")
+            {
+                quests.uncountableReward.sprite = GetSpriteForItem(activeQuest.info.rewardItem2);
+            }
+            else
+            {
+                quests.uncountableReward.gameObject.SetActive(false);
+            }
         }
 
-        foreach (Quest completedQuest in allActiveQuests)
+        foreach (Quest completedQuest in allCompletedQuests)
         {
             GameObject questPrefab = Instantiate(completedQuestPrefab, Vector3.zero, Quaternion.identity);
             questPrefab.transform.SetParent(questMenuContent.transform, false);
@@ -152,13 +168,34 @@ public class QuestManager : MonoBehaviour
             quests.questName.text = completedQuest.questName;
             quests.questGiver.text = completedQuest.questGiver;
 
-            quests.isActive = true;
-            quests.isTracking = true;
+            quests.isActive = false; // Mark as not active since it's completed
+            quests.isTracking = false;
 
-            // quests.countableReward.sprite = "";
-            quests.countableRewardAmount.text = "0";
+            if (completedQuest.info.rewardItem1 != "")
+            {
+                quests.countableReward.sprite = GetSpriteForItem(completedQuest.info.rewardItem1);
+                quests.countableRewardAmount.text = completedQuest.info.rewardItem1Amount.ToString();
+            }
+            else
+            {
+                quests.countableReward.gameObject.SetActive(false);
+                quests.countableRewardAmount.text = "";
+            }
 
-            // quests.uncountableReward.sprite = "";
+            if (completedQuest.info.rewardItem2 != "")
+            {
+                quests.uncountableReward.sprite = GetSpriteForItem(completedQuest.info.rewardItem2);
+            }
+            else
+            {
+                quests.uncountableReward.gameObject.SetActive(false);
+            }
         }
+    }
+
+    private Sprite GetSpriteForItem(string item)
+    {
+        var itemToGet = Resources.Load<GameObject>(item);
+        return itemToGet.GetComponent<Image>().sprite;
     }
 }
