@@ -32,7 +32,7 @@ public class LightHouseLoader : MonoBehaviour
 
         if (playerInRange)
         {
-            lighthouseText.transform.position = lighthouseText.transform.parent.position + new Vector3(-1, 5, 0);
+            lighthouseText.transform.position = lighthouseText.transform.parent.position + new Vector3(-1, 4, 0);
             lighthouseText.transform.LookAt(player.transform);
             lighthouseText.transform.Rotate(0, 180, 0);
         }
@@ -49,7 +49,7 @@ public class LightHouseLoader : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            lighthouseText.gameObject.SetActive(true);
+            lighthouseText.SetActive(true);
         }
     }
 
