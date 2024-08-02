@@ -15,13 +15,13 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject itemInfoUI;
 
-    public List<GameObject> slotList = new List<GameObject>();
+    public List<InventorySlot> slotList = new List<InventorySlot>();
 
     public List<string> itemList = new List<string>();
 
     private GameObject itemToAdd;
 
-    private GameObject nextEmptySlot;
+    private InventorySlot nextEmptySlot;
     
     public GameObject pickupAlert;
     public TextMeshProUGUI pickupName;
@@ -65,7 +65,8 @@ public class InventorySystem : MonoBehaviour
         {
             if (child.CompareTag("Slot"))
             {
-                slotList.Add(child.gameObject);
+                InventorySlot slot = child.GetComponent<InventorySlot>();
+                slotList.Add(slot);
             }
         }
     }
@@ -96,60 +97,32 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName, bool shouldStack) // spesifik bir objeyi envanter listesine ekleyebilme metodu
     {
-
         SoundManager.Instance.PlaySound(SoundManager.Instance.pickItemSound);
+        if (itemToAdd != null)
+        {
+            TriggerPickupPopUp(itemName, itemToAdd.GetComponent<UnityEngine.UI.Image>().sprite);
+        }
 
-        GameObject stack = CheckIfStackExists(itemName);
+        InventorySlot stack = CheckIfStackExists(itemName);
 
         if (stack != null && shouldStack)
         {
             InventorySlot slot = stack.GetComponent<InventorySlot>();
-            if (slot != null && slot.itemInSlot != null)
-            {
-                slot.itemInSlot.amountInInventory++;
-                slot.UpdateItemInSlot();
-            }
+            stack.itemInSlot.amountInInventory += 1;
+            stack.UpdateItemInSlot();
         }
         else
         {
             nextEmptySlot = FindNextEmptySlot();
-            if (nextEmptySlot != null)
-            {
-                Debug.Log("Next empty slot found: " + nextEmptySlot.name);
-                Debug.Log("Attempting to load item from Resources: " + itemName);
-                GameObject itemPrefab = Resources.Load<GameObject>(itemName);
-                if (itemPrefab != null)
-                {
-                    Debug.Log("Item loaded from Resources: " + itemPrefab.name);
-                    itemToAdd = Instantiate(itemPrefab, nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
-                    if (itemToAdd != null)
-                    {
-                        itemToAdd.transform.SetParent(nextEmptySlot.transform);
-                        itemList.Add(itemName);
-                    }
-                }
-                else
-                {
-                    Debug.LogError("Failed to load item from Resources: " + itemName);
-                }
-            }
-            else
-            {
-                Debug.LogError("No empty slot found!");
-            }
+
+            itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
+            itemToAdd.transform.SetParent(nextEmptySlot.transform);
         }
 
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
 
-        if (itemToAdd != null)
-        {
-            TriggerPickupPopUp(itemName, itemToAdd.GetComponent<UnityEngine.UI.Image>().sprite);
-        }
-        else
-        {
-            Debug.LogError("itemToAdd is null after attempting to add to inventory.");
-        }
+        QuestManager.Instance.RefreshTrackerList();
     }
 
     void TriggerPickupPopUp(string itemName, Sprite itemSprite)
@@ -173,9 +146,9 @@ public class InventorySystem : MonoBehaviour
         pickupAlert.SetActive(false);
         hidePickupAlertCoroutine = null;
     }
-    private GameObject FindNextEmptySlot() // envanterde yer varsa, toplanan bir objeyi mevcut bos yere koyuyor
+    private InventorySlot FindNextEmptySlot() // envanterde yer varsa, toplanan bir objeyi mevcut bos yere koyuyor
     {
-        foreach (GameObject slot in slotList)
+        foreach (InventorySlot slot in slotList)
         {
             if (slot.transform.childCount <= 1)
             {
@@ -183,69 +156,79 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        return new GameObject();
+        return new InventorySlot();
     }
 
     public void RemoveItem(string itemName, int amountToRemove)
     {
         int remainingAmountToRemove = amountToRemove;
 
-        foreach (GameObject slot in slotList)
+        while (remainingAmountToRemove != 0)
         {
-            if (remainingAmountToRemove == 0)
-            {
-                break;
-            }
+            int previousRemainingAmount = remainingAmountToRemove;
 
-            InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
-            if (inventorySlot.itemInSlot != null && inventorySlot.itemInSlot.thisName == itemName)
+            foreach (InventorySlot slot in slotList)
             {
-                while (inventorySlot.itemInSlot.amountInInventory > 0 && remainingAmountToRemove > 0)
+                if (remainingAmountToRemove == 0)
                 {
-                    inventorySlot.itemInSlot.amountInInventory--;
-                    remainingAmountToRemove--;
+                    break;
+                }
 
-                    if (inventorySlot.itemInSlot.amountInInventory == 0)
+                InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
+                if (inventorySlot.itemInSlot != null && inventorySlot.itemInSlot.thisName == itemName)
+                {
+                    while (inventorySlot.itemInSlot.amountInInventory > 0 && remainingAmountToRemove > 0)
                     {
-                        Destroy(inventorySlot.itemInSlot.gameObject);
-                        inventorySlot.itemInSlot = null;
-                        break;
+                        inventorySlot.itemInSlot.amountInInventory--;
+                        remainingAmountToRemove--;
+
+                        if (inventorySlot.itemInSlot.amountInInventory == 0)
+                        {
+                            Destroy(inventorySlot.itemInSlot.gameObject);
+                            inventorySlot.itemInSlot = null;
+                            break;
+                        }
                     }
                 }
             }
-        }
 
-        ReCalculateList();
-        CraftingSystem.Instance.RefreshNeededItems();
+            if (previousRemainingAmount == remainingAmountToRemove)
+            {
+                Debug.Log("Item not found or insufficient quantity in inventory.");
+                break;
+            }
+
+            ReCalculateList();
+            CraftingSystem.Instance.RefreshNeededItems();
+            QuestManager.Instance.RefreshTrackerList();
+        }
     }
 
     public void ReCalculateList()
     {
 
         itemList.Clear();
-        foreach (GameObject slot in slotList)
+        foreach (InventorySlot inventorySlot in slotList)
         {
-            InventoryItem item = slot.GetComponent<InventorySlot>().itemInSlot;
+            InventoryItem item = inventorySlot.itemInSlot;
 
-                if (item != null)
+            if (item != null)
+            {
+                if (item.amountInInventory > 0)
                 {
-                    if (item.amountInInventory > 0)
+                    for (int i = 0; i < item.amountInInventory; i++)
                     {
-                        for (int i = 0; i < item.amountInInventory; i++)
-                        {
-                            itemList.Add(item.thisName);
-                        }
+                        itemList.Add(item.thisName);
                     }
                 }
+            }
         }
     }
 
-    private GameObject CheckIfStackExists(string ItemName)
+    private InventorySlot CheckIfStackExists(string ItemName)
     {
-        foreach (GameObject slot in slotList)
+        foreach (InventorySlot inventorySlot in slotList)
         {
-            InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
-
             inventorySlot.UpdateItemInSlot();
             
             if(inventorySlot != null && inventorySlot.itemInSlot != null)
@@ -253,7 +236,7 @@ public class InventorySystem : MonoBehaviour
                 if (inventorySlot.itemInSlot.thisName == ItemName 
                     && inventorySlot.itemInSlot.amountInInventory < stackLimit)
                 {
-                    return slot;
+                    return inventorySlot;
                 }
             }
         }
@@ -265,7 +248,7 @@ public class InventorySystem : MonoBehaviour
     {
         int emptySlot = 0;
 
-        foreach (GameObject slot in slotList)
+        foreach (InventorySlot slot in slotList)
         {
             if(slot.transform.childCount <= 1)
             {
@@ -281,5 +264,20 @@ public class InventorySystem : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int CheckItemAmount(string name)
+    {
+        int itemCounter = 0;
+
+        foreach(string item in itemList)
+        {
+            if (item == name)
+            {
+                itemCounter++;
+            }
+        }
+
+        return itemCounter;
     }
 }

@@ -90,7 +90,7 @@ public class SaveManager : MonoBehaviour
 
         List<InventoryItemData> inventory = new List<InventoryItemData>();
 
-        foreach(GameObject slot in InventorySystem.Instance.slotList)
+        foreach(InventorySlot slot in InventorySystem.Instance.slotList)
         {
             InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
             if (slot != null && inventorySlot.itemInSlot != null)
@@ -253,6 +253,8 @@ public class SaveManager : MonoBehaviour
 
             itemToAdd.transform.SetParent(availableSlot.transform, false);
         }
+
+        isLoading = false;
     }
 
     public void StartLoadedGame(int slotNumber)

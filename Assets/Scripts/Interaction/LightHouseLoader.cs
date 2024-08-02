@@ -25,6 +25,7 @@ public class LightHouseLoader : MonoBehaviour
         {
             if (CheckIfKeyExist())
             {
+                SaveManager.Instance.SaveGame(0);
                 SceneManager.LoadScene("LighthouseInterior");
             }
         }

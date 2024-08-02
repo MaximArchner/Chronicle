@@ -3,50 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
-
-    //public GameObject Item Bu belki daha sonra kullanılır
-    //{
-    //    get
-    //    {
-    //        if (transform.childCount > 0)
-    //        {
-    //            return transform.GetChild(0).gameObject;
-    //        }
-
-    //        return null;
-    //    }
-    //}
-
-
     public void OnDrop(PointerEventData eventData)
     {
-
         InventoryItem draggedItem = DragDrop.itemBeingDragged.GetComponent<InventoryItem>();
-        if (transform.childCount == 1) //mevcut slot bos ise
+        if (transform.childCount == 1)
         {
-
             SoundManager.Instance.PlaySound(SoundManager.Instance.dropItemSound);
 
             DragDrop.itemBeingDragged.transform.SetParent(transform);
-            DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
+            DragDrop.itemBeingDragged.transform.localPosition = Vector2.zero;
 
-            if (transform.CompareTag("QuickSlot") == false)
+            if (!transform.CompareTag("QuickSlot"))
             {
                 draggedItem.isInsideQuickSlot = false;
                 CraftingSystem.Instance.RefreshNeededItems();
                 InventorySystem.Instance.ReCalculateList();
             }
         }
-        else if (transform.childCount == 2)//mevcut slot bos degil ise
+        else if (transform.childCount == 2)
         {
-            // iki item'in da ayni tipten olup olmadigini anlamak icin
-            if (draggedItem.thisName == GetStoredItem().thisName && IsLimitExceeded(draggedItem) == false && draggedItem.isStackable == true)
+            if (draggedItem.thisName == GetStoredItem().thisName && !IsLimitExceeded(draggedItem) && draggedItem.isStackable)
             {
-                // DraggedItem ile StoredItem'� mergeleme
                 GetStoredItem().amountInInventory += draggedItem.amountInInventory;
                 DestroyImmediate(DragDrop.itemBeingDragged);
             }
@@ -54,10 +33,10 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         if (transform.CompareTag("QuickSlot"))
         {
-            if (draggedItem.isEquippable == true)
+            if (draggedItem.isEquippable)
             {
                 DragDrop.itemBeingDragged.transform.SetParent(transform);
-                DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
+                DragDrop.itemBeingDragged.transform.localPosition = Vector2.zero;
                 draggedItem.isInsideQuickSlot = true;
             }
 
@@ -66,21 +45,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         }
     }
 
-    InventoryItem GetStoredItem()
+    private InventoryItem GetStoredItem()
     {
         return transform.GetChild(0).GetComponent<InventoryItem>();
     }
 
-    bool IsLimitExceeded(InventoryItem draggedItem)
+    private bool IsLimitExceeded(InventoryItem draggedItem)
     {
-        if((draggedItem.amountInInventory + GetStoredItem().amountInInventory) > InventorySystem.Instance.stackLimit) 
-        {
-            return true;
-        }
-
-        else
-        {
-            return false;
-        }
+        return (draggedItem.amountInInventory + GetStoredItem().amountInInventory) > InventorySystem.Instance.stackLimit;
     }
 }

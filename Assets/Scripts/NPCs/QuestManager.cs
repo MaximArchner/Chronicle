@@ -47,7 +47,7 @@ public class QuestManager : MonoBehaviour
         RefreshTrackerList();
     }
 
-    private void RefreshTrackerList()
+    public void RefreshTrackerList()
     {
         foreach (Transform child in questTrackerContent.transform)
         {
@@ -65,8 +65,8 @@ public class QuestManager : MonoBehaviour
 
             if (trackedQuest.info.secondRequirementItem != "")
             {
-                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " 0/" + $"{trackedQuest.info.firstRequirementAmount}\n" +
-                    $"{trackedQuest.info.secondRequirementItem}" + " 0/" + $"{trackedQuest.info.secondRequirementAmount}\n";
+                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " " + InventorySystem.Instance.CheckItemAmount(trackedQuest.info.firstRequirementItem) + "/" + $"{trackedQuest.info.firstRequirementAmount}\n" +
+                    $"{trackedQuest.info.secondRequirementItem}" + " " + InventorySystem.Instance.CheckItemAmount(trackedQuest.info.secondRequirementItem) + "/" + $"{trackedQuest.info.secondRequirementAmount}\n";
             }
             else
             {

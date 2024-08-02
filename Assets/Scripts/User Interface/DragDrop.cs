@@ -50,7 +50,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         var tempItemReference = itemBeingDragged;
         itemBeingDragged = null;
 
-        if (tempItemReference.transform.parent == tempItemReference.transform.root)
+        if (tempItemReference.transform.parent == tempItemReference.transform.root);
         {
             tempItemReference.SetActive(false);
 

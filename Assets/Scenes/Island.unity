@@ -295408,6 +295408,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 436715184342503535, guid: ca4571c29f6a16748a0dd66a6a421be0, type: 3}
   m_PrefabInstance: {fileID: 1759331110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1761614784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3771230371766602144, guid: 56e082f49ca3ba2448d64bf5a6740ff7, type: 3}
+  m_PrefabInstance: {fileID: 2473495190664899077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1761678164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361401,6 +361406,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4235816447358249956, guid: 56e082f49ca3ba2448d64bf5a6740ff7, type: 3}
+      propertyPath: trashAlertUI
+      value: 
+      objectReference: {fileID: 1761614784}
     - target: {fileID: 4700480065658500195, guid: 56e082f49ca3ba2448d64bf5a6740ff7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
