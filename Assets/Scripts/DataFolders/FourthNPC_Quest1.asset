@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc23288b6d93aab489cf401afc66c4b7, type: 3}
+  m_Name: FourthNPC_Quest1
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - Hello there, I'm Jason. I usually take care of the construction around here,
+    most of these cabins were built by these hands. All the current cabins are occupied,
+    though, and you definitely need a cabin of your own.
+  - I've got a lot of work to do now but if you bring me 20 Planks, I could build
+    it by sunset, so you can rest cozy and warm by night.
+  - You can craft planks from logs you've gathered, use your Crafting System Menu
+    to Refine logs into planks. Let me know when you have the planks, will you?
+  acceptOption: Okay, thank you for helping. I'll be on it.
+  acceptAnswer: Great to hear that, see you then.
+  declineOption: I'm occupied at the moment, but I'll let you know if I can help.
+  declineAnswer: That's fine, if you change your mind, you know where to find me.
+  comebackAfterDecline: I guess you're free now? Will you gather the planks so we
+    can build your cabin?
+  comebackInProgress: You're doing okay, but you still need to get more planks, that
+    is, if you don't want to sleep under the stars.
+  comebackCompleted: Thanks for the planks, I'll be constructing your house.
+  finalWords: Planks, sticks, stones and fruits. A simple life for a simple construction
+    man like me. God bless that I know how to construct buildings without using nails.
+    Though I wonder if we could find anything at the mines they built before we were
+    stranded on this island.
+  rewardItem1: 
+  rewardItem1Amount: 0
+  rewardItem2: 
+  firstRequirementItem: Plank
+  firstRequirementAmount: 20
+  secondRequirementItem: 
+  secondRequirementAmount: 0

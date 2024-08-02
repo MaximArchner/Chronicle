@@ -5,10 +5,12 @@ using UnityEngine;
 public class KeyCollection : MonoBehaviour
 {
     public bool playerInRange = false;
-    public string ItemName = "Key";
+    public string ItemName;
 
     private void Update()
     {
+        ItemName = transform.gameObject.name;
+        
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             if (InventorySystem.Instance.CheckSlotsAvailable(1))
