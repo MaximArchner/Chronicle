@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a662335d658999941b927d24abfc1ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTrashable: 1
+  isTrashable: 0
   thisName: Fuel
   thisDescription: A gallon of fuel.
   thisFunctionality: Could fuel a large mechanism.

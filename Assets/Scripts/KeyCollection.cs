@@ -7,9 +7,19 @@ public class KeyCollection : MonoBehaviour
     public bool playerInRange = false;
     public string ItemName;
 
+    private void Start()
+    {
+        if (transform.gameObject.name.Contains("_Model"))
+        {
+            ItemName = transform.gameObject.name.Replace("_Model", "");
+        }
+        else
+        {
+            ItemName=transform.gameObject.name;
+        }
+    }
     private void Update()
     {
-        ItemName = transform.gameObject.name;
         
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
