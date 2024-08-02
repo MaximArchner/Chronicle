@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
+using Ink.Parsed;
 
 public class LightHouseLoader : MonoBehaviour
 {
     public bool playerInRange = false;
     public GameObject lighthouseText;
     public Transform player;
-    public GameObject inventory;
+    public List<string> inventoryList;
 
     private void Start()
     {
         lighthouseText = transform.Find("LightHouseText").gameObject;
+        inventoryList = InventorySystem.Instance.itemList;
     }
     private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene("LighthouseInterior");
+            if (CheckIfKeyExist())
+            {
+                SceneManager.LoadScene("LighthouseInterior");
+            }
         }
 
         if (playerInRange)
@@ -28,6 +34,17 @@ public class LightHouseLoader : MonoBehaviour
             lighthouseText.transform.LookAt(player.transform);
             lighthouseText.transform.Rotate(0, 180, 0);
         }
+    }
+
+    private bool CheckIfKeyExist()
+    {
+        InventorySystem.Instance.ReCalculateList();
+        if (inventoryList.Contains("Lighthouse Key"))
+        {
+            return true;
+        }
+        else {
+            return false; }
     }
 
     private void OnTriggerEnter(Collider other)
