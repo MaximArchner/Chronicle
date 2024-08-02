@@ -11,6 +11,7 @@ TagManager:
   - Killable
   - NPC
   - Water
+  - TrashSlot
   layers:
   - Default
   - TransparentFX
