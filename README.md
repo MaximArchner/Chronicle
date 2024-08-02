@@ -135,6 +135,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 # Sprint 3
 <br>
 * <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
+
 * <strong> Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. Sprint 2 için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
