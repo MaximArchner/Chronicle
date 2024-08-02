@@ -33,6 +33,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        isMenuOpen = false;
+    }
+
     private void Update()
     {
         

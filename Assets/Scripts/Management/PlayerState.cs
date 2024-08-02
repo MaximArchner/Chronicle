@@ -51,6 +51,7 @@ public class PlayerState : MonoBehaviour
 
         StartCoroutine(decreaseThirst());
         mainMapCamera.SetActive(false);
+        mainIsOpen = false;
     }
 
     IEnumerator decreaseThirst() // Coroutine'in hangi araliklarla gerceklesecegini belirliyor (su an 5 saniyede bir -1 veriyor Thirst'e)
