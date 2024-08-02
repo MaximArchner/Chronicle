@@ -87,6 +87,7 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 # Sprint 2
 <br>
 * <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
+* <strong> Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. Sprint 2 için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
 
 * <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
 [Unity71 - Sprint 2 Daily Scrum Screenshots](https://imgur.com/a/Bg19paH)
@@ -132,3 +133,14 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <video src="https://github.com/user-attachments/assets/c9ab9fb5-c6ff-4be6-b2c4-a542c00fa615" width="600"></video>
 
 # Sprint 3
+<br>
+* <strong> Sprint içinde tamamlanması tahmin edilen puan: </strong> 100 puan
+* <strong> Puan tamamlama mantığı: </strong> Proje boyunca tamamlanması gereken backlog puanı 300'dür. Sprint 2 için bitirilmesi istenilen puan sayısı 100 olarak belirlenmiştir ve hedefe ulaşılmıştır.
+
+* <strong> Daily Scrum: </strong> Daily Scrum toplantıları hem Whatsapp üzerinden hem de Discord üzerinden devam etmiştir. Discord'da haftada birkaç gün toplantılar yapılmıştır.
+[Unity71 - Sprint 3 Daily Scrum Screenshots]
+
+* Sprint 3 Board Update: <br>
+![sprint3](https://github.com/user-attachments/assets/be5317e1-0770-445a-a75b-68470c535db9)
+<br>
+<br>
