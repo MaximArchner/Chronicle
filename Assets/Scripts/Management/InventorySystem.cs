@@ -55,15 +55,8 @@ public class InventorySystem : MonoBehaviour
         isOpen = false;
 
         PopulateSlotList();
-        StartCoroutine(LoadInventory());
-
-    }
-
-    private IEnumerator LoadInventory()
-    {
-        yield return new WaitForSeconds(3f);
         ReCalculateList();
-        CraftingSystem.Instance.RefreshNeededItems();
+
     }
 
     private void PopulateSlotList() // Envanter haznelerini sayip durumlarini sonradan degistirip kontrol edebilmemiz icin bir listeye esitleyecek

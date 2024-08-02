@@ -31,6 +31,49 @@ public class QuestManager : MonoBehaviour
 
     [Header("Quest Tracker")]
     public GameObject questTrackerContent;
+    public GameObject trackedQuestPrefab;
+
+    public List<Quest> allTrackedQuests;
+
+    public void TrackQuest(Quest quest)
+    {
+        allTrackedQuests.Add(quest);
+        RefreshTrackerList();
+    }
+
+    public void UntrackQuest(Quest quest)
+    {
+        allTrackedQuests.Remove(quest);
+        RefreshTrackerList();
+    }
+
+    private void RefreshTrackerList()
+    {
+        foreach (Transform child in questTrackerContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Quest trackedQuest in allTrackedQuests)
+        {
+            GameObject trackerPrefab = Instantiate(trackedQuestPrefab, Vector3.zero, Quaternion.identity);
+            trackerPrefab.transform.SetParent(questTrackerContent.transform, false);
+
+            QuestTracking questTracking = trackerPrefab.GetComponent<QuestTracking>();
+
+            questTracking.questName.text = trackedQuest.questName;
+
+            if (trackedQuest.info.secondRequirementItem != "")
+            {
+                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " 0/" + $"{trackedQuest.info.firstRequirementAmount}\n" +
+                    $"{trackedQuest.info.secondRequirementItem}" + " 0/" + $"{trackedQuest.info.secondRequirementAmount}\n";
+            }
+            else
+            {
+                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " 0/" + $"{trackedQuest.info.firstRequirementAmount}\n";
+            }
+        }
+    }
 
     public void Update()
     {
@@ -57,6 +100,7 @@ public class QuestManager : MonoBehaviour
     public void AddActiveQuest(Quest quest)
     {
         allActiveQuests.Add(quest);
+        TrackQuest(quest);
         RefreshQuestList();
     }
 
@@ -67,6 +111,8 @@ public class QuestManager : MonoBehaviour
 
         // Gorevi tamamlanmis gorevler listesine ekleme
         allCompletedQuests.Add(quest);
+
+        UntrackQuest(quest);
 
         RefreshQuestList();
     }

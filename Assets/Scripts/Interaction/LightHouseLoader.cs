@@ -17,6 +17,7 @@ public class LightHouseLoader : MonoBehaviour
     {
         lighthouseText = transform.Find("LightHouseText").gameObject;
         inventoryList = InventorySystem.Instance.itemList;
+        InventorySystem.Instance.ReCalculateList();
     }
     private void Update()
     {
@@ -39,12 +40,7 @@ public class LightHouseLoader : MonoBehaviour
     private bool CheckIfKeyExist()
     {
         InventorySystem.Instance.ReCalculateList();
-        if (inventoryList.Contains("Lighthouse Key"))
-        {
-            return true;
-        }
-        else {
-            return false; }
+        return inventoryList.Contains("Lighthouse Key");
     }
 
     private void OnTriggerEnter(Collider other)
