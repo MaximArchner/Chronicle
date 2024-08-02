@@ -25,7 +25,14 @@ public class KeyCollection : MonoBehaviour
         {
             if (InventorySystem.Instance.CheckSlotsAvailable(1))
             {
-                InventorySystem.Instance.AddToInventory(ItemName, false);
+                if (transform.gameObject.name.Contains("Key"))
+                {
+                    InventorySystem.Instance.AddToInventory(ItemName, false);
+                }
+                else
+                {
+                    InventorySystem.Instance.AddToInventory(ItemName, true);
+                }
                 InventorySystem.Instance.itemsPickedup.Add(gameObject.name);
                 Destroy(gameObject);
             }

@@ -121,8 +121,6 @@ public class InventorySystem : MonoBehaviour
 
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
-
-        QuestManager.Instance.RefreshTrackerList();
     }
 
     void TriggerPickupPopUp(string itemName, Sprite itemSprite)

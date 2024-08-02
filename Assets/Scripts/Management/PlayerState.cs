@@ -45,18 +45,22 @@ public class PlayerState : MonoBehaviour
 
     private void Start()
     {
+        if (!SceneManager.GetActiveScene().name.Contains("Island"))
+        {
+            mainMapCamera = null;
+        }
+
         currentHealth = maxHealth;
         currentHunger = maxHunger;
         currentThirstPercent = maxThirstPercent;
 
         StartCoroutine(decreaseThirst());
-        mainMapCamera.SetActive(false);
+        if (mainMapCamera != null)
+        {
+            mainMapCamera.SetActive(false);
+        }
         mainIsOpen = false;
 
-        if (SceneManager.GetActiveScene().name != "Island")
-        {
-            mainMapCamera = null;
-        }
     }
 
     IEnumerator decreaseThirst() // Coroutine'in hangi araliklarla gerceklesecegini belirliyor (su an 5 saniyede bir -1 veriyor Thirst'e)
