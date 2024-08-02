@@ -171,6 +171,6 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 <img src="https://github.com/user-attachments/assets/6f7b4076-c30e-4133-839d-66a4879e081b" width="400"></img>
 <img src="https://github.com/user-attachments/assets/30741841-42f3-45e0-bbee-1ddc5646be34" width="400"></img>
 <img src="https://github.com/user-attachments/assets/17fd7834-1f62-4294-99a4-820a7aa55202" width="400"></img>
-<img src="https://github.com/user-attachments/assets/3f6075f8-d0d2-419b-975e-31938ca28476" width="600"></img>
+<img src="https://github.com/user-attachments/assets/3f6075f8-d0d2-419b-975e-31938ca28476" width="700"></img>
 <img src="(https://github.com/user-attachments/assets/4c9da6cc-b6e5-464b-9e0d-0174ebd9be1e" width="600"></img>
 
