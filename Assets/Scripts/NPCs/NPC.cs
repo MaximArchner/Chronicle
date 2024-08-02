@@ -276,6 +276,7 @@ public class NPC : MonoBehaviour
 
     private void AcceptedQuest()
     {
+        QuestManager.Instance.AddActiveQuest(currentActiveQuest);
         currentActiveQuest.accepted = true;
         currentActiveQuest.declined = false;
 
@@ -300,6 +301,7 @@ public class NPC : MonoBehaviour
     private void ReceiveRewardAndCompleteQuest()
     {
         currentActiveQuest.isCompleted = true;
+        QuestManager.Instance.MarkQuestCompleted(currentActiveQuest);
 
         if (currentActiveQuest.info.rewardItem1 != "")
         {
