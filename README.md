@@ -161,3 +161,17 @@ Tek kişilik, adada hayatta kalma ve odadan kaçış türünde bir oyun olan Chr
 * Ada içerisinde NPC'lerle girilen diyaloglar ile karakterin çeşitli görevlerle hareket etmesini içeren bir hikaye yaratılmıştır.
 * Toplanan yiyecekler ile düşen canı yükseltme mekaniği ve yürüdükçe koştukça yorulma mekaniği karaktere entegre edilmiştir.
 
+![Screenshot_27](https://github.com/user-attachments/assets/b4f0c809-f862-4fda-bfac-1b3d055da377)
+![Screenshot_43](https://github.com/user-attachments/assets/62945299-466b-4cc9-a5c1-d9e7a563944b)
+![Screenshot_42](https://github.com/user-attachments/assets/4ccd518f-6a4c-4a1a-8991-a9179266b9b4)
+![image55](https://github.com/user-attachments/assets/49a57009-c89c-4a0a-b254-113ccd2231e1)
+![55](https://github.com/user-attachments/assets/907b3633-8d16-44df-a183-0ccf8b9d894a)
+![66](https://github.com/user-attachments/assets/e222d426-77d1-4b8a-b85b-d23ed0db3174)
+![7](https://github.com/user-attachments/assets/aad9ae1d-4b52-422f-b96a-1919ec24a286)
+![66666](https://github.com/user-attachments/assets/b43d62c0-8de5-4f11-b063-2beceaf7cd7e)
+![887](https://github.com/user-attachments/assets/6f7b4076-c30e-4133-839d-66a4879e081b)
+![67885](https://github.com/user-attachments/assets/30741841-42f3-45e0-bbee-1ddc5646be34)
+![WhatsApp Görsel 2024-08-02 saat 20 49 23_8a800dd0](https://github.com/user-attachments/assets/17fd7834-1f62-4294-99a4-820a7aa55202)
+![WhatsApp Görsel 2024-07-30 saat 17 24 52_fe05f62d](https://github.com/user-attachments/assets/3f6075f8-d0d2-419b-975e-31938ca28476)
+![WhatsApp Görsel 2024-07-30 saat 17 23 55_477473e4](https://github.com/user-attachments/assets/4c9da6cc-b6e5-464b-9e0d-0174ebd9be1e)
+
