@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc23288b6d93aab489cf401afc66c4b7, type: 3}
+  m_Name: FirstNPC_Quest1
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - Hey, are you okay? You've hit the shore unconscious and I found you lying over
+    there while I was gathering coconuts.
+  - I'm Samantha. I'm one of the denizens of this island, stuck here for months.
+    Me and the others built a camp with the island's resources to survive.
+  - Come on, join me at the camp so I can introduce you to the others. And bring
+    5 coconuts with you, will you?
+  acceptOption: Sure, I'm happy I'm not stranded all alone.
+  acceptAnswer: Great! See you at the camp. Thanks a lot.
+  declineOption: I'm sorry but I don't know you. And I think I need a moment to gather
+    my thoughts.
+  declineAnswer: Oh, I see. You're right, I'm sorry for rushing things up. Let me
+    know if you change your mind.
+  comebackAfterDecline: Hey, have you changed your mind yet?
+  comebackInProgress: You can find the coconuts under the palm trees.
+  comebackCompleted: Oh, thanks a lot! You've gathered just enough, thanks for your
+    efforts. Here, keep some for yourself. The others probably gathered more than
+    us anyway.
+  finalWords: Welcome to the Chronicle Island.
+  rewardItem1: Coconut
+  rewardItem1Amount: 2
+  rewardItem2: 
+  firstRequirementItem: Coconut
+  firstRequirementAmount: 5
+  secondRequirementItem: 
+  secondRequirementAmount: 0

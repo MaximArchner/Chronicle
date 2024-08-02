@@ -2,34 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DialogSystem : MonoBehaviour
 {
     public GameObject dialogUI;
+    public GameObject npcImage;
     public TextMeshProUGUI dialogText;
     public Button option1;
     public Button option2;
     public Button option3;
-    public static DialogSystem instance { get; set; }
+    public GameObject mainCanvas;
+
+    public bool dialogUIActive;
+    public static DialogSystem Instance { get; set; }
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
         else
         {
-            instance = this;
+            Instance = this;
         }
     }
 
     private void Start()
     {
+        dialogUIActive = false;
+    }
 
-        dialogText = GetComponent<TextMeshProUGUI>();
-        option1 = GetComponent<Button>();
-        option2 = GetComponent<Button>();
-        option3 = GetComponent<Button>();
+    public void OpenDialogUI()
+    {
+        dialogUI.SetActive(true);
+        mainCanvas.SetActive(false);
+        dialogUIActive = true;
+        Time.timeScale = 0;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void CloseDialogUI()
+    {
+        dialogUI.SetActive(false);
+        mainCanvas.SetActive(true);
+        dialogUIActive = false;
+        Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
