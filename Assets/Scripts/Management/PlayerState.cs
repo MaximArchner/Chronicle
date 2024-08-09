@@ -29,7 +29,7 @@ public class PlayerState : MonoBehaviour
 
     public GameObject mainMapCamera;
     public GameObject mainMapCanvas;
-    public bool mainIsOpen;
+    public bool mainMapIsOpen;
 
     private void Awake()
     {
@@ -59,7 +59,7 @@ public class PlayerState : MonoBehaviour
         {
             mainMapCamera.SetActive(false);
         }
-        mainIsOpen = false;
+        mainMapIsOpen = false;
 
     }
 
@@ -95,17 +95,17 @@ public class PlayerState : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Island")
         {
-            if (Input.GetKeyDown(KeyCode.M) && !mainIsOpen)
+            if (Input.GetKeyDown(KeyCode.M) && !mainMapIsOpen && !MenuManager.Instance.isMenuOpen && !DialogSystem.Instance.dialogUIActive)
             {
-                mainIsOpen = true;
+                mainMapIsOpen = true;
                 mainMapCamera.SetActive(true);
                 mainMapCanvas.SetActive(true);
             }
-            else if (Input.GetKeyDown(KeyCode.M) && mainIsOpen)
+            else if (Input.GetKeyDown(KeyCode.M) && mainMapIsOpen)
             {
                 mainMapCamera.SetActive(false);
                 mainMapCanvas.SetActive(false);
-                mainIsOpen = false;
+                mainMapIsOpen = false;
             }
         }
     }

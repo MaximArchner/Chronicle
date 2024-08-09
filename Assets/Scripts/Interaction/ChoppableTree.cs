@@ -56,12 +56,6 @@ public class ChoppableTree : MonoBehaviour
     {
         SoundManager.Instance.PlaySound(SoundManager.Instance.choppingSound);
 
-        StartCoroutine(Hit());
-    }
-
-    public IEnumerator Hit()
-    {
-        yield return new WaitForSeconds(0.4f);
         _animator.SetTrigger("Hit");
         treeHealth -= 1;
 

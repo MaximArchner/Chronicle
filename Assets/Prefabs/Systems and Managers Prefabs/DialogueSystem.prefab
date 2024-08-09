@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7392104782221138554
 RectTransform:
   m_ObjectHideFlags: 0
@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186.4156, y: -392.34}
-  m_SizeDelta: {x: 1329.985, y: 195.32}
+  m_AnchoredPosition: {x: 213.56026, y: -390.18848}
+  m_SizeDelta: {x: 1384.2743, y: 235.697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5126598770402902790
 CanvasRenderer:
@@ -532,6 +532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8497928261771523838}
+  - component: {fileID: 1622632835391966197}
   m_Layer: 0
   m_Name: DialogueSystem
   m_TagString: Untagged
@@ -555,6 +556,27 @@ Transform:
   - {fileID: 6900693146969645531}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622632835391966197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121726694577587227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b001cf389b257e4ebc38c16be471dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogUI: {fileID: 5345971450921556980}
+  npcName: 
+  npcImage: {fileID: 5702430051696436355}
+  dialogText: {fileID: 428246292768985347}
+  option1: {fileID: 7945702904486702004}
+  option2: {fileID: 8641074096605100101}
+  option3: {fileID: 7292467831847681081}
+  mainCanvas: {fileID: 0}
+  dialogUIActive: 0
 --- !u!1 &4640260038031208977
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2479835324184880764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -830,10 +852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -892,8 +914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 250, y: 350}
-  m_SizeDelta: {x: 450, y: 700}
+  m_AnchoredPosition: {x: 271.56134, y: 174.11224}
+  m_SizeDelta: {x: 578.5677, y: 896.2119}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5911798972956729318
 CanvasRenderer:
@@ -951,7 +973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1671018139082392284
 RectTransform:
   m_ObjectHideFlags: 0

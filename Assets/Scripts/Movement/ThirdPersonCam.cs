@@ -22,7 +22,7 @@ public class ThirdPersonCam : MonoBehaviour
     private void Update()
     {
         if (!InventorySystem.Instance.isOpen && !CraftingSystem.Instance.isOpen && !MenuManager.Instance.isMenuOpen 
-            && !PlayerState.Instance.mainIsOpen)
+            && !PlayerState.Instance.mainMapIsOpen)
         {
             // rotate orientation
             Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);

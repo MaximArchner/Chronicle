@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
 {
     private Animator _animator;
     public CharacterController controller;
+    public Animation stillJumpAnimation;
 
     int isWalkingHash;
     int isSprintingHash;
@@ -18,11 +19,11 @@ public class playerMovement : MonoBehaviour
     public float jumpDuration = 0.5f;
 
     public Transform groundCheck;
-    public float groundDistance = 1.5f;
+    public float groundDistance = 0.5f;
     public LayerMask groundMask;
     public Transform orientation;
 
-    Vector3 velocity;
+    public Vector3 velocity;
     public bool isGrounded;
     public bool isSprinting;
 
@@ -40,7 +41,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         if (!InventorySystem.Instance.isOpen && !CraftingSystem.Instance.isOpen && !MenuManager.Instance.isMenuOpen 
-            && !PlayerState.Instance.mainIsOpen) // Envanter paneli acik degilse
+            && !PlayerState.Instance.mainMapIsOpen) // Envanter paneli acik degilse
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // groundCheck objesine dayanarak yere degiyor muyuz kontrol et
 
@@ -87,14 +88,14 @@ public class playerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && isGrounded) // Yerdeyken Jump butonuna basarsak
             {
-                StartCoroutine(Jump());
+                _animator.SetTrigger("Jump");
             }
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
 
 
-            if (lastPosition!= gameObject.transform.position && isGrounded == true)
+            if (lastPosition != gameObject.transform.position && isGrounded == true)
             {
                 isMoving = true;
 
@@ -108,19 +109,13 @@ public class playerMovement : MonoBehaviour
                 SoundManager.Instance.walkOnGrassSound.Stop();
 
             }
-            lastPosition= gameObject.transform.position;
+            lastPosition = gameObject.transform.position;
 
         }
-
-
     }
-
-    private IEnumerator Jump()
+    public void Jump()
     {
-        _animator.SetTrigger("Jump");
         _animator.SetBool("isGrounded", false);
-
-        yield return new WaitForSeconds(jumpDuration);
 
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
     }
