@@ -18,4 +18,28 @@ public class QuestsInProgress : MonoBehaviour
     public TextMeshProUGUI countableRewardAmount;
 
     public Image uncountableReward;
+
+    public Quest theQuest;
+
+    private void Start()
+    {
+        trackingButton.onClick.AddListener(() =>
+        {
+            if (isActive)
+            {
+                if (isTracking)
+                {
+                    isTracking = false;
+                    trackingButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Not Tracking";
+                    QuestManager.Instance.UntrackQuest(theQuest);
+                }
+                else
+                {
+                    isTracking = true;
+                    trackingButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Tracking";
+                    QuestManager.Instance.TrackQuest(theQuest);
+                } 
+            }
+        });
+    }
 }

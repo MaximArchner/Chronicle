@@ -12,30 +12,21 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; set; }
 
     public GameObject inventoryScreenUI;
-
     public GameObject itemInfoUI;
-
     public List<InventorySlot> slotList = new List<InventorySlot>();
-
     public List<string> itemList = new List<string>();
 
     private GameObject itemToAdd;
-
     private InventorySlot nextEmptySlot;
-    
+
     public GameObject pickupAlert;
     public TextMeshProUGUI pickupName;
     public UnityEngine.UI.Image pickupImage;
 
     public List<string> itemsPickedup;
-
     private Coroutine hidePickupAlertCoroutine;
-
     public int stackLimit = 99;
-
     public bool isOpen;
-
-    //public bool isFull; sonra kullanirsak diye saklayalim
 
     private void Awake()
     {
@@ -49,17 +40,14 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-
     void Start()
     {
         isOpen = false;
-
         PopulateSlotList();
         ReCalculateList();
-
     }
 
-    private void PopulateSlotList() // Envanter haznelerini sayip durumlarini sonradan degistirip kontrol edebilmemiz icin bir listeye esitleyecek
+    private void PopulateSlotList()
     {
         foreach (Transform child in inventoryScreenUI.transform)
         {
@@ -73,8 +61,7 @@ public class InventorySystem : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen && !MenuManager.Instance.isMenuOpen) // Envanteri acma
+        if (Input.GetKeyDown(KeyCode.I) && !isOpen && !MenuManager.Instance.isMenuOpen)
         {
             inventoryScreenUI.SetActive(true);
             UnityEngine.Cursor.lockState = CursorLockMode.None;
@@ -85,17 +72,16 @@ public class InventorySystem : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.I) && isOpen && !MenuManager.Instance.isMenuOpen)
         {
             inventoryScreenUI.SetActive(false);
-            if (CraftingSystem.Instance.isOpen == false)
+            if (!CraftingSystem.Instance.isOpen)
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
             }
-
             isOpen = false;
         }
     }
 
-    public void AddToInventory(string itemName, bool shouldStack) // spesifik bir objeyi envanter listesine ekleyebilme metodu
+    public void AddToInventory(string itemName, bool shouldStack)
     {
         SoundManager.Instance.PlaySound(SoundManager.Instance.pickItemSound);
         if (itemToAdd != null)
@@ -107,20 +93,19 @@ public class InventorySystem : MonoBehaviour
 
         if (stack != null && shouldStack)
         {
-            InventorySlot slot = stack.GetComponent<InventorySlot>();
             stack.itemInSlot.amountInInventory += 1;
             stack.UpdateItemInSlot();
         }
         else
         {
             nextEmptySlot = FindNextEmptySlot();
-
             itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), nextEmptySlot.transform.position, nextEmptySlot.transform.rotation);
             itemToAdd.transform.SetParent(nextEmptySlot.transform);
         }
 
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
+        QuestManager.Instance.RefreshTrackerList();
     }
 
     void TriggerPickupPopUp(string itemName, Sprite itemSprite)
@@ -140,11 +125,11 @@ public class InventorySystem : MonoBehaviour
     private IEnumerator HidePickupAlertAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
         pickupAlert.SetActive(false);
         hidePickupAlertCoroutine = null;
     }
-    private InventorySlot FindNextEmptySlot() // envanterde yer varsa, toplanan bir objeyi mevcut bos yere koyuyor
+
+    private InventorySlot FindNextEmptySlot()
     {
         foreach (InventorySlot slot in slotList)
         {
@@ -153,7 +138,6 @@ public class InventorySystem : MonoBehaviour
                 return slot;
             }
         }
-
         return new InventorySlot();
     }
 
@@ -204,7 +188,6 @@ public class InventorySystem : MonoBehaviour
 
     public void ReCalculateList()
     {
-
         itemList.Clear();
         foreach (InventorySlot inventorySlot in slotList)
         {
@@ -228,47 +211,37 @@ public class InventorySystem : MonoBehaviour
         foreach (InventorySlot inventorySlot in slotList)
         {
             inventorySlot.UpdateItemInSlot();
-            
-            if(inventorySlot != null && inventorySlot.itemInSlot != null)
+            if (inventorySlot != null && inventorySlot.itemInSlot != null)
             {
-                if (inventorySlot.itemInSlot.thisName == ItemName 
-                    && inventorySlot.itemInSlot.amountInInventory < stackLimit)
+                if (inventorySlot.itemInSlot.thisName == ItemName && inventorySlot.itemInSlot.amountInInventory < stackLimit)
                 {
                     return inventorySlot;
                 }
             }
         }
-
         return null;
     }
 
-    public bool CheckSlotsAvailable(int emptyMeeded)
+    public bool CheckSlotsAvailable(int emptyNeeded)
     {
         int emptySlot = 0;
 
         foreach (InventorySlot slot in slotList)
         {
-            if(slot.transform.childCount <= 1)
+            if (slot.transform.childCount <= 1)
             {
                 emptySlot++;
             }
         }
 
-        if (emptySlot >= emptyMeeded)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return emptySlot >= emptyNeeded;
     }
 
     public int CheckItemAmount(string name)
     {
         int itemCounter = 0;
 
-        foreach(string item in itemList)
+        foreach (string item in itemList)
         {
             if (item == name)
             {

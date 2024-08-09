@@ -27,7 +27,8 @@ MonoBehaviour:
     mind.
   comebackAfterDecline: Oh, have you changed your mind yet?
   comebackInProgress: You have to gather just a little more. You can check how many
-    materials you have collected by pressing I and open your inventory.
+    materials you have collected by pressing I and open your inventory. Also, you
+    can view your active and completed quests in the Quest Menu by pressing G.
   comebackCompleted: Well done, man! Hunting, gathering and foraging, that's the
     essential in survival.
   finalWords: With these materials, you can craft a tool, like an axe. Press C to

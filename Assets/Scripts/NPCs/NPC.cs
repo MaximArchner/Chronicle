@@ -57,10 +57,7 @@ public class NPC : MonoBehaviour
             {
                 StartConversation();
                 nameLearned = true;
-            }
-            else
-            {
-                isTalkingWithPlayer = false;
+                isTalkingWithPlayer = true;
             }
         }
     }
@@ -369,5 +366,7 @@ public class NPC : MonoBehaviour
             isTalkingWithPlayer = false;
         });
         option2.gameObject.SetActive(false);
+
+        isTalkingWithPlayer = false;
     }
 }

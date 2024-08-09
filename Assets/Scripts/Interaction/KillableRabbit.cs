@@ -47,12 +47,6 @@ public class KillableRabbit : MonoBehaviour
 
     public void GetHit()
     {
-        StartCoroutine(Hit());
-    }
-
-    public IEnumerator Hit()
-    {
-        yield return new WaitForSeconds(0.4f);
         rabbitHealth -= 1;
     }
 }

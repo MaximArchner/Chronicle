@@ -653,7 +653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 40, y: 0}
   m_SizeDelta: {x: 550, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4756535780534845115
@@ -1003,6 +1003,15 @@ MonoBehaviour:
   countableReward: {fileID: 1435050659048321865}
   countableRewardAmount: {fileID: 5589310883029458780}
   uncountableReward: {fileID: 1540383612484524015}
+  theQuest:
+    questName: 
+    questGiver: 
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 0}
 --- !u!1 &8713818346214867789
 GameObject:
   m_ObjectHideFlags: 0

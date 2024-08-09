@@ -14,26 +14,30 @@ public class EquipableItem : MonoBehaviour
 
     void Update()
     {
-        GameObject selectedEntity = selectionManager.Instance.selectedEntity;
-
         if (Input.GetMouseButtonDown(0) &&
             InventorySystem.Instance.isOpen == false &&
             CraftingSystem.Instance.isOpen == false)
         {
-
             animator.SetTrigger("hit");
-            SoundManager.Instance.PlaySound(SoundManager.Instance.toolSound);
-            if (selectedEntity != null)
+        }
+    }
+
+    public void GetHit()
+    {
+        GameObject selectedEntity = selectionManager.Instance.selectedEntity;
+
+        SoundManager.Instance.PlaySound(SoundManager.Instance.toolSound);
+
+        if (selectedEntity != null)
+        {
+            if (selectedEntity.CompareTag("Choppable"))
             {
-                if (selectedEntity.CompareTag("Choppable"))
-                {
-                    selectedEntity.GetComponent<ChoppableTree>().GetHit();
-                }
-                else if (selectedEntity.CompareTag("Killable"))
-                {
-                    selectedEntity.GetComponent<KillableRabbit>().GetHit();
-                }
+                selectedEntity.GetComponent<ChoppableTree>().GetHit();
+            }
+            else if (selectedEntity.CompareTag("Killable"))
+            {
+                selectedEntity.GetComponent<KillableRabbit>().GetHit();
             }
         }
-    }    
+    }
 }

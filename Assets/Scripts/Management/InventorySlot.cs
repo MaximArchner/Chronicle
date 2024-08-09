@@ -7,11 +7,6 @@ public class InventorySlot : MonoBehaviour
 {
     public TextMeshProUGUI ItemCount;
     public InventoryItem itemInSlot;
-
-    private void Start()
-    {
-        InventoryItem item = CheckInventoryItem();
-    }
     private void Update()
     {
         InventoryItem item = CheckInventoryItem();

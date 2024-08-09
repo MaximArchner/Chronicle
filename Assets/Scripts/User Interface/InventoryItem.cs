@@ -28,7 +28,6 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public bool isEquippable;
     public bool isInsideQuickSlot;
     public bool isSelected;
-    private GameObject itemPendingEquipping;
 
     // Esyalari biriktirme
     public bool isStackable;

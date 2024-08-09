@@ -61,18 +61,30 @@ public class QuestManager : MonoBehaviour
             GameObject trackerPrefab = Instantiate(trackedQuestPrefab, Vector3.zero, Quaternion.identity);
             trackerPrefab.transform.SetParent(questTrackerContent.transform, false);
 
+            RectTransform rectTransform = trackerPrefab.GetComponent<RectTransform>();
+            if (rectTransform != null && trackedQuest.info.secondRequirementItem != "")
+            {
+                rectTransform.sizeDelta = new Vector2(420, 130);
+            }
+
             QuestTracking questTracking = trackerPrefab.GetComponent<QuestTracking>();
 
             questTracking.questName.text = trackedQuest.questName;
 
+            var req1 = trackedQuest.info.firstRequirementItem;
+            var req1Amount = trackedQuest.info.firstRequirementAmount;
+            var req2 = trackedQuest.info.secondRequirementItem;
+            var req2Amount = trackedQuest.info.secondRequirementAmount;
+
+
             if (trackedQuest.info.secondRequirementItem != "")
             {
-                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " " + InventorySystem.Instance.CheckItemAmount(trackedQuest.info.firstRequirementItem) + "/" + $"{trackedQuest.info.firstRequirementAmount}\n" +
-                    $"{trackedQuest.info.secondRequirementItem}" + " " + InventorySystem.Instance.CheckItemAmount(trackedQuest.info.secondRequirementItem) + "/" + $"{trackedQuest.info.secondRequirementAmount}\n";
+                questTracking.questRequirement.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $"{req1Amount}\n" +
+                    $"{req2} " + InventorySystem.Instance.CheckItemAmount(req2) + "/" + $"{req2Amount}\n";
             }
             else
             {
-                questTracking.questRequirement.text = $"{trackedQuest.info.firstRequirementItem}" + " " + InventorySystem.Instance.CheckItemAmount(trackedQuest.info.secondRequirementItem) + "/" + $"{trackedQuest.info.firstRequirementAmount}\n";
+                questTracking.questRequirement.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $"{req1Amount}\n";
             }
         }
     }
@@ -131,6 +143,8 @@ public class QuestManager : MonoBehaviour
 
             QuestsInProgress quests = questPrefab.GetComponent<QuestsInProgress>();
 
+            quests.theQuest = activeQuest;
+
             quests.questName.text = activeQuest.questName;
             quests.questGiver.text = activeQuest.questGiver;
 
@@ -155,6 +169,11 @@ public class QuestManager : MonoBehaviour
             else
             {
                 quests.uncountableReward.gameObject.SetActive(false);
+            }
+
+            if (activeQuest.info.rewardItem1 == "" && activeQuest.info.rewardItem2 == "")
+            {
+                quests.gameObject.transform.Find("Rewards").gameObject.SetActive(false);
             }
         }
 

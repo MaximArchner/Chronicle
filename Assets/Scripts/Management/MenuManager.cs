@@ -49,6 +49,7 @@ public class MenuManager : MonoBehaviour
             if (mapCanvas != null)
             {
                 mapCanvas.SetActive(false);
+                PlayerState.Instance.mainMapIsOpen = false;
             }
             MenuCanvas.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
@@ -58,14 +59,17 @@ public class MenuManager : MonoBehaviour
         }
         else if ((Input.GetKeyDown(KeyCode.P) || resumeButtonClicked) && isMenuOpen)
         {
-            otherCanvas.SetActive(true);
+            if (DialogSystem.Instance.dialogUIActive == false)
+            {
+                otherCanvas.SetActive(true);
+            }
             MenuCanvas.SetActive(false);
 
             saveMenu.SetActive(false);
             settingsMenu.SetActive(false);
             pauseMenu.SetActive(true);
 
-            if (CraftingSystem.Instance.isOpen == false && InventorySystem.Instance.isOpen == false)
+            if (CraftingSystem.Instance.isOpen == false && InventorySystem.Instance.isOpen == false && QuestManager.Instance.isQuestMenuOpen == false && DialogSystem.Instance.dialogUIActive == false)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class DialogSystem : MonoBehaviour
 {
     public GameObject dialogUI;
+    public string npcName;
     public GameObject npcImage;
     public TextMeshProUGUI dialogText;
     public Button option1;
@@ -40,6 +41,8 @@ public class DialogSystem : MonoBehaviour
         mainCanvas.SetActive(false);
         dialogUIActive = true;
         Time.timeScale = 0;
+        npcName = selectionManager.Instance.lastSelectedNPC.name;
+        npcImage.GetComponent<Image>().sprite = Resources.Load<Sprite>(npcName + "_CloseUp");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
